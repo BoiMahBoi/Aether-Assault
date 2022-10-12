@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed;
+    public float damage;
+    public Collider2D col2D;
+    public Rigidbody2D rb;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position += transform.up * speed * Time.deltaTime;
     }
 }

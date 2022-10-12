@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class MothershipMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // attributes
+    public float moveSpeed;
+    public int shipHP;
+    public GameObject forceField;
+    public GameObject hullCollider;
+    public Rigidbody2D rb;
+
+    // builtin methods
     void Start()
     {
-        
+        // rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Inputs();
+    }
+
+    // custom methods
+    void Inputs()
+    {
+        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        direction.Normalize();
+        Movement(direction);
+    }
+    
+    void Movement(Vector2 direction)
+    {
+        rb.AddForce(direction * moveSpeed);
     }
 }
