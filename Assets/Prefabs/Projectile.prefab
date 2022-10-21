@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4511524474898046313}
   - component: {fileID: 2825805454240381827}
-  - component: {fileID: 8214447700566194839}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &8214447700566194839
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5200252393923782561}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!1 &7153415273132730439
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,10 +126,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7153415273550923041}
   - component: {fileID: 7136678478743759213}
-  - component: {fileID: 1626713023820037006}
+  - component: {fileID: 3917915536682991947}
+  - component: {fileID: 3501357828612883423}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,11 +163,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4b160c098265f42acb3f992c2a15fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 3501357828612883423}
   speed: 20
-  damage: 20
-  col2D: {fileID: 8214447700566194839}
-  rb: {fileID: 1626713023820037006}
---- !u!50 &1626713023820037006
+  damage: 10
+--- !u!70 &3917915536682991947
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153415273550923046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.25, y: 0.5}
+  m_Direction: 0
+--- !u!50 &3501357828612883423
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -196,7 +195,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

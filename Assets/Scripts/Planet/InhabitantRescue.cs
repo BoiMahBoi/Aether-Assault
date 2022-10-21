@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class InhabitantRescue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isRescuing;
+    public GameObject inhabitantPrefab;
+    public GameObject starFighter;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isRescuing)
+        {
+            if (starFighter != null)
+            {
+                GameObject inhabitant = Instantiate(inhabitantPrefab, transform.parent.position, transform.parent.rotation);
+
+                inhabitant.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f)));
+                inhabitant.transform.position += inhabitant.transform.up * 2.5f;
+
+                inhabitant.GetComponent<InhabitantMovement>().SetTarget(starFighter.gameObject);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == ("StarFighter"))
+        {
+            isRescuing = true;
+            starFighter = collider.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == ("StarFighter"))
+        {
+            isRescuing = false;
+            starFighter = null;
+        }
     }
 }
