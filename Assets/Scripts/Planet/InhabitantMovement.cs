@@ -11,13 +11,18 @@ public class InhabitantMovement : MonoBehaviour
     {
         if (starFighter != null)
         {
-            if ((starFighter.transform.position - transform.position).sqrMagnitude < 30f)
+            if ((starFighter.transform.position - transform.position).sqrMagnitude < 40f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime);
             }
             else
             {
                 // lerp between base color and red for x seconds
+                Destroy(gameObject);
+            }
+
+            if ((starFighter.transform.position - transform.position).sqrMagnitude < 1f)
+            {
                 Destroy(gameObject);
             }
         }
