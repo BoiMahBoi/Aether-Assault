@@ -5,16 +5,15 @@ using UnityEngine;
 public class MothershipTurretHP : MonoBehaviour
 {
     public float maxHP;
-    public float currentHP;
+    private float currentHP;
     public float repairTime;
-    public bool isFunctional;
-    public GameObject cannon;
+    private GameObject cannon;
     public GameObject cannonPrefab;
 
     void Start()
     {
         currentHP = maxHP;
-        cannon = Instantiate(cannonPrefab, transform);
+        cannon = transform.GetChild(0).gameObject;
     }
 
     public void TakeDamage(float damage)
@@ -29,7 +28,7 @@ public class MothershipTurretHP : MonoBehaviour
 
     void TurretDestroy()
     {
-        Destroy(cannon);
+        cannon.SetActive(false);
         StartCoroutine(TurretRepair());
     }
 
@@ -37,6 +36,7 @@ public class MothershipTurretHP : MonoBehaviour
     {
         yield return new WaitForSeconds(repairTime);
         currentHP = maxHP;
-        cannon = Instantiate(cannonPrefab, transform);
+        // reset rotation?
+        cannon.SetActive(true);
     }
 }

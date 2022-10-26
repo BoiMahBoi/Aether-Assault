@@ -6,10 +6,11 @@ public class MothershipMovement : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
+    public GameObject cannonManager;
 
     void Update()
     {
-        if (!transform.gameObject.GetComponent<MothershipManager>().isShooting)
+        if (!cannonManager.GetComponent<MothershipCannonManager>().isShooting)
         {
             Inputs();
         }
