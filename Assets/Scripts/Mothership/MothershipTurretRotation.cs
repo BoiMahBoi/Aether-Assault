@@ -7,10 +7,12 @@ public class MothershipTurretRotation : MonoBehaviour
     public float rotationSpeed;
     public float currentRotation;
     public float maxRotation;
+    private int cannonNumber;
+    public GameObject cannonManager;
 
     void Update()
     {
-        if (transform.parent.parent.gameObject.GetComponent<MothershipManager>().isShooting)
+        if (cannonManager.GetComponent<MothershipCannonManager>().isShooting /* &&  cannonNumber == cannonManager.GetComponent<MothershipManager>().activeCannon */)
         {
             Inputs();
         }

@@ -8,10 +8,9 @@ public class MothershipTurretHP : MonoBehaviour
     //Referrence to the HealthBar
     public HealthBar healthBar;
     public float maxHP;
-    public float currentHP;
+    private float currentHP;
     public float repairTime;
-    public bool isFunctional;
-    public GameObject cannon;
+    private GameObject cannon;
     public GameObject cannonPrefab;
 
     void Start()
@@ -19,7 +18,7 @@ public class MothershipTurretHP : MonoBehaviour
         //Assigning value to max health
         maxHP = 100;
         currentHP = maxHP;
-        cannon = Instantiate(cannonPrefab, transform);
+        cannon = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -46,7 +45,7 @@ public class MothershipTurretHP : MonoBehaviour
 
     void TurretDestroy()
     {
-        Destroy(cannon);
+        cannon.SetActive(false);
         StartCoroutine(TurretRepair());
     }
 
@@ -54,6 +53,7 @@ public class MothershipTurretHP : MonoBehaviour
     {
         yield return new WaitForSeconds(repairTime);
         currentHP = maxHP;
-        cannon = Instantiate(cannonPrefab, transform);
+        // reset rotation?
+        cannon.SetActive(true);
     }
 }

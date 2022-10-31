@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class MothershipTurretShoot : MonoBehaviour
 {
-    public float reloadTime;
     public bool canShoot;
+    public float reloadTime;
+    public int cannonNumber;
+    public GameObject cannonManager;
     public GameObject firePoint;
     public GameObject projectilePrefab;
 
     void Update()
     {
-        if (transform.parent.parent.gameObject.GetComponent<MothershipManager>().isShooting)
+        if (cannonManager.GetComponent<MothershipCannonManager>().isShooting /* &&  cannonNumber == cannonManager.GetComponent<MothershipManager>().activeCannon */)
         {
             Inputs();
         }
@@ -25,11 +27,11 @@ public class MothershipTurretShoot : MonoBehaviour
         }
     }
 
-     IEnumerator Fire()
-     {
+    IEnumerator Fire()
+    {
         canShoot = false;
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
-     }
+    }
 }

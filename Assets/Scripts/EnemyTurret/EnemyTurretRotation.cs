@@ -18,6 +18,6 @@ public class EnemyTurretRotation : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90.0f, Vector3.forward);
+        transform.parent.rotation = Quaternion.AngleAxis(angle - 90.0f, Vector3.forward);
     }
 }

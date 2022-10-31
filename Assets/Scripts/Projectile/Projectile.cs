@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("Enemy"))
         {
-            collider.transform.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
+            collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
         }
     }
 }
