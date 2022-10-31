@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class MothershipTurretHP : MonoBehaviour
 {
+    //Referrence to the HealthBar
+    public HealthBar healthBar;
     public float maxHP;
     public float currentHP;
     public float repairTime;
@@ -13,15 +16,29 @@ public class MothershipTurretHP : MonoBehaviour
 
     void Start()
     {
+        //Assigning value to max health
+        maxHP = 100;
         currentHP = maxHP;
         cannon = Instantiate(cannonPrefab, transform);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //*TESTING* When space is pressed, the function for taking damage is called
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
     }
 
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
 
-        if(currentHP < 0)
+        healthBar.SetHealth(currentHP);
+
+        if (currentHP < 0)
         {
             TurretDestroy();
         }
