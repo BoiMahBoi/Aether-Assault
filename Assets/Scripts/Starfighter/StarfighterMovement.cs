@@ -6,11 +6,14 @@ public class StarfighterMovement : MonoBehaviour
 {
     public float Speed;
     public float rotateSpeed;
-    private Rigidbody2D Rigidbody;
+    private Rigidbody2D rb;
+    public AudioSource thrusterSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         Speed = 200f;
         rotateSpeed = 2f;
     }
@@ -18,9 +21,16 @@ public class StarfighterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            thrusterSound.Stop();
+        }
+
         if (Input.GetKey(KeyCode.W)) 
         {
-            Rigidbody.AddForce(transform.up * Time.deltaTime * Speed);
+            rb.AddForce(transform.up * Time.deltaTime * Speed);
+            playThrusterSound();
         }
 
         if (Input.GetKey(KeyCode.A)) 
@@ -32,5 +42,35 @@ public class StarfighterMovement : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 0, -rotateSpeed) * Time.deltaTime * Speed, Space.World);
         }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            thrusterSound.Stop();
+        }
     }
+
+
+    // Sounds are handled in the methods below.
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            thrusterSound.Stop();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            
+            playThrusterSound();
+        }
+    }
+
+    void playThrusterSound()
+    {
+        if(!thrusterSound.isPlaying)
+        {
+            thrusterSound.Play();
+        }
+    }
+
 }

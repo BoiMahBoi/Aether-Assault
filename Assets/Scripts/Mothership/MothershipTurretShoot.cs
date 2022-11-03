@@ -10,26 +10,24 @@ public class MothershipTurretShoot : MonoBehaviour
     public GameObject cannonManager;
     public GameObject firePoint;
     public GameObject projectilePrefab;
+    public AudioSource shootingSound;
 
     void Update()
     {
         if (cannonManager.GetComponent<MothershipCannonManager>().isShooting /* &&  cannonNumber == cannonManager.GetComponent<MothershipManager>().activeCannon */)
         {
-            Inputs();
+            if (Input.GetKey(KeyCode.Space) && canShoot)
+            {
+                StartCoroutine(Fire());
+            }
         }
     }
 
-    void Inputs()
-    {
-        if(Input.GetKey(KeyCode.Space) && canShoot)
-        {
-            StartCoroutine(Fire());
-        }
-    }
 
     IEnumerator Fire()
     {
         canShoot = false;
+        shootingSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;

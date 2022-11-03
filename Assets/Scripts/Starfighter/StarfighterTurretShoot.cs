@@ -8,23 +8,22 @@ public class StarfighterTurretShoot : MonoBehaviour
     public bool canShoot;
     public GameObject firePoint;
     public GameObject projectilePrefab;
+    public AudioSource shootSound;
+
 
     // Update is called once per frame
     void Update()
     {
-        Inputs();
-    }
-
-    void Inputs() 
-    {
-        if (Input.GetKey(KeyCode.Return) && canShoot)
+        if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             StartCoroutine(Fire());
         }
     }
+
     IEnumerator Fire()
     {
         canShoot = false;
+        shootSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;

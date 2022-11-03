@@ -6,20 +6,25 @@ public class MothershipMovement : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
-    public GameObject cannonManager;
+    private MothershipCannonManager cannonManager;
+    public AudioSource thrusterSound;
 
-    void Update()
+
+    private void Start()
     {
-        if (!cannonManager.GetComponent<MothershipCannonManager>().isShooting)
-        {
-            Inputs();
-        }
+        cannonManager = GetComponent<MothershipCannonManager>();
     }
 
-    void Inputs()
+
+    void FixedUpdate()
     {
-        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Movement(direction);
+        if (!cannonManager.isShooting)
+        {
+            Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            //direction.Normalize();
+            //rb.AddForce(direction * moveSpeed);
+            Movement(direction);
+        }
     }
     
     void Movement(Vector2 direction)
@@ -27,4 +32,29 @@ public class MothershipMovement : MonoBehaviour
         direction.Normalize();
         rb.AddForce(direction * moveSpeed);
     }
+
+
+    private void Update()
+    {
+        if( !thrusterSound.isPlaying && !cannonManager.isShooting &&
+                                  (Input.GetKeyDown(KeyCode.UpArrow)
+                              ||Input.GetKeyDown(KeyCode.RightArrow)
+                              || Input.GetKeyDown(KeyCode.DownArrow)
+                              || Input.GetKeyDown(KeyCode.LeftArrow))) 
+        {
+            thrusterSound.Play();
+        }
+
+        else if (
+                                     (!Input.GetKey(KeyCode.UpArrow)
+                                 &&!Input.GetKey(KeyCode.RightArrow)
+                                 && !Input.GetKey(KeyCode.DownArrow)
+                                 && !Input.GetKey(KeyCode.LeftArrow)))
+        {
+            thrusterSound.Stop();
+        }
+
+    }
+
+
 }

@@ -11,6 +11,12 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.up * speed;
+        Invoke("DeleteProjectile", 5.0f);
+    }
+
+    void DeleteProjectile()
+    {
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
