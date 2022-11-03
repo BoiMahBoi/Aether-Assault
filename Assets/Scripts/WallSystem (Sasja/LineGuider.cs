@@ -10,8 +10,7 @@ public class LineGuider : MonoBehaviour
 {
     //we make a linerenderer
     private LineRenderer lineRenderer;
-    private bool outOfGame;
-    public GameObject player;
+    [HideInInspector] public bool outOfGame;
     public GameObject planet;
    
 
@@ -24,7 +23,6 @@ public class LineGuider : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         //we set it to two points
         lineRenderer.positionCount = 2;
-        
     }
 
     // Update is called once per frame
@@ -34,32 +32,30 @@ public class LineGuider : MonoBehaviour
         if (outOfGame) 
         {
             //we draw a line from position 1, which is our planet 
-            lineRenderer.SetPosition(0,planet.transform.position);
+            lineRenderer.SetPosition(0, planet.transform.position);
             //to our player
-            lineRenderer.SetPosition(1, player.transform.position); 
+            lineRenderer.SetPosition(1, gameObject.transform.position); 
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if the game object we collided with has the tag levelboarders, then we
-        if(collision.gameObject.CompareTag("levelboarders")) 
+        if(collision.gameObject.CompareTag("Levelborders")) 
         {
             //are out of the game and the bool = false, means it draw a line to guide us back.
-            outOfGame = false;
-
-            lineRenderer.enabled = false;
+            outOfGame = true;
+            lineRenderer.enabled = true;
         }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("levelboarders"))
+        if (collision.gameObject.CompareTag("Levelborders"))
         {
-            outOfGame = true;
-
-            lineRenderer.enabled = true;
+            outOfGame = false;
+            lineRenderer.enabled = false;
         }
     }
 

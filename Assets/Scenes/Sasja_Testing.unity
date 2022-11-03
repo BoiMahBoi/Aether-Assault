@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 96479782}
   - component: {fileID: 96479781}
   m_Layer: 0
-  m_Name: playGreound
-  m_TagString: levelboarders
+  m_Name: Level
+  m_TagString: Levelborders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,11 +300,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e8efd2a5dbd9c40bd70a6fc05c160f, type: 3}
---- !u!1 &1011154333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5207620244230445898, guid: 16e8efd2a5dbd9c40bd70a6fc05c160f, type: 3}
-  m_PrefabInstance: {fileID: 1011154332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1011154334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4055524761028098924, guid: 16e8efd2a5dbd9c40bd70a6fc05c160f, type: 3}
@@ -455,7 +450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1269325136}
   planet: {fileID: 719999928}
 --- !u!61 &1256986058
 BoxCollider2D:
@@ -544,11 +538,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4903dcdb08ad8f249a82cd23d0301734, type: 3}
---- !u!1 &1269325136 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6029618933305082178, guid: 4903dcdb08ad8f249a82cd23d0301734, type: 3}
-  m_PrefabInstance: {fileID: 1269325135}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1269325140 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6029618933305082301, guid: 4903dcdb08ad8f249a82cd23d0301734, type: 3}
@@ -698,7 +687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1011154333}
   planet: {fileID: 719999928}
 --- !u!1 &1917330460
 GameObject:

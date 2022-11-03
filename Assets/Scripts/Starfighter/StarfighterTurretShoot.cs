@@ -9,12 +9,12 @@ public class StarfighterTurretShoot : MonoBehaviour
     public GameObject firePoint;
     public GameObject projectilePrefab;
     public AudioSource shootSound;
-
+    public LineGuider guider;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && canShoot)
+        if (Input.GetKey(KeyCode.Space) && canShoot && !guider.outOfGame)
         {
             StartCoroutine(Fire());
         }

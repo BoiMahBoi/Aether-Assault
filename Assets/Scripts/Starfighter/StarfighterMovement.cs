@@ -14,8 +14,6 @@ public class StarfighterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Speed = 200f;
-        rotateSpeed = 2f;
     }
 
     // Update is called once per frame
