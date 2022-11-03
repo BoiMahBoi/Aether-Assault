@@ -18,8 +18,14 @@ public class starfighterHealth : MonoBehaviour
         maxHealth = 100;
         //Setting the current health to the maximum health at start of game
         currentHealth = maxHealth;
-        //Setting the healthbars health to the max health
-        healthBar.SetMaxHealth(maxHealth);
+        //Calling the function UpdateHealthBar
+        UpdateHealthBar();
+    }
+    
+    public void UpdateHealthBar()
+    {
+        //Updating the HealthBar, so that is relates to current health
+        healthBar.SetHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -37,6 +43,6 @@ public class starfighterHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        UpdateHealthBar();
     }
 }
