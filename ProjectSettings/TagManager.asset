@@ -7,7 +7,8 @@ TagManager:
   - Projectile
   - Enemy
   - RescueZone
-  - levelboarders
+  - Planet
+  - Levelborders
   layers:
   - Default
   - TransparentFX
