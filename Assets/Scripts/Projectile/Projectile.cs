@@ -38,14 +38,20 @@ public class Projectile : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("Enemy"))
         {
-            if(collider.gameObject.name == "Mothership") {
+            if (collider.gameObject.name == "Mothership") 
+            {
                 Debug.Log("The Mothership was hit!");
                 collider.gameObject.GetComponent<MothershipForcefieldHP>().hitShield();
-            } else if(collider.gameObject.name == "Starfighter"){
+            } 
+            else if (collider.gameObject.name == "Starfighter")
+            {
                 Debug.Log("The Starfighter was hit!");
             }
-            collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
-
+            else if (collider.gameObject.name == "MothershipCannon")
+            {
+                Debug.Log("A Mothership cannon was hit!");
+                collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
+            }
         }
     }
 }
