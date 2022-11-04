@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     public float damage;
+    
 
     void Start()
     {
@@ -32,10 +33,18 @@ public class Projectile : MonoBehaviour
         if (collider.gameObject.CompareTag("Projectile"))
         {
             Destroy(collider.gameObject);
+            Destroy(gameObject);
         }
         else if (collider.gameObject.CompareTag("Enemy"))
         {
+            if(collider.gameObject.name == "Mothership") {
+                Debug.Log("The Mothership was hit!");
+                collider.gameObject.GetComponent<MothershipForcefieldHP>().hitShield();
+            } else if(collider.gameObject.name == "Starfighter"){
+                Debug.Log("The Starfighter was hit!");
+            }
             collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
+
         }
     }
 }

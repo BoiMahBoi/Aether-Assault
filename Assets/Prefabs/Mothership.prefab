@@ -396,7 +396,7 @@ Transform:
   m_GameObject: {fileID: 1610921133124355633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8042984231569038601}
@@ -713,7 +713,7 @@ MonoBehaviour:
   cannonManager: {fileID: 1610921133124355633}
   firePoint: {fileID: 4898863379211547665}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 0}
+  shootingSound: {fileID: 239912060792031052}
 --- !u!58 &5904504388928467234
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -802,7 +802,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6691d07685c587e4e8770af9d77b637d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -901,14 +901,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5207620243480323799}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2588191, w: 0.9659258}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.175, y: 0.175, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5207620244365945841}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &2646245549960568836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -949,9 +949,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.8998494, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 31ea0813f2a2ccb46be5534d05139809, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1017,14 +1017,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5207620243905525032}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2588191, w: 0.9659258}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.17, y: 0.17, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5207620243242311637}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &5207620243905525037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8db205b08a73e9246ae79356a429309c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1090,9 +1090,10 @@ GameObject:
   - component: {fileID: 4055524761028098926}
   - component: {fileID: 4055524761028098927}
   - component: {fileID: 4662413080487599362}
+  - component: {fileID: 1487470214820167924}
   m_Layer: 0
   m_Name: Mothership
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1198,6 +1199,19 @@ PolygonCollider2D:
       - {x: -0.024, y: -1.336}
       - {x: 1.133, y: -0.665}
       - {x: 1.133, y: 0.667}
+--- !u!114 &1487470214820167924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207620244230445898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldSprite: {fileID: 2646245549960568836}
 --- !u!1 &5207620244365945854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1314,7 @@ MonoBehaviour:
   cannonManager: {fileID: 1610921133124355633}
   firePoint: {fileID: 8355952689331152346}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 0}
+  shootingSound: {fileID: 239912060792031052}
 --- !u!58 &4338927842619880497
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1361,7 +1375,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 434edb15773fb8f438868fdec8b7462c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.649
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1692,7 +1706,7 @@ MonoBehaviour:
   cannonManager: {fileID: 1610921133124355633}
   firePoint: {fileID: 1017876299857387672}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 0}
+  shootingSound: {fileID: 239912060792031052}
 --- !u!58 &549418265399819358
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1813,7 +1827,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6691d07685c587e4e8770af9d77b637d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1928,7 +1942,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6691d07685c587e4e8770af9d77b637d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
