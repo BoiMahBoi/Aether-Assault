@@ -32,7 +32,7 @@ public class MothershipForcefieldHP : MonoBehaviour
             tmp.a = 0f;
             shieldSprite.color = tmp;
         }
-        StartCoroutine(ShieldFade(0.1f, 1));
+        StartCoroutine(ShieldFade(0.0f, 1));
     }
 
     public IEnumerator ShieldFade(float endValue, float duration)

@@ -29,7 +29,8 @@ public class Projectile : MonoBehaviour
 
         // interface or super class named isDestroyable?
         // set the HP of projectiles to 1, so all projectiles only look for an HP class, and projectiles will deal enough damage to destroy bullets on impact
-
+        
+        
         if (collider.gameObject.CompareTag("Projectile"))
         {
             Destroy(collider.gameObject);
