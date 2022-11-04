@@ -17,7 +17,7 @@ public class MothershipTurretShoot : MonoBehaviour
     {
         if (cannonManager.GetComponent<MothershipCannonManager>().isShooting /* &&  cannonNumber == cannonManager.GetComponent<MothershipManager>().activeCannon */)
         {
-            if (Input.GetKey(KeyCode.Space) && canShoot)
+            if (Input.GetKey(KeyCode.RightControl) && canShoot)
             {
                 StartCoroutine(Fire());
             }
