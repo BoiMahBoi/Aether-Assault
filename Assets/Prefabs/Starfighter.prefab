@@ -334,7 +334,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77caad674882a814587f12ee0d8933a8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.81
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 2453056522129103182}
   m_Layer: 0
   m_Name: Starfighter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,7 +743,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668cfd1df2f1c204a896216f356ced2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 200
+  Speed: 150
   rotateSpeed: 2
   thrusterSound: {fileID: 2453056521871420097}
 --- !u!1 &8735263214604105336
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331986896186dc54ba911fa9e0ef0166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 1
+  reloadTime: 0.75
   canShoot: 1
   firePoint: {fileID: 3584853034087161495}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}

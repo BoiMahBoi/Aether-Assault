@@ -8,6 +8,19 @@ public class InhabitantRescue : MonoBehaviour
     public GameObject inhabitantPrefab;
     public GameObject starFighter;
 
+    /*
+     * IEnumerator with a random amount of yield seconds
+     * after yielding, instantiate marker at random rotation
+     * marker has a collider, when starfighter is standing still on top of it
+     * instantiate inhabitants
+     * 
+     * when beginning the rescue
+     * measure starfighters' position, from the center of the rescue-icon
+     * if starfighter is too far away from the rescue-icon
+     * end rescue
+     * lose incoming inhabitants
+     */
+
     void Update()
     {
         if (isRescuing)
