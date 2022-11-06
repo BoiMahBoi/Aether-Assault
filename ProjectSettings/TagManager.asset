@@ -9,6 +9,7 @@ TagManager:
   - RescueZone
   - Planet
   - Levelborders
+  - Asteroid
   layers:
   - Default
   - TransparentFX

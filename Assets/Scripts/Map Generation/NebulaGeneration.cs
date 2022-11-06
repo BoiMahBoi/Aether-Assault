@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidGeneration : MonoBehaviour
+public class NebulaGeneration : MonoBehaviour
 {
     public float mapX;
     public float mapY;
-    public int asteroidAmount;
-    public GameObject[] asteroidPrefabs;
+    public int spaceDetailAmount;
+    public GameObject[] spaceDetailPrefabs;
 
     void Start()
     {
-        for (int i = 0; i < asteroidAmount; i++)
+        for (int i = 0; i < spaceDetailAmount; i++)
         {
-            GenerateAsteroid();
+            GenerateSpaceDetail();
         }
     }
 
-    void GenerateAsteroid()
+    void GenerateSpaceDetail()
     {
-        int randAsteroid = Random.Range(0, asteroidPrefabs.Length);
-        
+        int randSpaceDetail = Random.Range(0, spaceDetailPrefabs.Length);
+
         float randX = Random.Range(-mapX, mapX);
         float randY = Random.Range(-mapY, mapY);
         Vector2 randLoc = new Vector2(randX, randY);
@@ -30,11 +30,11 @@ public class AsteroidGeneration : MonoBehaviour
 
         if (isLocationValid(randLoc))
         {
-            Instantiate(asteroidPrefabs[randAsteroid], randLoc, randRot, transform);
+            Instantiate(spaceDetailPrefabs[randSpaceDetail], randLoc, randRot, transform);
         }
         else
         {
-            GenerateAsteroid();
+            GenerateSpaceDetail();
         }
     }
 
@@ -42,7 +42,7 @@ public class AsteroidGeneration : MonoBehaviour
     {
         float distance = Vector2.Distance(randLoc, transform.position);
 
-        if (distance > 20)
+        if (distance > 40)
         {
             return true;
         }

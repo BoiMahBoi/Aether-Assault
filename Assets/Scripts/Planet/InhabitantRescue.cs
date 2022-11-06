@@ -6,19 +6,15 @@ public class InhabitantRescue : MonoBehaviour
 {
     public bool isRescuing;
     public GameObject inhabitantPrefab;
+    public Transform inhabitantSpawnTransform;
     public GameObject starFighter;
 
     /*
      * IEnumerator with a random amount of yield seconds
-     * after yielding, instantiate marker at random rotation
-     * marker has a collider, when starfighter is standing still on top of it
-     * instantiate inhabitants
+     * after yielding, rotate rescue anchor to random rotation
+     * set rescue zone active
      * 
-     * when beginning the rescue
-     * measure starfighters' position, from the center of the rescue-icon
-     * if starfighter is too far away from the rescue-icon
-     * end rescue
-     * lose incoming inhabitants
+     * limit instantiations to one per second
      */
 
     void Update()
@@ -27,10 +23,10 @@ public class InhabitantRescue : MonoBehaviour
         {
             if (starFighter != null)
             {
-                GameObject inhabitant = Instantiate(inhabitantPrefab, transform.parent.position, transform.parent.rotation);
+                GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawnTransform.position, transform.GetChild(0).rotation, transform.GetChild(0));
 
-                inhabitant.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f)));
-                inhabitant.transform.position += inhabitant.transform.up * 2.5f;
+                inhabitant.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f)));
+                //inhabitant.transform.position += inhabitant.transform.up * 2.5f;
 
                 inhabitant.GetComponent<InhabitantMovement>().SetTarget(starFighter.gameObject);
             }

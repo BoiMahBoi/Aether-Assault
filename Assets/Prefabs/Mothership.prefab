@@ -694,6 +694,7 @@ MonoBehaviour:
   rotationSpeed: 30
   currentRotation: 0
   maxRotation: 90
+  cannonNumber: 0
   cannonManager: {fileID: 1610921133124355633}
 --- !u!114 &8317192984504265317
 MonoBehaviour:
@@ -1088,9 +1089,9 @@ GameObject:
   - component: {fileID: 4055524761028098924}
   - component: {fileID: 4055524761028098913}
   - component: {fileID: 4055524761028098926}
+  - component: {fileID: 1487470214820167924}
   - component: {fileID: 4055524761028098927}
   - component: {fileID: 4662413080487599362}
-  - component: {fileID: 1487470214820167924}
   m_Layer: 0
   m_Name: Mothership
   m_TagString: Enemy
@@ -1147,6 +1148,19 @@ MonoBehaviour:
   moveSpeed: 50
   rb: {fileID: 4055524761028098927}
   thrusterSound: {fileID: 8894423865653095132}
+--- !u!114 &1487470214820167924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207620244230445898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldSprite: {fileID: 2646245549960568836}
 --- !u!50 &4055524761028098927
 Rigidbody2D:
   serializedVersion: 4
@@ -1199,19 +1213,6 @@ PolygonCollider2D:
       - {x: -0.024, y: -1.336}
       - {x: 1.133, y: -0.665}
       - {x: 1.133, y: 0.667}
---- !u!114 &1487470214820167924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207620244230445898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldSprite: {fileID: 2646245549960568836}
 --- !u!1 &5207620244365945854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1296,7 @@ MonoBehaviour:
   rotationSpeed: 30
   currentRotation: 0
   maxRotation: 90
+  cannonNumber: 0
   cannonManager: {fileID: 1610921133124355633}
 --- !u!114 &4755231311946523284
 MonoBehaviour:
@@ -1687,6 +1689,7 @@ MonoBehaviour:
   rotationSpeed: 30
   currentRotation: 0
   maxRotation: 90
+  cannonNumber: 0
   cannonManager: {fileID: 1610921133124355633}
 --- !u!114 &5648581516371298807
 MonoBehaviour:

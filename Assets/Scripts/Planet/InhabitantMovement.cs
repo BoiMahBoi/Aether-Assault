@@ -11,19 +11,24 @@ public class InhabitantMovement : MonoBehaviour
     {
         if (starFighter != null)
         {
-            if ((starFighter.transform.position - transform.position).sqrMagnitude < 40f) // if inhabitant is within 40 units
+            Debug.Log(Vector3.Distance(transform.position, starFighter.transform.position));
+
+            if (Vector3.Distance(transform.position, starFighter.transform.position) < 5.0f) // if inhabitant is within x units
             {
+                Debug.Log("Inhabitant is being rescued");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime); // move inhabitant towards starfighter
             }
-            else // if inhabitant is NOT within 40 untis
+            else // if inhabitant is NOT within x units
             {
                 // lerp between base color and red for x seconds
+                Debug.Log("Inhabitant was abandoned");
                 Destroy(gameObject); // die
             }
 
-            if ((starFighter.transform.position - transform.position).sqrMagnitude < 1f) // if inhabitant is within 1 unit
+            if (Vector3.Distance(transform.position, starFighter.transform.position) < 2.0f) // if inhabitant is within x unit
             {
-                Destroy(gameObject); // resucue
+                Debug.Log("Inhabitant was rescued");
+                Destroy(gameObject); // rescue
             }
         }
     }
