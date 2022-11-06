@@ -11,7 +11,6 @@ public class MothershipCannonManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            // replace isShooting with activeCannon
             if (isShooting)
             {
                 isShooting = false;
@@ -20,7 +19,10 @@ public class MothershipCannonManager : MonoBehaviour
             {
                 isShooting = true;
             }
+        }
 
+        if (Input.GetKeyDown(KeyCode.V))
+        {
             if (activeCannon < 2)
             {
                 activeCannon++;
@@ -30,8 +32,7 @@ public class MothershipCannonManager : MonoBehaviour
                 activeCannon = 0;
             }
 
-            Debug.Log(activeCannon);
+            Debug.Log("the current active cannon value is: " + activeCannon);
         }
-
     }
 }

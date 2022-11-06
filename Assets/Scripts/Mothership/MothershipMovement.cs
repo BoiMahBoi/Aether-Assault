@@ -9,20 +9,16 @@ public class MothershipMovement : MonoBehaviour
     private MothershipCannonManager cannonManager;
     public AudioSource thrusterSound;
 
-
     private void Start()
     {
         cannonManager = GetComponent<MothershipCannonManager>();
     }
-
 
     void FixedUpdate()
     {
         if (!cannonManager.isShooting)
         {
             Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            //direction.Normalize();
-            //rb.AddForce(direction * moveSpeed);
             Movement(direction);
         }
     }
@@ -33,23 +29,22 @@ public class MothershipMovement : MonoBehaviour
         rb.AddForce(direction * moveSpeed);
     }
 
-
     private void Update()
     {
-        if( !thrusterSound.isPlaying && !cannonManager.isShooting &&
-                                  (Input.GetKeyDown(KeyCode.UpArrow)
-                              ||Input.GetKeyDown(KeyCode.RightArrow)
-                              || Input.GetKeyDown(KeyCode.DownArrow)
-                              || Input.GetKeyDown(KeyCode.LeftArrow))) 
+        if (!thrusterSound.isPlaying && !cannonManager.isShooting &&
+                                                                      (Input.GetKeyDown(KeyCode.UpArrow)
+                                                                    || Input.GetKeyDown(KeyCode.RightArrow)
+                                                                    || Input.GetKeyDown(KeyCode.DownArrow)
+                                                                    || Input.GetKeyDown(KeyCode.LeftArrow))) 
         {
             thrusterSound.Play();
         }
 
         else if (
-                                     (!Input.GetKey(KeyCode.UpArrow)
-                                 &&!Input.GetKey(KeyCode.RightArrow)
-                                 && !Input.GetKey(KeyCode.DownArrow)
-                                 && !Input.GetKey(KeyCode.LeftArrow)))
+                                                                     (!Input.GetKey(KeyCode.UpArrow)
+                                                                   && !Input.GetKey(KeyCode.RightArrow)
+                                                                   && !Input.GetKey(KeyCode.DownArrow)
+                                                                   && !Input.GetKey(KeyCode.LeftArrow)))
         {
             thrusterSound.Stop();
         }

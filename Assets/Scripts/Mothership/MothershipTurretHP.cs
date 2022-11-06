@@ -34,7 +34,8 @@ public class MothershipTurretHP : MonoBehaviour
     public void UpdateHealthBar()
     {
         //Updating the HealthBar, so that is relates to current health
-        healthBar.SetHealth(currentHP);
+
+        //healthBar.SetHealth(currentHP); // re insert this line when mothership cannons has healthbars
     }
 
     public void TakeDamage(float damage)
