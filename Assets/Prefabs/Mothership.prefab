@@ -399,6 +399,7 @@ MonoBehaviour:
   maxHP: 50
   currentHP: 0
   repairTime: 10
+  isDestroyed: 0
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
 --- !u!1 &1693300513850136665
 GameObject:
@@ -1017,6 +1018,7 @@ GameObject:
   - component: {fileID: 7441088784340394207}
   - component: {fileID: 5451782020327103300}
   - component: {fileID: 3698782860645055785}
+  - component: {fileID: 893598578}
   m_Layer: 0
   m_Name: Mothership
   m_TagString: Enemy
@@ -1070,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c73e7c4f3c94c4e8acc21c7aea73e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 200
   rb: {fileID: 5451782020327103300}
   thrusterSound: {fileID: 616949122290043639}
 --- !u!114 &7441088784340394207
@@ -1138,6 +1140,24 @@ PolygonCollider2D:
       - {x: -0.024, y: -1.336}
       - {x: 1.133, y: -0.665}
       - {x: 1.133, y: 0.667}
+--- !u!114 &893598578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460775496545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5c2736c72248445b12e72f0a10ab3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannons:
+  - {fileID: 413043965076329444}
+  - {fileID: 4608145852783219202}
+  - {fileID: 5298455133153591242}
+  maxHP: 100
+  currentHP: 0
 --- !u!1 &4608145852783219202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1708,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1732,7 +1752,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.91372555, g: 0.13725491, b: 0.13725491, a: 1}
+      key0: {r: 0.9245283, g: 0.3009078, b: 0.3009078, a: 1}
       key1: {r: 0.91372555, g: 0.13725491, b: 0.13725491, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1906,6 +1926,7 @@ MonoBehaviour:
   maxHP: 50
   currentHP: 0
   repairTime: 10
+  isDestroyed: 0
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
 --- !u!1 &9090976893464012171
 GameObject:
@@ -1956,4 +1977,5 @@ MonoBehaviour:
   maxHP: 50
   currentHP: 0
   repairTime: 10
+  isDestroyed: 0
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}

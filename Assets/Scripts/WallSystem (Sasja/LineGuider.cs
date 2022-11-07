@@ -44,8 +44,8 @@ public class LineGuider : MonoBehaviour
         if(collision.gameObject.CompareTag("Levelborders")) 
         {
             //are out of the game and the bool = false, means it draw a line to guide us back.
-            outOfGame = true;
-            lineRenderer.enabled = true;
+            outOfGame = false;
+            lineRenderer.enabled = false;
         }
 
     }
@@ -54,8 +54,8 @@ public class LineGuider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Levelborders"))
         {
-            outOfGame = false;
-            lineRenderer.enabled = false;
+            outOfGame = true;
+            lineRenderer.enabled = true;
         }
     }
 

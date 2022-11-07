@@ -26,20 +26,16 @@ public class starfighterHealth : MonoBehaviour
     {
         //Updating the HealthBar, so that is relates to current health
         healthBar.SetHealth(currentHealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       /* //*TESTING* When space is pressed, the function for taking damage is called
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (currentHealth <= 0)
         {
-            TakeDamage(20);
-        }*/
+            //Spawn explosion here
+            Debug.Log("Mothership wins!");
+        }
     }
 
     //The function for taking damage, substracting the damage taken from current health
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

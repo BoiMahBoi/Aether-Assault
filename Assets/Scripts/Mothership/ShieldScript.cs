@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShieldScript: MonoBehaviour
 {
     public SpriteRenderer shieldSprite;
-    private bool shieldActive;
     private bool isFading;
 
 
@@ -13,21 +12,20 @@ public class ShieldScript: MonoBehaviour
     void Start()
     {
         isFading = false;
-        shieldActive = true;
         Color tmp = shieldSprite.color;
-        tmp.a = 0.25f;
+        tmp.a = 0.0f;
         shieldSprite.color = tmp;
     }
 
-    public void hitShield() {
+    public void HitShield() {
         Debug.Log("Shield was hit");
         if(isFading){
             StopAllCoroutines();
             Color tmp = shieldSprite.color;
-            tmp.a = 0.25f;
+            tmp.a = 0.0f;
             shieldSprite.color = tmp;
         }
-        StartCoroutine(ShieldFade(0.25f, 1));
+        StartCoroutine(ShieldFade(0.0f, 1));
     }
 
     public IEnumerator ShieldFade(float endValue, float duration)

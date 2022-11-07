@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
-    public float damage;
+    public int damage;
     
 
     void Start()
@@ -31,13 +31,22 @@ public class Projectile : MonoBehaviour
         {
             if (collider.gameObject.name == "Mothership") 
             {
-                Debug.Log("The Mothership was hit!");
-                collider.gameObject.GetComponent<ShieldScript>().hitShield();
+                if(collider.gameObject.GetComponent<MothershipHealth>().hasWorkingTurrets())
+                {
+                    Debug.Log("Mothership still has working turrets!");
+                    collider.gameObject.GetComponent<ShieldScript>().HitShield();
+
+                } else
+                {
+                    Debug.Log("You damaged the mothership!");
+                    collider.gameObject.GetComponent<MothershipHealth>().TakeDamage(damage);
+                }
+                
                 Destroy(gameObject);
             } 
             else if (collider.gameObject.name == "Starfighter")
             {
-                Debug.Log("The Starfighter was hit!");
+                collider.gameObject.GetComponent<starfighterHealth>().TakeDamage(damage);
                 Destroy(gameObject);
             }
             else if (collider.gameObject.name == "MothershipCannon")
@@ -55,7 +64,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("RescueZone")) {
             Debug.Log("The Planet was hit!");
-            collider.gameObject.GetComponent<ShieldScript>().hitShield();
+            collider.gameObject.GetComponent<ShieldScript>().HitShield();
             Destroy(gameObject);
         }
     }
