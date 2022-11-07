@@ -31,11 +31,11 @@ public class starfighterHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //*TESTING* When space is pressed, the function for taking damage is called
+       /* //*TESTING* When space is pressed, the function for taking damage is called
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-        }
+        }*/
     }
 
     //The function for taking damage, substracting the damage taken from current health

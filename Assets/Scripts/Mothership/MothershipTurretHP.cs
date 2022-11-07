@@ -22,14 +22,14 @@ public class MothershipTurretHP : MonoBehaviour
     }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
-        //*TESTING* When space is pressed, the function for taking damage is called
+        /*//*TESTING* When space is pressed, the function for taking damage is called
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-        }
-    }*/
+        }*/
+    }
 
     public void UpdateHealthBar()
     {
