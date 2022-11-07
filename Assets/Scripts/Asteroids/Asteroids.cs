@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Asteroids : MonoBehaviour
 {
+
+    private int hp;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = 5;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void AsteroidGotShot(){
+        hp--;
+        //Spawn dust particle
+        if(hp <= 0) {
+            //Spawn asteroid explosion particle
+            Destroy(gameObject);
+        }
     }
 }
