@@ -9,7 +9,7 @@ public class MothershipCannonManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             if (isShooting)
             {
@@ -21,7 +21,7 @@ public class MothershipCannonManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (activeCannon < 2)
             {

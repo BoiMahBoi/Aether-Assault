@@ -8,7 +8,7 @@ public class StarfighterMovement : MonoBehaviour
     public float rotateSpeed;
     private Rigidbody2D rb;
     public AudioSource thrusterSound;
-
+    public float speedBackwards;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,11 @@ public class StarfighterMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             thrusterSound.Stop();
+        }
+
+        if (Input.GetKey(KeyCode.S)) 
+        {
+            rb.AddForce(-transform.up * Time.deltaTime * speedBackwards);
         }
     }
 

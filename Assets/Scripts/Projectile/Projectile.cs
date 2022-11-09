@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
-    public float damage;
+    public int damage;
     
 
     void Start()
@@ -21,16 +21,7 @@ public class Projectile : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (!collider.gameObject.CompareTag("RescueZone"))
-        {
-            Destroy(gameObject);
-        }
-
-        // interface or super class named isDestroyable?
-        // set the HP of projectiles to 1, so all projectiles only look for an HP class, and projectiles will deal enough damage to destroy bullets on impact
-        
-        
+    {   
         if (collider.gameObject.CompareTag("Projectile"))
         {
             Destroy(collider.gameObject);
@@ -40,18 +31,41 @@ public class Projectile : MonoBehaviour
         {
             if (collider.gameObject.name == "Mothership") 
             {
-                Debug.Log("The Mothership was hit!");
-                collider.gameObject.GetComponent<MothershipForcefieldHP>().hitShield();
+                if(collider.gameObject.GetComponent<MothershipHealth>().hasWorkingTurrets())
+                {
+                    Debug.Log("Mothership still has working turrets!");
+                    collider.gameObject.GetComponent<ShieldScript>().HitShield();
+
+                } else
+                {
+                    Debug.Log("You damaged the mothership!");
+                    collider.gameObject.GetComponent<MothershipHealth>().TakeDamage(damage);
+                }
+                
+                Destroy(gameObject);
             } 
             else if (collider.gameObject.name == "Starfighter")
             {
-                Debug.Log("The Starfighter was hit!");
+                collider.gameObject.GetComponent<starfighterHealth>().TakeDamage(damage);
+                Destroy(gameObject);
             }
             else if (collider.gameObject.name == "MothershipCannon")
             {
                 Debug.Log("A Mothership cannon was hit!");
                 collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
+                Destroy(gameObject);
             }
+        } 
+        else if (collider.gameObject.CompareTag("Asteroid"))
+        {
+            Debug.Log("An asteroid was hit!");
+            collider.gameObject.GetComponent<Asteroids>().AsteroidGotShot();
+            Destroy(gameObject);
+        }
+        else if (collider.gameObject.CompareTag("RescueZone")) {
+            Debug.Log("The Planet was hit!");
+            collider.gameObject.GetComponent<ShieldScript>().HitShield();
+            Destroy(gameObject);
         }
     }
 }
