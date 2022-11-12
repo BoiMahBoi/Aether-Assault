@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EnemyTurretShoot : MonoBehaviour
 {
+    [Header("Turret Settings")]
     public float reloadTime;
     public bool canShoot;
+
+    [Header("Object References")]
     public GameObject firePoint;
     public GameObject projectilePrefab;
 

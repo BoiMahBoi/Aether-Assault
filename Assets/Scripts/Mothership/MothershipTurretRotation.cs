@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class MothershipTurretRotation : MonoBehaviour
 {
+    [Header("Rotation Settings")]
     public float rotationSpeed;
     public float currentRotation;
     public float maxRotation;
     public int cannonNumber;
+
+    [Header("CannonManager Reference")]
     public MothershipCannonManager cannonManager;
 
     void Update()
     {
         if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon)
         {
-            Inputs();
+            float cannonRotation = Input.GetAxis("Horizontal");
+            TurretRotation(cannonRotation);
         }
-    }
-
-    void Inputs()
-    {
-        float cannonRotation = Input.GetAxis("Horizontal");
-        TurretRotation(cannonRotation);
     }
 
     void TurretRotation(float cannonRotation)

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Asteroids : MonoBehaviour
 {
-
-    private int hp;
+    [Header("Asteroid Settings")]
+    public int hp;
+    public float minSpeed, maxSpeed;
 
     // Start is called before the first frame update
     void Start()

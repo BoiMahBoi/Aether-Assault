@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class MothershipTurretHP : MonoBehaviour
 {
-    //Referrence to the HealthBar
+    //Reference to the HealthBar
+    [Header("Object References")]
     public HealthBar healthBar;
+    public GameObject cannonPrefab;
+
+    [Header("Turret Settings")]
     public float maxHP;
     public float currentHP;
     public float repairTime;
+
+    [Header("Turret State")]
     public bool isDestroyed;
     private GameObject cannon;
-    public GameObject cannonPrefab;
 
     void Start()
     {

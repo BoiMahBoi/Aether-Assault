@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class SpaceGeneration : MonoBehaviour
 {
+    [Header("Coordinates")]
     public float tileAmountX;
     public float tileAmountY;
+
     // public float offset = 11;
+    [Header("Tile References")]
     public GameObject[] tilePrefabs;
 
     void Start()

@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRescuing: 0
-  inhabitantPrefab: {fileID: 3920600997139414565, guid: 350337ced85a3534196500394c7f0aed, type: 3}
-  inhabitantSpawnTransform: {fileID: 0}
+  inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
+  inhabitantSpawnTransform: {fileID: 6755444911494866391}
   starFighter: {fileID: 0}
 --- !u!58 &6755444911072943400
 CircleCollider2D:

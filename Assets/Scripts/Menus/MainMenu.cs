@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    [Header("Menu References")]
     public GameObject mainMenu;
     public GameObject howToMenu;
     public GameObject optionsMenu;

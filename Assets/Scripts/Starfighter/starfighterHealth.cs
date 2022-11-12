@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class starfighterHealth : MonoBehaviour
 {
+    [Header("Health Settings")]
     //Public var for the maximum health
     public float maxHealth;
     //Public var for the current health
     public float currentHealth;
+
     //Referrence to the HealthBar
+    [Header("Healthbar Reference")]
     public HealthBar healthBar;
 
     // Start is called before the first frame update

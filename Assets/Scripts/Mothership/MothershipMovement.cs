@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class MothershipMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float moveSpeed;
-    public Rigidbody2D rb;
-    private MothershipCannonManager cannonManager;
+
+    [Header("SoundFX")]
     public AudioSource thrusterSound;
+    private MothershipCannonManager cannonManager;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         cannonManager = GetComponent<MothershipCannonManager>();
     }
 

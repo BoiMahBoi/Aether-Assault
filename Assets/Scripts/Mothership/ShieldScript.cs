@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShieldScript: MonoBehaviour
 {
+    [Header("Shield-Sprite Reference")]
     public SpriteRenderer shieldSprite;
     private bool isFading;
-
 
     // builtin methods
     void Start()

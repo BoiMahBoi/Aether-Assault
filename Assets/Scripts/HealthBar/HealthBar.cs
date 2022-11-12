@@ -4,13 +4,16 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
-       
-{
-    public Slider slider;
+public class HealthBar : MonoBehaviour {
+
+    [Header("Gradient Settings")]
     public Gradient gradient;
+
+    [Header("Slider Reference")]
+    public Slider slider;
+
+    [Header("Fill Reference")]
     public Image fill;
-    // Start is called before the first frame update
     
     public void SetMaxHealth(float health)
     {

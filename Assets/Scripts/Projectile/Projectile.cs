@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+
+    [Header("Projectile Settings")]
     public float speed;
     public int damage;
     
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
         Invoke("DeleteProjectile", 5.0f);
     }

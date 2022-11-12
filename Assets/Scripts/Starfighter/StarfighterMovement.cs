@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class StarfighterMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float Speed;
     public float rotateSpeed;
+    public float speedBackwards;
+
     private Rigidbody2D rb;
     public AudioSource thrusterSound;
-    public float speedBackwards;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +52,7 @@ public class StarfighterMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) 
         {
             rb.AddForce(-transform.up * Time.deltaTime * speedBackwards);
+
         }
     }
 
@@ -56,12 +60,12 @@ public class StarfighterMovement : MonoBehaviour
     // Sounds are handled in the methods below.
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
         {
             thrusterSound.Stop();
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
         {
             
             playThrusterSound();

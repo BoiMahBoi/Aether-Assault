@@ -396,11 +396,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   maxHP: 50
   currentHP: 0
-  repairTime: 10
+  repairTime: 15
   isDestroyed: 0
-  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
 --- !u!1 &1693300513850136665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,12 +1013,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5451782020327103303}
-  - component: {fileID: 5451782020327103306}
-  - component: {fileID: 5451782020327103301}
-  - component: {fileID: 7441088784340394207}
   - component: {fileID: 5451782020327103300}
   - component: {fileID: 3698782860645055785}
+  - component: {fileID: 5451782020327103306}
+  - component: {fileID: 5451782020327103301}
   - component: {fileID: 893598578}
+  - component: {fileID: 7441088784340394207}
   - component: {fileID: 534663103}
   m_Layer: 0
   m_Name: Mothership
@@ -1047,48 +1047,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5451782020327103306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298034460775496545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9464503f2160ad49ae4b891b9de94d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShooting: 0
-  activeCannon: 0
---- !u!114 &5451782020327103301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298034460775496545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55c73e7c4f3c94c4e8acc21c7aea73e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 200
-  rb: {fileID: 5451782020327103300}
-  thrusterSound: {fileID: 616949122290043639}
---- !u!114 &7441088784340394207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298034460775496545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldSprite: {fileID: 6294302584153800751}
 --- !u!50 &5451782020327103300
 Rigidbody2D:
   serializedVersion: 4
@@ -1141,6 +1099,34 @@ PolygonCollider2D:
       - {x: -0.024, y: -1.336}
       - {x: 1.133, y: -0.665}
       - {x: 1.133, y: 0.667}
+--- !u!114 &5451782020327103306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460775496545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9464503f2160ad49ae4b891b9de94d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShooting: 0
+  activeCannon: 0
+--- !u!114 &5451782020327103301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460775496545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c73e7c4f3c94c4e8acc21c7aea73e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 200
+  thrusterSound: {fileID: 616949122290043639}
 --- !u!114 &893598578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,8 +1143,22 @@ MonoBehaviour:
   - {fileID: 413043965076329444}
   - {fileID: 4608145852783219202}
   - {fileID: 5298455133153591242}
-  maxHP: 100
+  healthBar: {fileID: 0}
+  maxHP: 50
   currentHP: 0
+--- !u!114 &7441088784340394207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460775496545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldSprite: {fileID: 6294302584153800751}
 --- !u!114 &534663103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,8 +1173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   maxCharge: 10
-  beamCharged: 0
   fireTime: 3
+  beamCharged: 0
+  isFiring: 0
   slider: {fileID: 0}
 --- !u!1 &4608145852783219202
 GameObject:
@@ -1340,7 +1341,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 69e475a2e652b0045a6c1b74942504b3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.03
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1704,8 +1705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outOfGame: 0
   planet: {fileID: 0}
+  outOfGame: 0
 --- !u!120 &8349815086520321563
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1941,11 +1942,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   maxHP: 50
   currentHP: 0
-  repairTime: 10
+  repairTime: 15
   isDestroyed: 0
-  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
 --- !u!1 &9090976893464012171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,8 +1993,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   maxHP: 50
   currentHP: 0
-  repairTime: 10
+  repairTime: 15
   isDestroyed: 0
-  cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}

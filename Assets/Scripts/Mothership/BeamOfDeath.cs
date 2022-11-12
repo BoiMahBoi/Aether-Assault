@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class BeamOfDeath : MonoBehaviour
 {
-    [Header("Beam charging")]
+    [Header("Beam Settings")]
     public int count = 0;
     public int maxCharge = 10;
+    public float fireTime;
 
     [Header("Beam State")]
     public bool beamCharged;
-    public float fireTime;
-    private bool isFiring = false;
+    [HideInInspector]public bool isFiring = false;
 
     [Header("Slider")]
+    [Tooltip("Assign the slider here")]
     public Slider slider;
 
     private void Start()
@@ -42,7 +43,6 @@ public class BeamOfDeath : MonoBehaviour
                 }
             }
             slider.value = count;
-
         }
     }
 
@@ -66,5 +66,7 @@ public class BeamOfDeath : MonoBehaviour
         Debug.Log("Preparing the beam!");
         yield return new WaitForSeconds(fireTime);
         Debug.Log("The Mothership destroyed the planet!");
+        //Put effects here
+        isFiring = false;
     }
 }

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class AsteroidGeneration : MonoBehaviour
 {
+    [Header("Coordinates")]
     public float mapX;
     public float mapY;
+
+    [Header("Amount to spawn")]
     public int asteroidAmount;
+
+    [Header("Asteroid References")]
     public GameObject[] asteroidPrefabs;
 
     void Start()

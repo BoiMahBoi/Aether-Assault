@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outOfGame: 0
   planet: {fileID: 0}
+  outOfGame: 0
 --- !u!120 &1896813348
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e9f3f065ac45534aa973ae6f3902fd8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.25
   m_Pitch: 0.24
   Loop: 1
   Mute: 0
@@ -783,8 +783,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 100
   rotateSpeed: 1
-  thrusterSound: {fileID: 2453056521871420097}
   speedBackwards: 30
+  thrusterSound: {fileID: 2453056521871420097}
 --- !u!114 &1003476330
 MonoBehaviour:
   m_ObjectHideFlags: 0

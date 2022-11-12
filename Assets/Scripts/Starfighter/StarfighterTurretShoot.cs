@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class StarfighterTurretShoot : MonoBehaviour
 {
+    [Header("Turret Settings")]
     public float reloadTime;
     public bool canShoot;
+
+    [Header("Object References")]
     public GameObject firePoint;
     public GameObject projectilePrefab;
     public AudioSource shootSound;
