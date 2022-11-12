@@ -20,6 +20,7 @@ public class MothershipTurretHP : MonoBehaviour
         isDestroyed = false;
         currentHP = maxHP;
         cannon = transform.GetChild(0).gameObject;
+        healthBar.SetMaxHealth(maxHP);
     }
 
     public void UpdateHealthBar()
