@@ -2157,7 +2157,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: bf6fa404779e7994faa017d8bfce3605, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75
-  m_Pitch: 0.95
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -2346,10 +2346,6 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 2141220960}
-    - target: {fileID: 2453056522129103182, guid: df8c538d056562f42b222d39e82aed88, type: 3}
-      propertyPath: speedBackwards
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8189377634166370676, guid: df8c538d056562f42b222d39e82aed88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4066,17 +4062,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: maxHP
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 393301551}
-    - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: maxHP
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
@@ -4084,10 +4072,6 @@ PrefabInstance:
     - target: {fileID: 4298034460775496545, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_Name
       value: Mothership
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561812466380648715, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: maxHP
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4561812466380648715, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar

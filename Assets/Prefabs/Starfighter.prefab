@@ -784,6 +784,7 @@ MonoBehaviour:
   Speed: 100
   rotateSpeed: 1
   thrusterSound: {fileID: 2453056521871420097}
+  speedBackwards: 30
 --- !u!114 &1003476330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331986896186dc54ba911fa9e0ef0166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 0.75
+  reloadTime: 0.5
   canShoot: 1
   firePoint: {fileID: 3584853034087161495}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
