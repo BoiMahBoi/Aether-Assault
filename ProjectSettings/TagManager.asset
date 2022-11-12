@@ -10,6 +10,7 @@ TagManager:
   - Planet
   - Levelborders
   - Asteroid
+  - UranPickUp
   layers:
   - Default
   - TransparentFX
