@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class LineGuider : MonoBehaviour
 {
@@ -12,8 +13,6 @@ public class LineGuider : MonoBehaviour
     private LineRenderer lineRenderer;
     [HideInInspector] public bool outOfGame;
     public GameObject planet;
-   
-
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,7 @@ public class LineGuider : MonoBehaviour
             //we draw a line from position 1, which is our planet 
             lineRenderer.SetPosition(0, planet.transform.position);
             //to our player
-            lineRenderer.SetPosition(1, gameObject.transform.position); 
+            lineRenderer.SetPosition(1, gameObject.transform.position);
         }
     }
 
@@ -47,7 +46,6 @@ public class LineGuider : MonoBehaviour
             outOfGame = false;
             lineRenderer.enabled = false;
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -58,6 +56,4 @@ public class LineGuider : MonoBehaviour
             lineRenderer.enabled = true;
         }
     }
-
-
 }

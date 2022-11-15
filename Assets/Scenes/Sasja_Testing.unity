@@ -450,7 +450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfGame: 0
   planet: {fileID: 719999928}
+  arrow: {fileID: 0}
 --- !u!61 &1256986058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -687,7 +689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883fe83805f53f48805bec3366f6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfGame: 0
   planet: {fileID: 719999928}
+  arrow: {fileID: 0}
 --- !u!1 &1917330460
 GameObject:
   m_ObjectHideFlags: 0
