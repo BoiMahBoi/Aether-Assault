@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class StarfighterMovement : MonoBehaviour
 {
+    private TrailRenderer thrusterTrail;
+
     [Header("Movement Settings")]
     public float Speed;
     public float rotateSpeed;
     public float speedBackwards;
-
     private Rigidbody2D rb;
     public AudioSource thrusterSound;
+
     
 
     // Start is called before the first frame update
     void Start()
     {
+        thrusterTrail = gameObject.GetComponentInChildren<TrailRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -57,17 +60,18 @@ public class StarfighterMovement : MonoBehaviour
     }
 
 
-    // Sounds are handled in the methods below.
+    //Effects are handled below
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
         {
+            thrusterTrail.enabled = false;
             thrusterSound.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
         {
-            
+            thrusterTrail.enabled = true;
             playThrusterSound();
         }
     }
