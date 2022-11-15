@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class InhabitantMovement : MonoBehaviour
 {
-    public GameObject starFighter;
+    [Header("Inhabitant Settings")]
     public float moveSpeed;
+
+    [Header("Starfighter Reference")]
+    public GameObject starFighter;
+
 
     void Update()
     {

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class NebulaGeneration : MonoBehaviour
 {
+    [Header("Coordinates")]
     public float mapX;
     public float mapY;
+
+    [Header("Amount to spawn")]
     public int spaceDetailAmount;
+
+    [Header("Nebula References")]
     public GameObject[] spaceDetailPrefabs;
 
     void Start()

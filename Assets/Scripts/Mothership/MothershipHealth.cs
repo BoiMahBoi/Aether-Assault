@@ -8,14 +8,17 @@ public class MothershipHealth : MonoBehaviour
     public GameObject[] cannons = new GameObject[3];
 
     //Referrence to the HealthBar
-    //public HealthBar healthBar;
+    [Tooltip("Assign the Mothership's Healthbar here")]
+    public HealthBar healthBar;
+
+    [Header("Health Settings")]
     public float maxHP;
     public float currentHP;
+    private bool isDead = false;
 
     void Start()
     {
-        //Assigning value to max health
-        maxHP = 100;
+        healthBar.SetMaxHealth(maxHP);
         currentHP = maxHP;
     }
 
@@ -31,22 +34,26 @@ public class MothershipHealth : MonoBehaviour
         return false;
     }
 
-    /*public void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         //Updating the HealthBar, so that is relates to current health
         healthBar.SetHealth(currentHP);
-    }*/
+    }
 
     public void TakeDamage(float damage)
     {
-        currentHP -= damage;
-
-        //UpdateHealthBar();
-
-        if (currentHP <= 0)
+        if(!isDead)
         {
-            //Spawn explosion here
-            Debug.Log("The Starfighter won!");
+            currentHP -= damage;
+            healthBar.SetHealth(currentHP);
+            //UpdateHealthBar();
+
+            if (currentHP <= 0)
+            {
+                //Spawn explosion here
+                isDead = true;
+                Debug.Log("The Starfighter won!");
+            }
         }
     }
 }

@@ -11,7 +11,6 @@ public class LineGuider : MonoBehaviour
 {
     //we make a linerenderer
     private LineRenderer lineRenderer;
-    [HideInInspector] public bool outOfGame;
     public GameObject planet;
 
     // Start is called before the first frame update

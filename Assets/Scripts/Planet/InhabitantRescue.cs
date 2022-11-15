@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class InhabitantRescue : MonoBehaviour
 {
+    [Header("Rescue-System Settings")]
     public bool isRescuing;
+
+    [Header("Object References")]
     public GameObject inhabitantPrefab;
     public Transform inhabitantSpawnTransform;
     public GameObject starFighter;

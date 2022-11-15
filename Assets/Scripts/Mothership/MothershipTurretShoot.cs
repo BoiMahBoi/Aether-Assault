@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MothershipTurretShoot : MonoBehaviour
 {
+    [Header("Turret Settings")]
     public bool canShoot;
     public float reloadTime;
     public int cannonNumber;
+
+    [Header("Object References")]
     public MothershipCannonManager cannonManager;
     public GameObject firePoint;
     public GameObject projectilePrefab;
