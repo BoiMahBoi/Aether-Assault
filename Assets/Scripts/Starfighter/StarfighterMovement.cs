@@ -5,7 +5,6 @@ using UnityEngine;
 public class StarfighterMovement : MonoBehaviour
 {
     private TrailRenderer thrusterTrail;
-    private ParticleSystem SmokeParticles;
 
     [Header("Movement Settings")]
     public float Speed;
@@ -20,7 +19,6 @@ public class StarfighterMovement : MonoBehaviour
     void Start()
     {
         thrusterTrail = gameObject.GetComponentInChildren<TrailRenderer>();
-        SmokeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -69,14 +67,12 @@ public class StarfighterMovement : MonoBehaviour
         {
             thrusterTrail.enabled = false;
             thrusterSound.Stop();
-            SmokeParticles.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
         {
             thrusterTrail.enabled = true;
             playThrusterSound();
-            SmokeParticles.Play();
         }
     }
 
