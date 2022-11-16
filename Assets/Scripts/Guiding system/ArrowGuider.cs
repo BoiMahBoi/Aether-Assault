@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class ArrowGuider : MonoBehaviour
 {
-    public GameObject player;
-    public SpriteRenderer arrow;
+    public Transform player;
+    public LineGuider lineGuiderScript;
+    private SpriteRenderer arrowSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        arrow.transform.position = player.transform.position;
-        //use the public bool out of game by packing system with dot. 
-        
+        arrowSprite = GetComponent<SpriteRenderer>();
+        arrowSprite.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if outOfGame.player
+        if (lineGuiderScript.outOfGame) 
+        {
+            arrowSprite.enabled=true;
+        }
 
-        
+        if (!lineGuiderScript.outOfGame)
+        {
+            arrowSprite.enabled = false;
+        }
+
+        transform.rotation = player.rotation;
+
+
     }
 }
