@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject howToMenu;
     public GameObject optionsMenu;
+    public GameObject creditsMenu;
 
     public void playGame()
     {
@@ -40,6 +41,11 @@ public class MainMenu : MonoBehaviour
             howToMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
+        else if (creditsMenu.activeSelf)
+        {
+            Debug.Log("Going back to the Main Menu from the credits menu");
+            creditsMenu.SetActive(false);
+            mainMenu.SetActive(true);
+        }
     }
-
 }
