@@ -3789,6 +3789,10 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 893598572}
+    - target: {fileID: 722497568797205522, guid: f7c0a5fda57db52438956167b177b375, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2595380790367313911, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: m_Value
       value: 100
@@ -3804,6 +3808,10 @@ PrefabInstance:
     - target: {fileID: 4410774385164530591, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: m_SizeDelta.y
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410774385164530591, guid: f7c0a5fda57db52438956167b177b375, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4410774385164530591, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3828,6 +3836,10 @@ PrefabInstance:
     - target: {fileID: 4410774385164530591, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410774385197934308, guid: f7c0a5fda57db52438956167b177b375, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4410774385197934313, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
@@ -4085,6 +4097,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5294300927209178741, guid: f7c0a5fda57db52438956167b177b375, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003489395662975428, guid: f7c0a5fda57db52438956167b177b375, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7c0a5fda57db52438956167b177b375, type: 3}
 --- !u!1001 &4963330337393547981
@@ -4224,6 +4244,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1787188818}
+    - target: {fileID: 4298034459339589373, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298034459339589373, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 4298034460775496545, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_Name
       value: Mothership
