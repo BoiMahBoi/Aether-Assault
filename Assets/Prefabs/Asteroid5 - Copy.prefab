@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1039313457}
   - component: {fileID: 827700450145405227}
   m_Layer: 0
-  m_Name: Asteroid5
+  m_Name: Asteroid5 - Copy
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
