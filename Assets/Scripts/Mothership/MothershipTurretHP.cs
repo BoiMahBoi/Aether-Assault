@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class MothershipTurretHP : MonoBehaviour
 {
+
+    private bool isFading = false;
+
     //Reference to the HealthBar
     [Header("Object References")]
     public HealthBar healthBar;
     public GameObject cannonPrefab;
+    public SpriteRenderer cannonSprite;
 
     [Header("Turret Settings")]
     public float maxHP;
@@ -44,6 +48,18 @@ public class MothershipTurretHP : MonoBehaviour
         {
             TurretDestroy();
         }
+
+        if (isFading)
+        {
+            StopAllCoroutines();
+            Color tmp = cannonSprite.color;
+            tmp.r = 0.75f;
+            tmp.g = 0.75f;
+            tmp.b = 0.75f;
+            cannonSprite.color = tmp;
+        }
+        StartCoroutine(BlinkWhite(0.75f, 0.5f));
+
     }
 
     void TurretDestroy()
@@ -61,4 +77,29 @@ public class MothershipTurretHP : MonoBehaviour
         // reset rotation?
         cannon.SetActive(true);
     }
+
+    public IEnumerator BlinkWhite(float endValue, float duration)
+    {
+        isFading = true;
+        Color tmp = cannonSprite.color;
+        tmp.r = 1.0f;
+        tmp.g = 1.0f;
+        tmp.b = 1.0f;
+        cannonSprite.color = tmp;
+        float elapsedTime = 0;
+        float startRedValue = cannonSprite.color.r;
+        float startGreenValue = cannonSprite.color.g;
+        float startBlueValue = cannonSprite.color.b;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float newRed = Mathf.Lerp(startRedValue, endValue, elapsedTime / duration);
+            float newGreen = Mathf.Lerp(startGreenValue, endValue, elapsedTime / duration);
+            float newBlue = Mathf.Lerp(startBlueValue, endValue, elapsedTime / duration);
+            cannonSprite.color = new Color(newRed, newGreen, newBlue, cannonSprite.color.a);
+            yield return null;
+        }
+        isFading = false;
+    }
+
 }

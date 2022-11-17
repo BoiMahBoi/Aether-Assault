@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ShieldScript: MonoBehaviour
 {
-    [Header("Shield-Sprite Reference")]
+    [Header("Object References")]
     public SpriteRenderer shieldSprite;
+    public AudioSource shieldSound;
     private bool isFading;
 
     // builtin methods
@@ -25,6 +26,7 @@ public class ShieldScript: MonoBehaviour
             tmp.a = 0.0f;
             shieldSprite.color = tmp;
         }
+        shieldSound.Play();
         StartCoroutine(ShieldFade(0.0f, 1));
     }
 

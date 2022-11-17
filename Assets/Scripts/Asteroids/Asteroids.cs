@@ -61,7 +61,6 @@ public class Asteroids : MonoBehaviour
             float newGreen = Mathf.Lerp(startGreenValue, endValue, elapsedTime / duration);
             float newBlue = Mathf.Lerp(startBlueValue, endValue, elapsedTime / duration);
             sprite.color = new Color(newRed, newGreen, newBlue, sprite.color.a);
-            Debug.Log("It's getting white in here!");
             yield return null;
         }
         isFading = false;
