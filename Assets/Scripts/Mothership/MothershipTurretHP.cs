@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class MothershipTurretHP : MonoBehaviour
 {
-
     private bool isFading = false;
 
     //Reference to the HealthBar
@@ -13,11 +12,13 @@ public class MothershipTurretHP : MonoBehaviour
     public HealthBar healthBar;
     public GameObject cannonPrefab;
     public SpriteRenderer cannonSprite;
+    public int cannonNumber;
 
     [Header("Turret Settings")]
     public float maxHP;
     public float currentHP;
     public float repairTime;
+    private float repairTimer;
 
     [Header("Turret State")]
     public bool isDestroyed;
@@ -26,6 +27,7 @@ public class MothershipTurretHP : MonoBehaviour
     void Start()
     {
         //Assigning value to max health
+        repairTimer = repairTime;
         isDestroyed = false;
         currentHP = maxHP;
         cannon = transform.GetChild(0).gameObject;
@@ -59,26 +61,38 @@ public class MothershipTurretHP : MonoBehaviour
             cannonSprite.color = tmp;
         }
         StartCoroutine(BlinkWhite(0.75f, 0.5f));
-
     }
 
     void TurretDestroy()
     {
         cannon.SetActive(false);
-        isDestroyed = false;
-        StartCoroutine(TurretRepair());
+        isDestroyed = true;
+
+        // remove cannon[cannonNumber] from functionalCannons in MothershipCannonManager
     }
 
-    IEnumerator TurretRepair()
+    void Update()
     {
-        yield return new WaitForSeconds(repairTime);
-        currentHP = maxHP;
-        UpdateHealthBar();
-        // reset rotation?
-        cannon.SetActive(true);
+        if (isDestroyed)
+        {
+            if (repairTimer > 0)
+            {
+                repairTimer -= Time.deltaTime;
+            }
+            else
+            {
+                currentHP = maxHP;
+                cannon.SetActive(true);
+                isDestroyed = false;
+                // add cannon[cannonNumber] from cannon to functionalCannons in MothershipCannonManager
+                UpdateHealthBar();
+
+                repairTimer = repairTime;
+            }
+        }
     }
 
-    public IEnumerator BlinkWhite(float endValue, float duration)
+    IEnumerator BlinkWhite(float endValue, float duration)
     {
         isFading = true;
         Color tmp = cannonSprite.color;

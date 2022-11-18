@@ -1144,7 +1144,6 @@ GameObject:
   - component: {fileID: 5451782020327103303}
   - component: {fileID: 5451782020327103300}
   - component: {fileID: 3698782860645055785}
-  - component: {fileID: 5451782020327103306}
   - component: {fileID: 5451782020327103301}
   - component: {fileID: 893598578}
   - component: {fileID: 7441088784340394207}
@@ -1228,20 +1227,6 @@ PolygonCollider2D:
       - {x: -0.024, y: -1.336}
       - {x: 1.133, y: -0.665}
       - {x: 1.133, y: 0.667}
---- !u!114 &5451782020327103306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298034460775496545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9464503f2160ad49ae4b891b9de94d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShooting: 0
-  activeCannon: 0
 --- !u!114 &5451782020327103301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,6 +1241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 200
   thrusterSound: {fileID: 616949122290043639}
+  cannonManager: {fileID: 5426410325101145957}
+  rb: {fileID: 5451782020327103300}
 --- !u!114 &893598578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1743,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShooting: 0
-  activeCannon: 0
+  activeCannon: 1
+  cannon1: {fileID: 413043965076329444}
+  cannon2: {fileID: 4608145852783219202}
+  cannon3: {fileID: 5298455133153591242}
 --- !u!1 &8257568544846029098
 GameObject:
   m_ObjectHideFlags: 0

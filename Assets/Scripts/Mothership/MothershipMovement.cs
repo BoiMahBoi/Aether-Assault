@@ -9,14 +9,8 @@ public class MothershipMovement : MonoBehaviour
 
     [Header("SoundFX")]
     public AudioSource thrusterSound;
-    private MothershipCannonManager cannonManager;
-    private Rigidbody2D rb;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        cannonManager = GetComponent<MothershipCannonManager>();
-    }
+    public MothershipCannonManager cannonManager;
+    public Rigidbody2D rb;
 
     void FixedUpdate()
     {
@@ -52,8 +46,5 @@ public class MothershipMovement : MonoBehaviour
         {
             thrusterSound.Stop();
         }
-
     }
-
-
 }

@@ -10,45 +10,91 @@ public class MothershipCannonManager : MonoBehaviour
     [Header("Current Cannon")]
     public int activeCannon;
 
+    [Header("Cannons")]
+    public GameObject[] cannons;
+    //public GameObject[] FunctionalCannons;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            if (isShooting)
+            if (cannons[0].activeSelf == false && cannons[1].activeSelf == false && cannons[2].activeSelf == false)
             {
                 isShooting = false;
             }
             else
             {
-                isShooting = true;
+                if (isShooting)
+                {
+                    isShooting = false;
+                }
+                else
+                {
+                    isShooting = true;
+                }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isShooting)
         {
-            if (activeCannon < 2)
-            {
-                activeCannon++;
-            }
-            else
+            activeCannon++;
+
+            if (activeCannon > 2)
             {
                 activeCannon = 0;
             }
 
-            Debug.Log("the current active cannon value is: " + activeCannon);
-        } 
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting)
-        {
-            if (activeCannon == 0)
+            if (activeCannon < 0)
             {
                 activeCannon = 2;
             }
-            else
+
+            if (activeCannon == 0 && cannons[0].activeSelf == false)
             {
-                activeCannon--;
+                activeCannon = 1;
             }
 
-            Debug.Log("the current active cannon value is: " + activeCannon);
+            if (activeCannon == 1 && cannons[1].activeSelf == false)
+            {
+                activeCannon = 2;
+            }
+
+            if (activeCannon == 2 && cannons[2].activeSelf == false)
+            {
+                activeCannon = 0;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting)
+        {
+            activeCannon--;
+
+            if (activeCannon > 2)
+            {
+                activeCannon = 0;
+            }
+
+            if (activeCannon < 0)
+            {
+                activeCannon = 2;
+            }
+
+            if (activeCannon == 0 && cannons[0].activeSelf == false)
+            {
+                activeCannon = 2;
+            }
+
+            if (activeCannon == 1 && cannons[1].activeSelf == false)
+            {
+                activeCannon = 0;
+            }
+
+            if (activeCannon == 2 && cannons[2].activeSelf == false)
+            {
+                activeCannon = 1;
+            }
+
+            Debug.Log("Current active cannon is: " + activeCannon);
         }
     }
 }
