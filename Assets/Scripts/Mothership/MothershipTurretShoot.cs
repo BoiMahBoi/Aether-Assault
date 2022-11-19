@@ -6,6 +6,7 @@ public class MothershipTurretShoot : MonoBehaviour
 {
     [Header("Turret Settings")]
     public bool canShoot;
+    public bool indicatorActive = false;
     public float reloadTime;
     public int cannonNumber;
 
@@ -14,15 +15,27 @@ public class MothershipTurretShoot : MonoBehaviour
     public GameObject firePoint;
     public GameObject projectilePrefab;
     public AudioSource shootingSound;
+    public GameObject indicatorSprite;
 
     void Update()
     {
         if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon)
         {
+            if(!indicatorActive)
+            {
+                indicatorActive = true;
+                indicatorSprite.SetActive(true);
+            }
             if (Input.GetKey(KeyCode.RightControl) && canShoot)
             {
                 StartCoroutine(Fire());
             }
+        }
+
+        if (!cannonManager.isShooting || cannonNumber != cannonManager.activeCannon)
+        {
+            indicatorActive = false;
+            indicatorSprite.SetActive(false);
         }
     }
 
