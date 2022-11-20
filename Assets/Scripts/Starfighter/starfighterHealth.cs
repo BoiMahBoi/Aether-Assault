@@ -5,6 +5,7 @@ using UnityEngine;
 public class starfighterHealth : MonoBehaviour
 {
     private bool isFading = false;
+    private GameManager gameManager;
 
     [Header("Health Settings")]
     //Public var for the maximum health
@@ -20,6 +21,7 @@ public class starfighterHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         //Assigning value to the maximum health
         maxHealth = 100;
         //Setting the current health to the maximum health at start of game
@@ -37,6 +39,7 @@ public class starfighterHealth : MonoBehaviour
         {
             //Spawn explosion here
             Debug.Log("Mothership wins!");
+            gameManager.GameOver("Mothership");
         }
     }
 

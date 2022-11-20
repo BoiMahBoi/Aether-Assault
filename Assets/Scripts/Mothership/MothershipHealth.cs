@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MothershipHealth : MonoBehaviour
 {
-
+    private GameManager gameManager;
     public GameObject[] cannons = new GameObject[3];
     public SpriteRenderer playerSprite;
 
@@ -21,6 +21,7 @@ public class MothershipHealth : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         healthBar.SetMaxHealth(maxHP);
         currentHP = maxHP;
     }
@@ -56,6 +57,7 @@ public class MothershipHealth : MonoBehaviour
                 //Spawn explosion here
                 isDead = true;
                 Debug.Log("The Starfighter won!");
+                gameManager.GameOver("Starfighter");
             }
             if (isFading)
             {

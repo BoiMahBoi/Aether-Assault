@@ -11,6 +11,7 @@ TagManager:
   - Levelborders
   - Asteroid
   - Uran
+  - GameManager
   layers:
   - Default
   - TransparentFX
