@@ -17,7 +17,7 @@ public class InhabitantMovement : MonoBehaviour
         {
             Debug.Log(Vector3.Distance(transform.position, starFighter.transform.position));
 
-            if (Vector3.Distance(transform.position, starFighter.transform.position) < 5.0f) // if inhabitant is within x units
+            if (Vector3.Distance(transform.position, starFighter.transform.position) < 10.0f) // if inhabitant is within x units
             {
                 Debug.Log("Inhabitant is being rescued");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime); // move inhabitant towards starfighter
@@ -33,6 +33,7 @@ public class InhabitantMovement : MonoBehaviour
             {
                 Debug.Log("Inhabitant was rescued");
                 Destroy(gameObject); // rescue
+                // starFighter.transform.GetComponent<>().rescueInhabitant();
             }
         }
     }

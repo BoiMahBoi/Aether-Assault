@@ -107,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664388836688064542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553743262149935395}
   m_Layer: 0
-  m_Name: Inhabitants
+  m_Name: InhabitantsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,8 +139,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763999865609574838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,8 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928612465950784718}
-  - component: {fileID: 8922125780006748510}
-  - component: {fileID: 1364958498833410963}
+  - component: {fileID: 1311010516120437133}
   m_Layer: 0
   m_Name: RescueZone
   m_TagString: Untagged
@@ -173,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322055917670602557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.25, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -182,7 +181,7 @@ Transform:
   m_Father: {fileID: 2445832467115065227}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8922125780006748510
+--- !u!58 &1311010516120437133
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,27 +191,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1364958498833410963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322055917670602557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8fd82f5e0a05b4d8a358600323aa0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRescuing: 0
-  inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
-  starFighter: {fileID: 0}
 --- !u!1 &2125283226814012024
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +206,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2445832467115065227}
+  - component: {fileID: 5661669380591071074}
+  - component: {fileID: 8445459317698696464}
   m_Layer: 0
   m_Name: RescueZoneAnchor
   m_TagString: Untagged
@@ -245,6 +231,46 @@ Transform:
   m_Father: {fileID: 3062743720719166696}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5661669380591071074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125283226814012024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8fd82f5e0a05b4d8a358600323aa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rescueZoneTimer: 5
+  inhabitantRescueTimer: 2
+  isRescueZoneActive: 0
+  isRescuing: 0
+  starFighter: {fileID: 0}
+  rescueZone: {fileID: 1322055917670602557}
+  inhabitantPrefab: {fileID: 680041690482599045, guid: 5e7842d2327e2b546aa645fd2811aae7, type: 3}
+--- !u!50 &8445459317698696464
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125283226814012024}
+  m_BodyType: 0
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2822486013760113979
 GameObject:
   m_ObjectHideFlags: 0

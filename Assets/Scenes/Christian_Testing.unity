@@ -548,6 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isShooting: 0
   activeCannon: 0
+  cannons: []
 --- !u!1 &1679313006
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,10 +859,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 1364958498833410963, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
-      propertyPath: inhabitantSpawnTransform
-      value: 
-      objectReference: {fileID: 5744596990778278318}
+    - target: {fileID: 1311010516120437133, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125283226814012024, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_Name
+      value: RescueZoneAnchor
+      objectReference: {fileID: 0}
     - target: {fileID: 3062743720719166696, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -910,13 +915,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet_Christian
       objectReference: {fileID: 0}
+    - target: {fileID: 4928612465950784718, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445459317698696464, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445459317698696464, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
---- !u!4 &5744596990778278318 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 553743262149935395, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
-  m_PrefabInstance: {fileID: 5194798913792016525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7104058121968856165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3062743720719166696, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
