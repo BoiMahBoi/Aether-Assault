@@ -5,7 +5,7 @@ using UnityEngine;
 public class InhabitantMovement : MonoBehaviour
 {
     [Header("Inhabitant Settings")]
-    public float moveSpeed;
+    public float moveSpeed; // decrease movement speed so its easier to lose the inhabitant due to distance
 
     [Header("Starfighter Reference")]
     public GameObject starFighter;
