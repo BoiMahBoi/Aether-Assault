@@ -2280,15 +2280,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8189377634166370699, guid: df8c538d056562f42b222d39e82aed88, type: 3}
       propertyPath: m_Name
-      value: Starfighter
+      value: StarFighter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df8c538d056562f42b222d39e82aed88, type: 3}
---- !u!1 &1319084080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8189377634166370699, guid: df8c538d056562f42b222d39e82aed88, type: 3}
-  m_PrefabInstance: {fileID: 1319084079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349145080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,10 +3545,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6755444911072943831, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: starFighter
-      value: 
-      objectReference: {fileID: 1319084080}
+    - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: rescueZoneTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: inhabitantRescueTime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241426729906807729, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621366901792271380, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Name
+      value: Rescue zone manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755444911072943400, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6755444911494865961, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -3601,6 +3612,10 @@ PrefabInstance:
     - target: {fileID: 6755444911494866391, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818116705869427452, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Name
+      value: Rescue zone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}

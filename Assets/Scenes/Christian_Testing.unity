@@ -721,6 +721,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &2049749510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 763999865609574838, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+  m_PrefabInstance: {fileID: 5194798913792016525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &621320884207573132
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,11 +862,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 553743262149935395, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1311010516120437133, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322055917670602557, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2125283226814012024, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
       propertyPath: m_Name
@@ -919,6 +928,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5661669380591071074, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
+      propertyPath: inhabitantSpawner
+      value: 
+      objectReference: {fileID: 2049749510}
     - target: {fileID: 8445459317698696464, guid: 4657dcdd1c30b224bab98d614d6a640e, type: 3}
       propertyPath: m_Simulated
       value: 1

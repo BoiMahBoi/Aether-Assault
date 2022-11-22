@@ -6,6 +6,8 @@ public class InhabitantMovement : MonoBehaviour
 {
     [Header("Inhabitant Settings")]
     public float moveSpeed; // decrease movement speed so its easier to lose the inhabitant due to distance
+    public float maxRescueDistance;
+    public float minRescueDistance;
 
     [Header("Starfighter Reference")]
     public GameObject starFighter;
@@ -17,7 +19,7 @@ public class InhabitantMovement : MonoBehaviour
         {
             Debug.Log(Vector3.Distance(transform.position, starFighter.transform.position));
 
-            if (Vector3.Distance(transform.position, starFighter.transform.position) < 10.0f) // if inhabitant is within x units
+            if (Vector3.Distance(transform.position, starFighter.transform.position) < maxRescueDistance) // if inhabitant is within x units
             {
                 Debug.Log("Inhabitant is being rescued");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime); // move inhabitant towards starfighter
@@ -29,7 +31,7 @@ public class InhabitantMovement : MonoBehaviour
                 Destroy(gameObject); // die
             }
 
-            if (Vector3.Distance(transform.position, starFighter.transform.position) < 2.0f) // if inhabitant is within x unit
+            if (Vector3.Distance(transform.position, starFighter.transform.position) < minRescueDistance) // if inhabitant is within x unit
             {
                 Debug.Log("Inhabitant was rescued");
                 Destroy(gameObject); // rescue

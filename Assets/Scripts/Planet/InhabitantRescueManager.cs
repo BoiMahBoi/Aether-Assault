@@ -6,24 +6,25 @@ public class InhabitantRescueManager : MonoBehaviour
 {
     #region attributes
     [Header("Rescue-System Settings")]
-    public float rescueZoneTimer;
-    private float _rescueZoneTimer;
-    public float inhabitantRescueTimer;
-    private float _inhabitantRescueTimer;
+    public float rescueZoneTime;
+    private float rescueZoneTimer;
+    public float inhabitantRescueTime;
+    private float inhabitantRescueTimer;
     public bool isRescueZoneActive;
     public bool isRescuing;
 
     [Header("Object References")]
     public GameObject starFighter;
     public GameObject rescueZone;
+    public GameObject inhabitantSpawner;
     public GameObject inhabitantPrefab;
     #endregion
 
     #region builtin methods
     void Start()
     {
-        _rescueZoneTimer = rescueZoneTimer;
-        _inhabitantRescueTimer = inhabitantRescueTimer;
+        rescueZoneTimer = rescueZoneTime;
+        inhabitantRescueTimer = inhabitantRescueTime;
     }
 
     void Update()
@@ -48,8 +49,8 @@ public class InhabitantRescueManager : MonoBehaviour
             isRescuing = false;
             starFighter = null;
 
-            _rescueZoneTimer = rescueZoneTimer;
-            _inhabitantRescueTimer = inhabitantRescueTimer;
+            rescueZoneTimer = rescueZoneTime;
+            inhabitantRescueTimer = inhabitantRescueTime;
             isRescueZoneActive = false;
             rescueZone.SetActive(false);
         }
@@ -59,9 +60,9 @@ public class InhabitantRescueManager : MonoBehaviour
     #region custom methods
     void RescueZoneSpawner()
     {
-        if (_rescueZoneTimer > 0)
+        if (rescueZoneTimer > 0)
         {
-            _rescueZoneTimer -= Time.deltaTime;
+            rescueZoneTimer -= Time.deltaTime;
         }
         else
         {
@@ -80,19 +81,17 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             if (starFighter != null)
             {
-                if (_inhabitantRescueTimer > 0)
+                if (inhabitantRescueTimer > 0)
                 {
-                    _inhabitantRescueTimer -= Time.deltaTime;
+                    inhabitantRescueTimer -= Time.deltaTime;
                 }
                 else
                 {
-                    GameObject inhabitant = Instantiate(inhabitantPrefab, rescueZone.transform.position, transform.GetChild(0).rotation);
-                    inhabitant.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f)));
-                    //inhabitant.transform.position += inhabitant.transform.up * 2.5f;
+                    GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
                     inhabitant.GetComponent<InhabitantMovement>().SetTarget(starFighter.gameObject);
 
-                    _rescueZoneTimer = rescueZoneTimer;
-                    _inhabitantRescueTimer = inhabitantRescueTimer;
+                    rescueZoneTimer = rescueZoneTime;
+                    inhabitantRescueTimer = inhabitantRescueTime;
                     isRescueZoneActive = false;
                     rescueZone.SetActive(false);
                 }
