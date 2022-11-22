@@ -5,13 +5,12 @@ using UnityEngine;
 public class InhabitantMovement : MonoBehaviour
 {
     [Header("Inhabitant Settings")]
-    public float moveSpeed; // decrease movement speed so its easier to lose the inhabitant due to distance
-    public float maxRescueDistance;
-    public float minRescueDistance;
+    public float moveSpeed; // decrease movement speed so its easier to lose the inhabitant due to distance?
+    public float maxRescueDistance; // distance inhabitants can remain being rescued from
+    public float minRescueDistance; // distance inhabitants are rescued within
 
     [Header("Starfighter Reference")]
     public GameObject starFighter;
-
 
     void Update()
     {
@@ -35,7 +34,7 @@ public class InhabitantMovement : MonoBehaviour
             {
                 Debug.Log("Inhabitant was rescued");
                 Destroy(gameObject); // rescue
-                // starFighter.transform.GetComponent<>().rescueInhabitant();
+                // starFighter.transform.GetComponent<>().rescueInhabitant(); // use this line to increment rescuedInhabitants in a starFighter class
             }
         }
     }

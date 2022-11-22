@@ -6,10 +6,10 @@ public class InhabitantRescueManager : MonoBehaviour
 {
     #region attributes
     [Header("Rescue-System Settings")]
-    public float rescueZoneTime;
-    private float rescueZoneTimer;
-    public float inhabitantRescueTime;
-    private float inhabitantRescueTimer;
+    public float rescueZoneTime; // Amount of time before each rescue zone is instantiated
+    private float rescueZoneTimer; // Current time until a rescue zone is instantiatied
+    public float inhabitantRescueTime; // Amount of time before an inhabitant is instantiated while in the rescue zone
+    private float inhabitantRescueTimer; // current time until an inhabitant is instantiated
     public bool isRescueZoneActive;
     public bool isRescuing;
 
