@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1959535389126970329}
   - component: {fileID: 1959535389126970330}
   m_Layer: 0
-  m_Name: Uran
+  m_Name: Crystal
   m_TagString: Uran
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
