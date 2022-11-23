@@ -2230,6 +2230,22 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 390848821}
+    - target: {fileID: 1896813348, guid: df8c538d056562f42b222d39e82aed88, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896813348, guid: df8c538d056562f42b222d39e82aed88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1896813348, guid: df8c538d056562f42b222d39e82aed88, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1896813348, guid: df8c538d056562f42b222d39e82aed88, type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1896813349, guid: df8c538d056562f42b222d39e82aed88, type: 3}
       propertyPath: planet
       value: 
@@ -5590,5 +5606,9 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 2141220960}
+    - target: {fileID: 8349815086520321563, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
