@@ -207,3 +207,4 @@ MonoBehaviour:
   minSpeed: 0
   maxSpeed: 0
   explosionParticles: {fileID: 2861106012759571187, guid: ba3c1b85d030ce645b79cc7624096fac, type: 3}
+  crystal: {fileID: 1959535389126970331, guid: 401d74793d8724d4fb85f611e2572278, type: 3}
