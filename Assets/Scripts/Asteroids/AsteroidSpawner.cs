@@ -23,7 +23,7 @@ public class AsteroidSpawner : MonoBehaviour
     public IEnumerator SpawnEnumerator()
     {
         SpawnAsteroid();
-        int randomTime = Random.Range(1, 2);
+        int randomTime = Random.Range(3, 6);
         yield return new WaitForSeconds(randomTime);
         StartCoroutine(SpawnEnumerator());
     }
@@ -31,10 +31,9 @@ public class AsteroidSpawner : MonoBehaviour
     public void SpawnAsteroid()
     {
         int spawnPicker = Random.Range(0, 4);
-
         int randomPrefab = Random.Range(0, asteroidPrefabs.Length);
-        float randRotation = Random.Range(0, 359);
-        Quaternion randRot = new Quaternion(0, 0, randRotation, 0);
+        float randRotation = Random.Range(0f, 10f);
+        Quaternion randRot = Quaternion.Euler(0, 0, Random.Range(0f, 359f));
 
         if (spawnPicker == 0)
         {
@@ -57,6 +56,4 @@ public class AsteroidSpawner : MonoBehaviour
             Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
         }
     }
-
-
 }
