@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startcolor: {r: 1, g: 1, b: 1, a: 1}
-  endcolor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  endcolor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.4745098}
   fadetime: 1.5
