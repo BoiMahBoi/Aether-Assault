@@ -5520,7 +5520,7 @@ PrefabInstance:
       objectReference: {fileID: 393301551}
     - target: {fileID: 3769113265730212613, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: rotationSpeed
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
@@ -5536,7 +5536,11 @@ PrefabInstance:
       objectReference: {fileID: 1539168030}
     - target: {fileID: 4774844900939486366, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: rotationSpeed
-      value: 45
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451782020327103301, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
+      propertyPath: moveSpeed
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5451782020327103303, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_RootOrder
@@ -5584,7 +5588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171881139579153221, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: rotationSpeed
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8349815086520321562, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: planet
