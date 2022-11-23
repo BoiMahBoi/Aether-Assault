@@ -10,48 +10,53 @@ public class AsteroidSpawner : MonoBehaviour
     public float mapX;
     public float mapY;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnAsteroid());
+        for(int i = 0; i < 2; i++)
+        {
+            SpawnAsteroid();
+        }
+        StartCoroutine(SpawnEnumerator());
     }
 
-    public IEnumerator spawnAsteroid()
+    public IEnumerator SpawnEnumerator()
     {
-        int spawnPicker = Random.Range(1, 4);
+        SpawnAsteroid();
+        int randomTime = Random.Range(1, 2);
+        yield return new WaitForSeconds(randomTime);
+        StartCoroutine(SpawnEnumerator());
+    }
+
+    public void SpawnAsteroid()
+    {
+        int spawnPicker = Random.Range(0, 4);
 
         int randomPrefab = Random.Range(0, asteroidPrefabs.Length);
-
-        float randXAbove = Random.Range(50, mapX);
-        float randXBelow = Random.Range(-50, -mapX);
-        float randYAbove = Random.Range(30, mapY);
-        float randYBelow = Random.Range(-30, -mapY);
-
         float randRotation = Random.Range(0, 359);
         Quaternion randRot = new Quaternion(0, 0, randRotation, 0);
 
-        if(spawnPicker == 1)
+        if (spawnPicker == 0)
         {
-            Vector2 randLoc = new Vector2(randXAbove, randYAbove);
-            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
-        } else if (spawnPicker == 2)
-        {
-            Vector2 randLoc = new Vector2(randXAbove, randYBelow);
-            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
-        } else if (spawnPicker == 3)
-        {
-            Vector2 randLoc = new Vector2(randXBelow, randYAbove);
-            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
-        } else
-        {
-            Vector2 randLoc = new Vector2(randXBelow, randYBelow);
+            Vector2 randLoc = new Vector2(Random.Range(-60,60), Random.Range(30, mapY));
             Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
         }
-
-        int randomTime = Random.Range(3, 10);
-        yield return new WaitForSeconds(randomTime);
-        StartCoroutine(spawnAsteroid());
+        else if (spawnPicker == 1)
+        {
+            Vector2 randLoc = new Vector2(Random.Range(-60, 60), Random.Range(-30, -mapY));
+            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
+        }
+        else if (spawnPicker == 2)
+        {
+            Vector2 randLoc = new Vector2(Random.Range(50, mapX), Random.Range(-40, 40));
+            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
+        }
+        else
+        {
+            Vector2 randLoc = new Vector2(Random.Range(-50, -mapX), Random.Range(-40, 40));
+            Instantiate(asteroidPrefabs[randomPrefab], randLoc, randRot, transform);
+        }
     }
+
 
 }
