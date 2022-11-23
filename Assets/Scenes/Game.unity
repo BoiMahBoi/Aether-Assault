@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 1268619238}
   - component: {fileID: 1268619237}
   - component: {fileID: 1268619239}
+  - component: {fileID: 1268619240}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -1463,6 +1464,27 @@ MonoBehaviour:
   gameOverMenu: {fileID: 1184150108}
   pauseMenu: {fileID: 152270694}
   gameOverText: {fileID: 679954278}
+--- !u!114 &1268619240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268619236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb94872b18ef3554c89e9c7c3c543c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mapX: 20
+  mapY: 20
 --- !u!4 &1297939259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1959535389126970328, guid: 401d74793d8724d4fb85f611e2572278, type: 3}
