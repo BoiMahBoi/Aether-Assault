@@ -48,11 +48,11 @@ public class BeamOfDeath : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) && beamCharged)
+        if (Input.GetKeyDown(KeyCode.Return) && beamCharged)
         {
             StartCoroutine(FireBeam());
         }
-        if (Input.GetKeyUp(KeyCode.KeypadEnter) && isFiring)
+        if (Input.GetKeyUp(KeyCode.Return) && isFiring)
         {
             Debug.Log("Stopped charging the beam...");
             StopAllCoroutines();

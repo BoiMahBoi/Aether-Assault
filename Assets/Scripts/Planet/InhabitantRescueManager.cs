@@ -35,7 +35,7 @@ public class InhabitantRescueManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name == ("StarFighter")) 
+        if (collider.gameObject.name == ("Starfighter")) 
         {
             isRescuing = true;
             starFighter = collider.gameObject;
@@ -44,7 +44,7 @@ public class InhabitantRescueManager : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.gameObject.name == ("StarFighter"))
+        if (collider.gameObject.name == ("Starfighter"))
         {
             isRescuing = false;
             starFighter = null;

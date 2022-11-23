@@ -14,6 +14,7 @@ public class Asteroids : MonoBehaviour
     private float driftSpeed;
     private Rigidbody2D rb;
     public GameObject crystal;
+    public bool isCrystalAsteroid;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,10 @@ public class Asteroids : MonoBehaviour
         if(hp <= 0) {
 
             Instantiate(explosionParticles, transform.position, transform.localRotation);
-            Instantiate(crystal, transform.position, transform.localRotation);
+            if(isCrystalAsteroid)
+            {
+                Instantiate(crystal, transform.position, transform.localRotation);
+            }
 
             //Spawn asteroid explosion particle
             Destroy(gameObject);
