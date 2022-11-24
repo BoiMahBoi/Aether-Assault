@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
 
     [HideInInspector]public bool MenuOpened = false;
-
     public GameObject gameOverMenu;
     public GameObject pauseMenu;
     public TextMeshProUGUI gameOverText;

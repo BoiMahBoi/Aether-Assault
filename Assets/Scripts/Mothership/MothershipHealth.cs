@@ -8,6 +8,7 @@ public class MothershipHealth : MonoBehaviour
     public GameObject[] cannons = new GameObject[3];
     public GameObject[] healthSections = new GameObject[6];
     public SpriteRenderer playerSprite;
+    public AudioSource hitSound;
 
     private bool isFading = false;
 
@@ -49,6 +50,7 @@ public class MothershipHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        hitSound.Play();
         healthSections[currentHP].SetActive(false);
         currentHP++;
         bool isAlive = hasHealthLeft();

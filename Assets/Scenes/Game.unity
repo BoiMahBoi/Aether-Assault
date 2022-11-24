@@ -267,11 +267,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 220, y: 20}
   m_EdgeRadius: 0
---- !u!1 &108771183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7856135592417418872, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141071659
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,11 +431,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
---- !u!1 &182126151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6018418845424861797, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &220538917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1710,11 +1700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &949686613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2089795819689446320, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &971313488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 872816441272695912, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
@@ -2085,7 +2070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268619236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6688657, y: 1.1792915, z: -0.18699452}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2381,10 +2366,6 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 2141220960}
-    - target: {fileID: 2453056520721422366, guid: df8c538d056562f42b222d39e82aed88, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8189377634166370676, guid: df8c538d056562f42b222d39e82aed88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3292,11 +3273,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 872816441272695912, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
   m_PrefabInstance: {fileID: 1308285778}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1509180516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8615389525634727960, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1525364201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 872816441272695912, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
@@ -3682,11 +3658,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648314275}
   m_CullTransparentMesh: 1
---- !u!1 &1660949141 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6046737058241256365, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1671656404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3783,6 +3754,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1135084716, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 072d39c19658b3c42a8414dd5ebe0e02, type: 3}
+    - target: {fileID: 2141220962, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141220962, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: rescueZoneTime
       value: 10
@@ -3802,6 +3785,14 @@ PrefabInstance:
     - target: {fileID: 6755444911072943400, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755444911072943401, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755444911072943401, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 6755444911494865961, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_Name
@@ -4190,11 +4181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9d718eeb9b53248952a339854bfba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1788920127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4985878379992894173, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1800598488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5647,30 +5633,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1747445498}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[0]
-      value: 
-      objectReference: {fileID: 1788920127}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[1]
-      value: 
-      objectReference: {fileID: 949686613}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[2]
-      value: 
-      objectReference: {fileID: 1660949141}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[3]
-      value: 
-      objectReference: {fileID: 1509180516}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[4]
-      value: 
-      objectReference: {fileID: 182126151}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthSections.Array.data[5]
-      value: 
-      objectReference: {fileID: 108771183}
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 

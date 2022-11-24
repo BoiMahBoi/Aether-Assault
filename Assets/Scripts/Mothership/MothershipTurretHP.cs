@@ -13,6 +13,7 @@ public class MothershipTurretHP : MonoBehaviour
     public GameObject cannonPrefab;
     public SpriteRenderer cannonSprite;
     public int cannonNumber;
+    public AudioSource hitSound;
 
     [Header("Turret Settings")]
     public float maxHP;
@@ -42,8 +43,8 @@ public class MothershipTurretHP : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        hitSound.Play();
         currentHP -= damage;
-
         UpdateHealthBar();
 
         if (currentHP <= 0)
@@ -115,5 +116,4 @@ public class MothershipTurretHP : MonoBehaviour
         }
         isFading = false;
     }
-
 }
