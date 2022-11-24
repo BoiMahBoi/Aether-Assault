@@ -6,6 +6,7 @@ public class MothershipHealth : MonoBehaviour
 {
     private GameManager gameManager;
     public GameObject[] cannons = new GameObject[3];
+    public GameObject[] healthSections = new GameObject[6];
     public SpriteRenderer playerSprite;
 
     private bool isFading = false;
@@ -15,15 +16,11 @@ public class MothershipHealth : MonoBehaviour
     public HealthBar healthBar;
 
     [Header("Health Settings")]
-    public float maxHP;
-    public float currentHP;
-    private bool isDead = false;
+    public int currentHP = 5;
 
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        healthBar.SetMaxHealth(maxHP);
-        currentHP = maxHP;
     }
 
     public bool hasWorkingTurrets()
@@ -38,38 +35,40 @@ public class MothershipHealth : MonoBehaviour
         return false;
     }
 
-    public void UpdateHealthBar()
+    public bool hasHealthLeft()
     {
-        //Updating the HealthBar, so that is relates to current health
-        healthBar.SetHealth(currentHP);
+        foreach (var t in healthSections)
+        {
+            if (t.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void TakeDamage(float damage)
     {
-        if(!isDead)
-        {
-            currentHP -= damage;
-            healthBar.SetHealth(currentHP);
-            //UpdateHealthBar();
+        healthSections[currentHP].SetActive(false);
+        currentHP++;
+        bool isAlive = hasHealthLeft();
 
-            if (currentHP <= 0)
-            {
-                //Spawn explosion here
-                isDead = true;
-                Debug.Log("The Starfighter won!");
-                gameManager.GameOver("Starfighter");
-            }
-            if (isFading)
-            {
-                StopAllCoroutines();
-                Color tmp = playerSprite.color;
-                tmp.r = 0.75f;
-                tmp.g = 0.75f;
-                tmp.b = 0.75f;
-                playerSprite.color = tmp;
-            }
-            StartCoroutine(BlinkWhite(0.75f, 0.5f));
+        if (!isAlive)
+        {
+            //Spawn explosion here
+            Debug.Log("The Starfighter won!");
+            gameManager.GameOver("Starfighter");
         }
+        if (isFading)
+        {
+            StopAllCoroutines();
+            Color tmp = playerSprite.color;
+            tmp.r = 0.75f;
+            tmp.g = 0.75f;
+            tmp.b = 0.75f;
+            playerSprite.color = tmp;
+        }
+        StartCoroutine(BlinkWhite(0.75f, 0.5f));
     }
 
     public IEnumerator BlinkWhite(float endValue, float duration)
