@@ -964,7 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8189377634166370676}
   - component: {fileID: 8189377634166370677}
-  - component: {fileID: 8189377634166370678}
+  - component: {fileID: 1003476334}
   - component: {fileID: 2453056522129103182}
   - component: {fileID: 1003476330}
   m_Layer: 0
@@ -1014,8 +1014,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8189377634166370678
-CircleCollider2D:
+--- !u!60 &1003476334
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1028,8 +1028,24 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09465509, y: 1.0040853}
+      - {x: -0.09861627, y: 1.0065743}
+      - {x: -0.74725, y: 0.3484634}
+      - {x: -0.74556994, y: -0.401404}
+      - {x: -0.0045867995, y: -0.56572366}
+      - {x: 0.74557143, y: -0.41455272}
+      - {x: 0.7472499, y: 0.34188914}
 --- !u!114 &2453056522129103182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668cfd1df2f1c204a896216f356ced2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 100
+  Speed: 90
   rotateSpeed: 1
   speedBackwards: 30
   thrusterSound: {fileID: 2453056521871420097}
