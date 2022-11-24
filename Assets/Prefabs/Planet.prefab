@@ -74,7 +74,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c261758cc0622648a2f5970a90b1735, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 072d39c19658b3c42a8414dd5ebe0e02, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 257819372032449264}
   - component: {fileID: 3167238694134076717}
   m_Layer: 0
-  m_Name: Rescue zone
+  m_Name: Rescue zone manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,14 +406,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8fd82f5e0a05b4d8a358600323aa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rescueZoneTime: 0
-  inhabitantRescueTime: 0
+  rescueZoneTime: 10
+  inhabitantRescueTime: 2.5
   isRescueZoneActive: 0
   isRescuing: 0
   starFighter: {fileID: 0}
   rescueZone: {fileID: 6818116705869427452}
   inhabitantSpawner: {fileID: 5350508677786334795}
-  inhabitantPrefab: {fileID: 680041690482599045, guid: 5e7842d2327e2b546aa645fd2811aae7, type: 3}
+  inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
 --- !u!50 &3167238694134076717
 Rigidbody2D:
   serializedVersion: 4
@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6755444911072943402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.38, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -695,7 +695,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: -0.1}
   serializedVersion: 2
   m_Radius: 24
 --- !u!1 &6818116705869427452
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 3110692466633067684}
   - component: {fileID: 2241426729906807729}
   m_Layer: 0
-  m_Name: RescueZone
+  m_Name: Rescue zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,4 +747,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1

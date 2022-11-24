@@ -3754,46 +3754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1135084716, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 072d39c19658b3c42a8414dd5ebe0e02, type: 3}
-    - target: {fileID: 2141220962, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141220962, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: rescueZoneTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: inhabitantRescueTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2241426729906807729, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621366901792271380, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Name
-      value: Rescue zone manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6755444911072943400, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6755444911072943401, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 6755444911072943401, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.48
-      objectReference: {fileID: 0}
     - target: {fileID: 6755444911494865961, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -3841,10 +3801,6 @@ PrefabInstance:
     - target: {fileID: 6755444911494866391, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6818116705869427452, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Name
-      value: Rescue zone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
@@ -3981,17 +3937,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c779aceb5b7d694e9718234a0f28617, type: 3}
---- !u!114 &1747445498 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8240231652433325975, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-  m_PrefabInstance: {fileID: 4410774386682488268}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9d718eeb9b53248952a339854bfba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1776000048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5451,18 +5396,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224615703903664676, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: objectToFollow
-      value: 
-      objectReference: {fileID: 893598572}
-    - target: {fileID: 3202280134470315501, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202280134470315501, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774385197934313, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
@@ -5515,50 +5448,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4410774385913846399, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774385913846399, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386091860903, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 893598572}
-    - target: {fileID: 4410774386167459246, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774386167459246, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386377747265, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1003476329}
-    - target: {fileID: 4410774386548066953, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774386548066953, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386832391602, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 893598572}
-    - target: {fileID: 4911642685498232302, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4911642685498232302, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7c0a5fda57db52438956167b177b375, type: 3}
 --- !u!1001 &4963330337393547981
@@ -5629,10 +5530,6 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 931087655}
-    - target: {fileID: 893598578, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1747445498}
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
