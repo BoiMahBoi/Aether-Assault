@@ -9,6 +9,7 @@ public class BeamOfDeath : MonoBehaviour
     public int count = 0;
     public int maxCharge = 10;
     public float fireTime;
+    //public animater planetexplosion
 
     [Header("Beam State")]
     public bool beamCharged;
@@ -66,7 +67,7 @@ public class BeamOfDeath : MonoBehaviour
         Debug.Log("Preparing the beam!");
         yield return new WaitForSeconds(fireTime);
         Debug.Log("The Mothership destroyed the planet!");
-        //Put effects here
+        //Put effects here. before game ends input explosion.
         isFiring = false;
     }
 }
