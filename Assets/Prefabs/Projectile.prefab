@@ -163,8 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4b160c098265f42acb3f992c2a15fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3501357828612883423}
-  speed: 20
+  speed: 22
   damage: 10
 --- !u!70 &3917915536682991947
 CapsuleCollider2D:
