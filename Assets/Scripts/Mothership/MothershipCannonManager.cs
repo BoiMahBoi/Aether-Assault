@@ -16,16 +16,6 @@ public class MothershipCannonManager : MonoBehaviour
 
     void Update()
     {
-        TurretMode();
-        SwitchTurretUp();
-        SwitchTurretDown();
-        DestroyedActiveTurret();
-
-        Debug.Log("Current active cannon is: " + activeCannon);
-    }
-
-    void TurretMode()
-    {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             if (cannons[0].activeSelf == false && cannons[1].activeSelf == false && cannons[2].activeSelf == false)
@@ -44,10 +34,7 @@ public class MothershipCannonManager : MonoBehaviour
                 }
             }
         }
-    }
 
-    void SwitchTurretUp()
-    {
         if (Input.GetKeyDown(KeyCode.UpArrow) && isShooting)
         {
             activeCannon++;
@@ -77,10 +64,7 @@ public class MothershipCannonManager : MonoBehaviour
                 activeCannon = 0;
             }
         }
-    }
 
-    void SwitchTurretDown()
-    {
         if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting)
         {
             activeCannon--;
@@ -109,24 +93,8 @@ public class MothershipCannonManager : MonoBehaviour
             {
                 activeCannon = 1;
             }
-        }
-    }
 
-    void DestroyedActiveTurret()
-    {
-        if (activeCannon == 0 && cannons[0].activeSelf == false)
-        {
-            activeCannon = 1;
-        }
-
-        if (activeCannon == 1 && cannons[1].activeSelf == false)
-        {
-            activeCannon = 2;
-        }
-
-        if (activeCannon == 2 && cannons[2].activeSelf == false)
-        {
-            activeCannon = 0;
+            Debug.Log("Current active cannon is: " + activeCannon);
         }
     }
 }

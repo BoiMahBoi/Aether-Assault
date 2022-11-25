@@ -26,7 +26,7 @@ public class MothershipTurretShoot : MonoBehaviour
                 indicatorActive = true;
                 indicatorSprite.SetActive(true);
             }
-            if (/*SLET IKKE DETTE!!! (Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.RightAlt)) && */ canShoot)
+            if (Input.GetKey(KeyCode.RightControl) && canShoot)
             {
                 StartCoroutine(Fire());
             }

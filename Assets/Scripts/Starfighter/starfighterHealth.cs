@@ -6,7 +6,6 @@ public class starfighterHealth : MonoBehaviour
 {
     private bool isFading = false;
     private GameManager gameManager;
-    public AudioSource hitSound;
 
     [Header("Health Settings")]
     //Public var for the maximum health
@@ -35,7 +34,7 @@ public class starfighterHealth : MonoBehaviour
     {
         //Updating the HealthBar, so that is relates to current health
         healthBar.SetHealth(currentHealth);
-
+        
         if (currentHealth <= 0)
         {
             //Spawn explosion here
@@ -48,7 +47,7 @@ public class starfighterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        hitSound.Play();
+
         UpdateHealthBar();
 
         if (isFading)
@@ -85,4 +84,5 @@ public class starfighterHealth : MonoBehaviour
         }
         isFading = false;
     }
+
 }
