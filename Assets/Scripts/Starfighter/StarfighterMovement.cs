@@ -37,6 +37,19 @@ public class StarfighterMovement : MonoBehaviour
             playThrusterSound();
         }
 
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rb.AddForce(transform.right * -1 * Time.deltaTime * Speed);
+            playThrusterSound();
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            rb.AddForce(transform.right * Time.deltaTime * Speed);
+            playThrusterSound();
+        }
+
+
         if (Input.GetKey(KeyCode.A)) 
         {
             transform.Rotate(new Vector3(0, 0, rotateSpeed) * Time.deltaTime * Speed, Space.World);   
