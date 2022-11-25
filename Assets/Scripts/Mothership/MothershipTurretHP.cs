@@ -17,8 +17,8 @@ public class MothershipTurretHP : MonoBehaviour
     [Header("Turret Settings")]
     public float maxHP;
     public float currentHP;
-    public float repairTime; //Time it takes to repair
-    public float repairTimer; //Current increment for the repair time (Slider value)
+    public float repairTime;
+    private float repairTimer;
 
     [Header("Turret State")]
     public bool isDestroyed;
@@ -75,9 +75,9 @@ public class MothershipTurretHP : MonoBehaviour
     {
         if (isDestroyed)
         {
-            if (repairTimer < repairTime)
+            if (repairTimer > 0)
             {
-                repairTimer += Time.deltaTime;
+                repairTimer -= Time.deltaTime;
             }
             else
             {
@@ -87,7 +87,7 @@ public class MothershipTurretHP : MonoBehaviour
                 // add cannon[cannonNumber] from cannon to functionalCannons in MothershipCannonManager
                 UpdateHealthBar();
 
-                repairTimer = 0;
+                repairTimer = repairTime;
             }
         }
     }
