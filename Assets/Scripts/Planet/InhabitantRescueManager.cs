@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InhabitantRescueManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject rescueZone;
     public GameObject inhabitantSpawner;
     public GameObject inhabitantPrefab;
+    public Slider rescueSlider;
 
     [Header("Rescue Win")]
     public int rescueCount;
@@ -28,6 +30,7 @@ public class InhabitantRescueManager : MonoBehaviour
     #region builtin methods
     void Start()
     {
+        rescueSlider.maxValue = maxRescueCount;
         rescueZoneTimer = rescueZoneTime;
         inhabitantRescueTimer = inhabitantRescueTime;
     }
@@ -107,6 +110,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public void IncreaseRescueCount()
     {
         rescueCount++;
+        rescueSlider.value = rescueCount;
 
         if (rescueCount >= maxRescueCount)
         {

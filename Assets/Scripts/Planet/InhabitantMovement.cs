@@ -32,9 +32,8 @@ public class InhabitantMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, starFighter.transform.position) < minRescueDistance) // if inhabitant is within x unit
             {
                 Debug.Log("Inhabitant was rescued");
+                rescueManager.GetComponent<InhabitantRescueManager>().IncreaseRescueCount();
                 Destroy(gameObject); // rescue
-                rescueManager.transform.GetComponent<InhabitantRescueManager>().IncreaseRescueCount();
-
             }
         }
     }
