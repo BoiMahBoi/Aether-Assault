@@ -9,8 +9,9 @@ public class InhabitantMovement : MonoBehaviour
     public float maxRescueDistance; // distance inhabitants can remain being rescued from
     public float minRescueDistance; // distance inhabitants are rescued within
 
-    [Header("Starfighter Reference")]
+    [Header("Object References")]
     public GameObject starFighter;
+    public GameObject rescueManager;
 
     void Update()
     {
@@ -24,7 +25,7 @@ public class InhabitantMovement : MonoBehaviour
             else // if inhabitant is NOT within x units
             {
                 // lerp between base color and red for x seconds
-                Debug.Log("Inhabitant was abandoned");
+                Debug.Log("Inhabitant was abandoned");  
                 Destroy(gameObject); // die
             }
 
@@ -32,13 +33,15 @@ public class InhabitantMovement : MonoBehaviour
             {
                 Debug.Log("Inhabitant was rescued");
                 Destroy(gameObject); // rescue
-                // starFighter.transform.GetComponent<>().rescueInhabitant(); // use this line to increment rescuedInhabitants in a starFighter class
+                rescueManager.transform.GetComponent<InhabitantRescueManager>().IncreaseRescueCount();
+
             }
         }
     }
 
-    public void SetTarget(GameObject _starFighter) // receives starfighter GameObject from InhabitantRescue
+    public void SetObjectReferences(GameObject _starFighter, GameObject _rescueManager) // receives starfighter GameObject from InhabitantRescue
     {
         starFighter = _starFighter; // store the starFighter gameobject on this instance of the inhabitant
+        rescueManager = _rescueManager;
     }
 }

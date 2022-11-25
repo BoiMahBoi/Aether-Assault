@@ -18,6 +18,11 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject rescueZone;
     public GameObject inhabitantSpawner;
     public GameObject inhabitantPrefab;
+
+    [Header("Rescue Win")]
+    public int rescueCount;
+    public int maxRescueCount;
+    public int fleeTime; // the starfighter has to stay alive for a certain amount of time before it can win by rescuing
     #endregion
 
     #region builtin methods
@@ -88,7 +93,7 @@ public class InhabitantRescueManager : MonoBehaviour
                 else
                 {
                     GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
-                    inhabitant.GetComponent<InhabitantMovement>().SetTarget(starFighter.gameObject);
+                    inhabitant.GetComponent<InhabitantMovement>().SetObjectReferences(starFighter.gameObject, this.transform.gameObject);
 
                     rescueZoneTimer = rescueZoneTime;
                     inhabitantRescueTimer = inhabitantRescueTime;
@@ -97,6 +102,27 @@ public class InhabitantRescueManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void IncreaseRescueCount()
+    {
+        rescueCount++;
+
+        if (rescueCount >= maxRescueCount)
+        {
+            StartCoroutine("Fleeing");
+        }
+    }
+
+    IEnumerator Fleeing()
+    {
+        yield return new WaitForSeconds(fleeTime);
+        RescueWin();
+    }
+
+    void RescueWin()
+    {
+        Debug.Log("Starfighter won by rescue!");
     }
     #endregion
 }

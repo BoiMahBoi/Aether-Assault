@@ -25,6 +25,7 @@ public class BeamOfDeath : MonoBehaviour
         slider.value = count;
 
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Uran"))

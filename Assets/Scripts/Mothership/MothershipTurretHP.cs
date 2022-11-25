@@ -85,6 +85,7 @@ public class MothershipTurretHP : MonoBehaviour
                 currentHP = maxHP;
                 cannon.SetActive(true);
                 isDestroyed = false;
+                cannon.transform.gameObject.GetComponent<MothershipTurretShoot>().canShoot = true;
                 // add cannon[cannonNumber] from cannon to functionalCannons in MothershipCannonManager
                 UpdateHealthBar();
 
