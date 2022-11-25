@@ -10,12 +10,23 @@ public class Asteroids : MonoBehaviour
     public GameObject explosionParticles;
     private SpriteRenderer sprite;
     private bool isFading;
+    private Transform planetTransform;
+    private float driftSpeed;
+    private Rigidbody2D rb;
+    public GameObject crystal;
+    public bool isCrystalAsteroid;
 
     // Start is called before the first frame update
     void Start()
     {
+        float randomPos = Random.Range(-20, 20);
+        planetTransform = GameObject.FindGameObjectWithTag("Planet").GetComponent<Transform>();
+        Vector3 driftTarget = new Vector2(planetTransform.position.x + randomPos, (planetTransform.position.y + randomPos));
+        driftSpeed = Random.Range(2, 7);
+        rb = GetComponent<Rigidbody2D>();
         hp = 5;
         sprite = GetComponent<SpriteRenderer>();
+        rb.AddForce((driftTarget - transform.position) * driftSpeed);
         isFading = false;
     }
 
@@ -25,6 +36,10 @@ public class Asteroids : MonoBehaviour
         if(hp <= 0) {
 
             Instantiate(explosionParticles, transform.position, transform.localRotation);
+            if(isCrystalAsteroid)
+            {
+                Instantiate(crystal, transform.position, transform.localRotation);
+            }
 
             //Spawn asteroid explosion particle
             Destroy(gameObject);

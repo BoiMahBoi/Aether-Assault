@@ -9,6 +9,7 @@ public class BeamOfDeath : MonoBehaviour
     public int count = 0;
     public int maxCharge = 10;
     public float fireTime;
+    //public animater planetexplosion
 
     [Header("Beam State")]
     public bool beamCharged;
@@ -24,6 +25,7 @@ public class BeamOfDeath : MonoBehaviour
         slider.value = count;
 
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Uran"))
@@ -48,11 +50,11 @@ public class BeamOfDeath : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) && beamCharged)
+        if (Input.GetKeyDown(KeyCode.Return) && beamCharged)
         {
             StartCoroutine(FireBeam());
         }
-        if (Input.GetKeyUp(KeyCode.KeypadEnter) && isFiring)
+        if (Input.GetKeyUp(KeyCode.Return) && isFiring)
         {
             Debug.Log("Stopped charging the beam...");
             StopAllCoroutines();
@@ -66,7 +68,7 @@ public class BeamOfDeath : MonoBehaviour
         Debug.Log("Preparing the beam!");
         yield return new WaitForSeconds(fireTime);
         Debug.Log("The Mothership destroyed the planet!");
-        //Put effects here
+        //Put effects here. before game ends input explosion.
         isFiring = false;
     }
 }
