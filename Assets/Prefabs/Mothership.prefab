@@ -1186,9 +1186,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4298034460089420762}
+  - component: {fileID: 1599889417}
+  - component: {fileID: 1599889418}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1209,6 +1211,36 @@ Transform:
   m_Father: {fileID: 5451782020327103303}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1599889417
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460089420757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+--- !u!114 &1599889418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460089420757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldSprite: {fileID: 6294302584153800751}
+  shieldSound: {fileID: 1891920451}
 --- !u!1 &4298034460584776963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1370,6 @@ GameObject:
   - component: {fileID: 3698782860645055785}
   - component: {fileID: 5451782020327103301}
   - component: {fileID: 893598578}
-  - component: {fileID: 7441088784340394207}
   - component: {fileID: 534663103}
   m_Layer: 0
   m_Name: Mothership
@@ -1463,20 +1494,6 @@ MonoBehaviour:
   hitSound: {fileID: 245876903}
   healthBar: {fileID: 0}
   currentHP: 0
---- !u!114 &7441088784340394207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298034460775496545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldSprite: {fileID: 6294302584153800751}
-  shieldSound: {fileID: 1891920451}
 --- !u!114 &534663103
 MonoBehaviour:
   m_ObjectHideFlags: 0

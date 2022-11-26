@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MothershipCannonManager : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [Header("Mothership State")]
     public bool isShooting;
 
@@ -13,6 +15,11 @@ public class MothershipCannonManager : MonoBehaviour
     [Header("Cannons")]
     public GameObject[] cannons;
     //public GameObject[] FunctionalCannons;
+
+    private void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
 
     void Update()
     {
@@ -26,7 +33,8 @@ public class MothershipCannonManager : MonoBehaviour
 
     void TurretMode()
     {
-        if (Input.GetKeyDown(KeyCode.RightShift))
+
+        if (Input.GetKeyDown(KeyCode.RightShift) && !gameManager.gamePaused)
         {
             if (cannons[0].activeSelf == false && cannons[1].activeSelf == false && cannons[2].activeSelf == false)
             {
@@ -48,7 +56,7 @@ public class MothershipCannonManager : MonoBehaviour
 
     void SwitchTurretUp()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isShooting)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isShooting && !gameManager.gamePaused)
         {
             activeCannon++;
 
@@ -81,7 +89,7 @@ public class MothershipCannonManager : MonoBehaviour
 
     void SwitchTurretDown()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting && !gameManager.gamePaused)
         {
             activeCannon--;
 

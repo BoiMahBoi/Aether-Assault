@@ -16,6 +16,13 @@ public class MothershipTurretShoot : MonoBehaviour
     public GameObject projectilePrefab;
     public AudioSource shootingSound;
     public GameObject indicatorSprite;
+    private GameManager gameManager;
+
+
+    private void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
 
     void Update()
     {

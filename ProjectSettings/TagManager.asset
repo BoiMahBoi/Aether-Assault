@@ -12,6 +12,7 @@ TagManager:
   - Asteroid
   - Uran
   - GameManager
+  - Shield
   layers:
   - Default
   - TransparentFX

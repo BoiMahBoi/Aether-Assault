@@ -7,7 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
-    [HideInInspector]public bool MenuOpened = false;
+    [HideInInspector]public bool gamePaused = false;
     public GameObject gameOverMenu;
     public GameObject pauseMenu;
     public TextMeshProUGUI gameOverText;
@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(string Winner)
     {
-        if(!MenuOpened)
+        if(!gamePaused)
         {
-            MenuOpened = true;
+            gamePaused = true;
             Time.timeScale = 0;
             gameOverText.SetText("The " + Winner + " has won!");
             gameOverMenu.SetActive(true);
@@ -40,14 +40,14 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        if (!MenuOpened)
+        if (!gamePaused)
         {
-            MenuOpened = true;
+            gamePaused = true;
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
         } else
         {
-            MenuOpened = false;
+            gamePaused = false;
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
         }

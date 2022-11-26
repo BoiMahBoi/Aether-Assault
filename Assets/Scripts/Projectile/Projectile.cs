@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
                 if(collider.gameObject.GetComponent<MothershipHealth>().hasWorkingTurrets())
                 {
                     Debug.Log("Mothership still has working turrets!");
-                    collider.gameObject.GetComponent<ShieldScript>().HitShield();
+                    collider.gameObject.GetComponentInChildren<ShieldScript>().HitShield();
 
                 } else
                 {

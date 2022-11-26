@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MothershipMovement : MonoBehaviour
 {
+
+    private GameManager gameManager;
+
     [Header("Movement Settings")]
     public float moveSpeed;
 
@@ -12,9 +15,14 @@ public class MothershipMovement : MonoBehaviour
     public MothershipCannonManager cannonManager;
     public Rigidbody2D rb;
 
-    void FixedUpdate()
+    private void Start()
     {
-        if (!cannonManager.isShooting)
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
+    void FixedUpdate()
+    { 
+        if (!cannonManager.isShooting && !gameManager.gamePaused)
         {
             Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             Movement(direction);
@@ -29,22 +37,22 @@ public class MothershipMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!thrusterSound.isPlaying && !cannonManager.isShooting &&
+            if (!thrusterSound.isPlaying && !cannonManager.isShooting && !gameManager.gamePaused &&
                                                                       (Input.GetKeyDown(KeyCode.UpArrow)
                                                                     || Input.GetKeyDown(KeyCode.RightArrow)
                                                                     || Input.GetKeyDown(KeyCode.DownArrow)
-                                                                    || Input.GetKeyDown(KeyCode.LeftArrow))) 
-        {
-            thrusterSound.Play();
-        }
+                                                                    || Input.GetKeyDown(KeyCode.LeftArrow)))
+            {
+                thrusterSound.Play();
+            }
 
-        else if (
-                                                                     (!Input.GetKey(KeyCode.UpArrow)
-                                                                   && !Input.GetKey(KeyCode.RightArrow)
-                                                                   && !Input.GetKey(KeyCode.DownArrow)
-                                                                   && !Input.GetKey(KeyCode.LeftArrow)))
-        {
-            thrusterSound.Stop();
-        }
+            else if (
+                                                                         (!Input.GetKey(KeyCode.UpArrow)
+                                                                       && !Input.GetKey(KeyCode.RightArrow)
+                                                                       && !Input.GetKey(KeyCode.DownArrow)
+                                                                       && !Input.GetKey(KeyCode.LeftArrow)))
+            {
+                thrusterSound.Stop();
+            }
     }
 }

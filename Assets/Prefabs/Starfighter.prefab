@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: 1003476334}
   - component: {fileID: 2453056522129103182}
   - component: {fileID: 1003476330}
+  - component: {fileID: 2080314709}
   m_Layer: 0
   m_Name: Starfighter
   m_TagString: Enemy
@@ -1079,6 +1080,19 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   playerSprite: {fileID: 4302382927785466213}
+--- !u!114 &2080314709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189377634166370699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70123eae390cc134e9807f386a2c8cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 75
 --- !u!1 &8735263214604105336
 GameObject:
   m_ObjectHideFlags: 0

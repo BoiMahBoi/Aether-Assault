@@ -13,13 +13,22 @@ public class StarfighterTurretShoot : MonoBehaviour
     public GameObject projectilePrefab;
     public AudioSource shootSound;
     public LineGuider guider;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && canShoot && !guider.outOfGame)
+        if(!gameManager.gamePaused)
         {
-            StartCoroutine(Fire());
+            if (Input.GetKey(KeyCode.Space) && canShoot && !guider.outOfGame)
+            {
+                StartCoroutine(Fire());
+            }
         }
     }
 
