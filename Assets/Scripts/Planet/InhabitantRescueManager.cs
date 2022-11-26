@@ -27,6 +27,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public int fleeTime; // the starfighter has to stay alive for a certain amount of time before it can win by rescuing
     #endregion
 
+
     #region builtin methods
     void Start()
     {
@@ -126,7 +127,7 @@ public class InhabitantRescueManager : MonoBehaviour
 
     void RescueWin()
     {
-        Debug.Log("Starfighter won by rescue!");
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver("Starfighter");
     }
     #endregion
 }

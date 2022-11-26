@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6889040174018017225}
   - component: {fileID: 8862384736400721619}
   - component: {fileID: -8275875147720828162}
+  - component: {fileID: 6929301103848741854}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Uran
@@ -205,3 +206,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6929301103848741854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959535389126970331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70123eae390cc134e9807f386a2c8cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 50
+  isAsteroid: 1

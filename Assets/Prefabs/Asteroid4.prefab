@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6857132027023396856}
   - component: {fileID: 1103249807675123061}
   - component: {fileID: -7068467058140339259}
+  - component: {fileID: 5453902928636912368}
   m_Layer: 0
   m_Name: Asteroid4
   m_TagString: Asteroid
@@ -226,3 +227,19 @@ MonoBehaviour:
   minSpeed: 0
   maxSpeed: 0
   explosionParticles: {fileID: 2861106012759571187, guid: ba3c1b85d030ce645b79cc7624096fac, type: 3}
+  crystal: {fileID: 0}
+  isCrystalAsteroid: 0
+--- !u!114 &5453902928636912368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649573269771337504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70123eae390cc134e9807f386a2c8cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 100
+  isAsteroid: 1

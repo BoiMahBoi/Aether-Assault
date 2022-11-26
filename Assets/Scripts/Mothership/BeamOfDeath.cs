@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class BeamOfDeath : MonoBehaviour
 {
+
+    private GameManager gameManager;
+
     [Header("Beam Settings")]
     public int count = 0;
     public int maxCharge = 10;
@@ -21,9 +24,9 @@ public class BeamOfDeath : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         slider.maxValue = maxCharge;
         slider.value = count;
-
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,11 +53,12 @@ public class BeamOfDeath : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && beamCharged)
+
+        if (Input.GetKeyDown(KeyCode.Return) && beamCharged && !gameManager.gamePaused)
         {
             StartCoroutine(FireBeam());
         }
-        if (Input.GetKeyUp(KeyCode.Return) && isFiring)
+        if (Input.GetKeyUp(KeyCode.Return) && isFiring && !gameManager.gamePaused)
         {
             Debug.Log("Stopped charging the beam...");
             StopAllCoroutines();
@@ -70,5 +74,7 @@ public class BeamOfDeath : MonoBehaviour
         Debug.Log("The Mothership destroyed the planet!");
         //Put effects here. before game ends input explosion.
         isFiring = false;
+        gameManager.GameOver("Mothership");
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver("Mothership");
     }
 }
