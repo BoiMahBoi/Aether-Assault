@@ -15,6 +15,10 @@ public class ShieldBounce : MonoBehaviour
             direction.Normalize();
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+
             gameObject.GetComponent<Rigidbody2D>().AddForce(direction * power);
             collision.gameObject.GetComponent<ShieldScript>().HitShield();
         }
