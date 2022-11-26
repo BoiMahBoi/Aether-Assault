@@ -5474,7 +5474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5482,15 +5482,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 399.2248
+      value: 399.22485
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.9231
+      value: 76.923096
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5526,7 +5526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 2766147425004975016, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5543,6 +5543,10 @@ PrefabInstance:
     - target: {fileID: 2766147425004975023, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: m_Name
       value: RescueSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184257738532734507, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246959956374720688, guid: fe5daeec4d33ecf46abd8fd22a38afe2, type: 3}
       propertyPath: player
