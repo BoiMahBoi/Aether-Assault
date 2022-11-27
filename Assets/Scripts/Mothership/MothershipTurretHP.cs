@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 //using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MothershipTurretHP : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class MothershipTurretHP : MonoBehaviour
     public SpriteRenderer cannonSprite;
     public int cannonNumber;
     public AudioSource hitSound;
+
+    public Slider repairSlider;
 
     [Header("Turret Settings")]
     public float maxHP;
@@ -28,11 +32,12 @@ public class MothershipTurretHP : MonoBehaviour
     void Start()
     {
         //Assigning value to max health
-        repairTimer = repairTime;
         isDestroyed = false;
         currentHP = maxHP;
         cannon = transform.GetChild(0).gameObject;
         healthBar.SetMaxHealth(maxHP);
+        repairSlider.value = repairTimer;
+        repairSlider.maxValue = repairTime;
     }
 
     public void UpdateHealthBar()
@@ -76,20 +81,22 @@ public class MothershipTurretHP : MonoBehaviour
     {
         if (isDestroyed)
         {
-            if (repairTimer > 0)
+            if (repairTimer < repairTime)
             {
-                repairTimer -= Time.deltaTime;
+                repairTimer += Time.deltaTime;
+                repairSlider.value = repairTimer;
             }
             else
             {
                 currentHP = maxHP;
                 cannon.SetActive(true);
                 isDestroyed = false;
-                cannon.transform.gameObject.GetComponent<MothershipTurretShoot>().canShoot = true;
+                cannon.gameObject.GetComponent<MothershipTurretShoot>().canShoot = true;
                 // add cannon[cannonNumber] from cannon to functionalCannons in MothershipCannonManager
                 UpdateHealthBar();
 
-                repairTimer = repairTime;
+                repairTimer = 0;
+                repairSlider.value = repairTimer;
             }
         }
     }
