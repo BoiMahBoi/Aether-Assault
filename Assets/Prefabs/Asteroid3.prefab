@@ -210,6 +210,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 2861106012759571187, guid: ba3c1b85d030ce645b79cc7624096fac, type: 3}
   crystal: {fileID: 0}
   isCrystalAsteroid: 0
+  medkit: {fileID: 4089688437448752883, guid: 76ba64e128f096a46859fcf784ceefc9, type: 3}
 --- !u!114 &57074855332160428
 MonoBehaviour:
   m_ObjectHideFlags: 0
