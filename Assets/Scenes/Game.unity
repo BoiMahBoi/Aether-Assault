@@ -2459,10 +2459,6 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 2141220960}
-    - target: {fileID: 2080314709, guid: df8c538d056562f42b222d39e82aed88, type: 3}
-      propertyPath: power
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 8189377634166370676, guid: df8c538d056562f42b222d39e82aed88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3385,25 +3381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9d718eeb9b53248952a339854bfba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1589951369 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4298034460775496545, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-  m_PrefabInstance: {fileID: 8349815085416504549}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1589951375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589951369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70123eae390cc134e9807f386a2c8cce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 15000
-  isAsteroid: 0
 --- !u!114 &1628109565 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1628109565, guid: f7c0a5fda57db52438956167b177b375, type: 3}
@@ -5629,50 +5606,22 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 857328388}
-    - target: {fileID: 1599889417, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: m_Radius
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 393301551}
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: repairTime
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: repairSlider
       value: 
       objectReference: {fileID: 689042177}
-    - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: explosionParticles
-      value: 
-      objectReference: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
-    - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 1628109565}
     - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1787188818}
     - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: repairBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: repairTime
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: repairSlider
       value: 
       objectReference: {fileID: 1628109565}
-    - target: {fileID: 4145833446683985971, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: explosionParticles
-      value: 
-      objectReference: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
     - target: {fileID: 4298034460775496545, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_Name
       value: Mothership
@@ -5685,10 +5634,6 @@ PrefabInstance:
       propertyPath: repairSlider
       value: 
       objectReference: {fileID: 1643360639}
-    - target: {fileID: 4561812466380648715, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: explosionParticles
-      value: 
-      objectReference: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
     - target: {fileID: 5451782020327103303, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5732,18 +5677,6 @@ PrefabInstance:
     - target: {fileID: 5451782020327103303, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001952490800773095, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99965507
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001952490800773095, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.02626231
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001952490800773095, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 8349815086520321562, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: planet

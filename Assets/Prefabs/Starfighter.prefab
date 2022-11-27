@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 75
+  isAsteroid: 0
 --- !u!1 &8735263214604105336
 GameObject:
   m_ObjectHideFlags: 0

@@ -628,6 +628,8 @@ MonoBehaviour:
   cannonSprite: {fileID: 8705362332683530002}
   cannonNumber: 2
   hitSound: {fileID: 245876903}
+  explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
+  repairSlider: {fileID: 0}
   maxHP: 50
   currentHP: 0
   repairTime: 15
@@ -1371,6 +1373,7 @@ GameObject:
   - component: {fileID: 5451782020327103301}
   - component: {fileID: 893598578}
   - component: {fileID: 534663103}
+  - component: {fileID: 1589951375}
   m_Layer: 0
   m_Name: Mothership
   m_TagString: Enemy
@@ -1512,6 +1515,20 @@ MonoBehaviour:
   beamCharged: 0
   isFiring: 0
   slider: {fileID: 0}
+--- !u!114 &1589951375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298034460775496545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70123eae390cc134e9807f386a2c8cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 15000
+  isAsteroid: 0
 --- !u!1 &4608145852783219202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,7 +1974,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5298455133153591242}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.02626231, w: 0.99965507}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1966,7 +1983,7 @@ Transform:
   - {fileID: 6501830145002098169}
   m_Father: {fileID: 1141152420681775735}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.01}
 --- !u!114 &4774844900939486366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,6 +2948,8 @@ MonoBehaviour:
   cannonSprite: {fileID: 7670666511754894433}
   cannonNumber: 1
   hitSound: {fileID: 245876903}
+  explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
+  repairSlider: {fileID: 0}
   maxHP: 50
   currentHP: 0
   repairTime: 15
@@ -2985,6 +3004,8 @@ MonoBehaviour:
   cannonSprite: {fileID: 8548989696226122419}
   cannonNumber: 0
   hitSound: {fileID: 245876903}
+  explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
+  repairSlider: {fileID: 0}
   maxHP: 50
   currentHP: 0
   repairTime: 15
