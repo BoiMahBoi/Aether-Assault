@@ -16,7 +16,9 @@ public class MothershipTurretHP : MonoBehaviour
     public SpriteRenderer cannonSprite;
     public int cannonNumber;
     public AudioSource hitSound;
+    public GameObject explosionParticles;
 
+    [Header("Repair bar slider refference")]
     public Slider repairSlider;
 
     [Header("Turret Settings")]
@@ -36,7 +38,9 @@ public class MothershipTurretHP : MonoBehaviour
         currentHP = maxHP;
         cannon = transform.GetChild(0).gameObject;
         healthBar.SetMaxHealth(maxHP);
+        //Setting repairSlider to current repair time spent
         repairSlider.value = repairTimer;
+        //Setting repairSliders max value to total repair time
         repairSlider.maxValue = repairTime;
     }
 
@@ -54,6 +58,8 @@ public class MothershipTurretHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
+            //Instantiating explosion
+            Instantiate(explosionParticles, transform.position, transform.localRotation);
             TurretDestroy();
         }
 
