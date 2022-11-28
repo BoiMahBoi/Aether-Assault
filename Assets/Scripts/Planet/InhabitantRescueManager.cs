@@ -19,6 +19,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject rescueZone;
     public GameObject inhabitantSpawner;
     public GameObject inhabitantPrefab;
+    public GameObject repairKitCollectionManager;
     public Slider rescueSlider;
 
     [Header("Rescue Win")]
@@ -48,6 +49,8 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             isRescuing = true;
             starFighter = collider.gameObject;
+
+            // disable the repairkit collection zone: when entering inhabitant rescue zone?
         }
     }
 
@@ -62,6 +65,8 @@ public class InhabitantRescueManager : MonoBehaviour
             inhabitantRescueTimer = inhabitantRescueTime;
             isRescueZoneActive = false;
             rescueZone.SetActive(false);
+
+            // disable the repairkit collection zone: when failing inhabitant rescue zone?
         }
     }
     #endregion
@@ -77,6 +82,11 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             if (!isRescueZoneActive)
             {
+                // test if the inhabitantRescueZone is active
+                    // if yes, get its current rotation
+                        // if repairZone rotation is within x degrees in either direction
+                            // re randomize a rotation
+
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f)));
                 isRescueZoneActive = true;
                 rescueZone.SetActive(true);
@@ -103,6 +113,8 @@ public class InhabitantRescueManager : MonoBehaviour
                     inhabitantRescueTimer = inhabitantRescueTime;
                     isRescueZoneActive = false;
                     rescueZone.SetActive(false);
+
+                    // disable the repairkit collection zone: when successfully rescuing inhabitant?
                 }
             }
         }

@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class MedKit : MonoBehaviour
 {
-    public starfighterHealth starfighterHealthScript;
+    /*
+     using 'Find..'. is bad practice especially when we already gain a reference to the starfighter on the collider detection
+     */
+
+
+    //public starfighterHealth starfighterHealthScript;
 
     // Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{
+    //    starfighterHealthScript = GameObject.Find("Starfighter").GetComponent<starfighterHealth>();
+    //}
+
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        starfighterHealthScript = GameObject.Find("Starfighter").GetComponent<starfighterHealth>();
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.name == "Starfighter") 
+        if (collider.gameObject.name == "Starfighter")
         {
-            starfighterHealthScript.currentHealth += 10;
-            starfighterHealthScript.UpdateHealthBar();
+            collider.transform.gameObject.GetComponent<starfighterHealth>().currentHealth += 10;
+            collider.transform.gameObject.GetComponent<starfighterHealth>().UpdateHealthBar();
             Destroy(gameObject);
         }
     }

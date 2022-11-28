@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1123792840355011003}
   - component: {fileID: 3230371520728790371}
-  - component: {fileID: 3046406340708000374}
+  - component: {fileID: -6111207755658026405}
   - component: {fileID: 4711500231415571727}
   - component: {fileID: 2947743902742795219}
   m_Layer: 0
-  m_Name: medkit
+  m_Name: RepairKit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3046406340708000374
+--- !u!114 &-6111207755658026405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,9 +96,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4089688437448752883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f686656914c712b4f88a2c2051cc6102, type: 3}
+  m_Script: {fileID: 11500000, guid: 79f509f5702f5ce4cb864e8aa4cf2b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
+  maxCollectionDistance: 10
+  minCollectionDistance: 1
+  starFighter: {fileID: 0}
 --- !u!61 &4711500231415571727
 BoxCollider2D:
   m_ObjectHideFlags: 0
