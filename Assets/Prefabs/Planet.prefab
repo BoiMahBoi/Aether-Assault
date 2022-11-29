@@ -300,14 +300,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531581092075168861}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7728544019167206394}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &635491831640088511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -349,7 +349,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5453bcbcd20c0c74e9a7a1f701025727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 808281814693117044}
   - component: {fileID: 7088681890638856948}
   m_Layer: 0
-  m_Name: Medkit zone
+  m_Name: Repairkit zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,6 +496,7 @@ MonoBehaviour:
   rescueZone: {fileID: 6818116705869427452}
   inhabitantSpawner: {fileID: 5350508677786334795}
   inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
+  repairKitCollectionManager: {fileID: 9054620764152367087}
   rescueSlider: {fileID: 0}
   rescueCount: 0
   maxRescueCount: 10
@@ -576,14 +577,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999036904210634601}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6407712732845129337}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7553250175952330536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -625,8 +626,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.19339621, g: 0.46990472, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 42eae272649144149a5cf77a796bb5f5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -929,7 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4075517650496635378}
   m_Layer: 0
-  m_Name: Medkit spawner
+  m_Name: Repairkit spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -996,6 +997,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ed94bcbd4a84d41a01405ad7183ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnablePlanetaryRepairkitCollection: 1
+  repairZoneTime: 10
+  repairKitTime: 2.5
+  isRepairZoneActive: 0
+  isRepairing: 0
+  starFighter: {fileID: 0}
+  repairZone: {fileID: 2209849473376195874}
+  repairKitSpawner: {fileID: 8540616529890892931}
+  repairKitPrefab: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
+  inhabitantRescueManager: {fileID: 4621366901792271380}
 --- !u!50 &8604099077119011527
 Rigidbody2D:
   serializedVersion: 4

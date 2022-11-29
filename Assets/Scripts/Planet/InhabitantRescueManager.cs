@@ -49,6 +49,7 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             isRescuing = true;
             starFighter = collider.gameObject;
+            starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
 
             // disable the repairkit collection zone: when entering inhabitant rescue zone?
         }
@@ -59,6 +60,7 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRescuing = false;
+            starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
             starFighter = null;
 
             rescueZoneTimer = rescueZoneTime;

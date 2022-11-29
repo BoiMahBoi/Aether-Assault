@@ -16,6 +16,7 @@ public class Asteroids : MonoBehaviour
     public GameObject crystal;
     public bool isCrystalAsteroid;
     public GameObject medkit;
+    public bool canDropMedkits;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class Asteroids : MonoBehaviour
             {
                 Instantiate(crystal, transform.position, transform.localRotation);
             }
-            else if(Random.Range(0, 4) == 2) 
+            else if(Random.Range(0, 4) == 2 && canDropMedkits) 
             {
                 Instantiate(medkit, transform.position, transform.localRotation);
             }

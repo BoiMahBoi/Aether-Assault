@@ -1377,11 +1377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &695047854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2209849473376195874, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-  m_PrefabInstance: {fileID: 1676595448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &779749822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1659,11 +1654,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
---- !u!1 &847576933 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8540616529890892931, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-  m_PrefabInstance: {fileID: 1676595448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &857328386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,11 +3132,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 872816441272695912, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
   m_PrefabInstance: {fileID: 482353914}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1432274451 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4621366901792271380, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-  m_PrefabInstance: {fileID: 1676595448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1456626949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,14 +3773,6 @@ PrefabInstance:
       propertyPath: rescueSlider
       value: 
       objectReference: {fileID: 7867942539553257076}
-    - target: {fileID: 257819372032449264, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairKitCollectionManager
-      value: 
-      objectReference: {fileID: 2011922178}
-    - target: {fileID: 2209849473376195874, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Name
-      value: Repairkit zone
-      objectReference: {fileID: 0}
     - target: {fileID: 6755444911494865961, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -3843,38 +3820,6 @@ PrefabInstance:
     - target: {fileID: 6755444911494866391, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairZone
-      value: 
-      objectReference: {fileID: 695047854}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairKitTime
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairZoneTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairKitPrefab
-      value: 
-      objectReference: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: repairKitSpawner
-      value: 
-      objectReference: {fileID: 847576933}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: inhabitantRescueManager
-      value: 
-      objectReference: {fileID: 1432274451}
-    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: EnablePlanetaryRepairkitCollection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540616529890892931, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-      propertyPath: m_Name
-      value: Repairkit spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
@@ -4732,11 +4677,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d548ab1bfbf6c934ba9d3bede884a62c, type: 3}
---- !u!1 &2011922178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9054620764152367087, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
-  m_PrefabInstance: {fileID: 1676595448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2048546421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5343,38 +5283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1231369592, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231369592, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057055986, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057055986, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106804841, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106804841, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202280134470315501, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202280134470315501, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774385197934313, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
@@ -5427,38 +5335,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4410774385913846399, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774385913846399, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386091860903, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 893598572}
-    - target: {fileID: 4410774386167459246, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774386167459246, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386377747265, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1003476329}
-    - target: {fileID: 4410774386548066953, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410774386548066953, guid: f7c0a5fda57db52438956167b177b375, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4410774386832391602, guid: f7c0a5fda57db52438956167b177b375, type: 3}
       propertyPath: objectToFollow
       value: 
