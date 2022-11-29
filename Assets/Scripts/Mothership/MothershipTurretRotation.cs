@@ -20,10 +20,10 @@ public class MothershipTurretRotation : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.E))
             {
-                cannonRotation = 1;
+                cannonRotation = cannonManager.rotateDirection;
             }
             if(Input.GetKey(KeyCode.Q)) {
-                cannonRotation = -1;
+                cannonRotation = -cannonManager.rotateDirection;
             }
             if(Input.GetKeyUp(KeyCode.E))
             {

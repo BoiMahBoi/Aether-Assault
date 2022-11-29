@@ -5,6 +5,8 @@ using UnityEngine;
 public class MothershipCannonManager : MonoBehaviour
 {
     private GameManager gameManager;
+    [HideInInspector]
+    public float rotateDirection;
 
     [Header("Mothership State")]
     public bool isShooting;
@@ -19,6 +21,7 @@ public class MothershipCannonManager : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        rotateDirection = 1;
     }
 
     void Update()
@@ -33,14 +36,17 @@ public class MothershipCannonManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             activeCannon = 1;
+            rotateDirection = 1;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             activeCannon = 2;
+            rotateDirection = 1;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             activeCannon = 0;
+            rotateDirection = -1;
         }
     }
 
