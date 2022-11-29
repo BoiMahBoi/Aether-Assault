@@ -18,18 +18,18 @@ public class MothershipTurretRotation : MonoBehaviour
     {
         if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon)
         {
-            if(Input.GetKey(KeyCode.E))
+            if(Input.GetKey(KeyCode.G))
             {
                 cannonRotation = cannonManager.rotateDirection;
             }
-            if(Input.GetKey(KeyCode.Q)) {
+            if(Input.GetKey(KeyCode.F)) {
                 cannonRotation = -cannonManager.rotateDirection;
             }
-            if(Input.GetKeyUp(KeyCode.E))
+            if(Input.GetKeyUp(KeyCode.G))
             {
                 cannonRotation = 0;
             }
-            if(Input.GetKeyUp(KeyCode.Q))
+            if(Input.GetKeyUp(KeyCode.F))
             {
                 cannonRotation = 0;
             }

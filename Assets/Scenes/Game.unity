@@ -5595,6 +5595,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 857328388}
+    - target: {fileID: 534663103, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
+      propertyPath: maxCharge
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3163662908889692449, guid: da292a19eec1e431c9a366b7097c4917, type: 3}
       propertyPath: healthBar
       value: 
