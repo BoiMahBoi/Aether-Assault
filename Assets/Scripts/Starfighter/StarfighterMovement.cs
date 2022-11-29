@@ -29,46 +29,33 @@ public class StarfighterMovement : MonoBehaviour
     {
         if(!gameManager.gamePaused)
         {
-            if (Input.GetKeyUp(KeyCode.W))
+            if (Input.GetKeyUp(KeyCode.UpArrow))
             {
                 thrusterSound.Stop();
             }
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.up * Time.deltaTime * Speed);
                 playThrusterSound();
             }
 
-            if (Input.GetKey(KeyCode.Q))
-            {
-                rb.AddForce(transform.right * -1 * Time.deltaTime * Speed);
-                playThrusterSound();
-            }
-
-            if (Input.GetKey(KeyCode.E))
-            {
-                rb.AddForce(transform.right * Time.deltaTime * Speed);
-                playThrusterSound();
-            }
-
-
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Rotate(new Vector3(0, 0, rotateSpeed) * Time.deltaTime * Speed, Space.World);
             }
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Rotate(new Vector3(0, 0, -rotateSpeed) * Time.deltaTime * Speed, Space.World);
             }
 
-            if (Input.GetKeyUp(KeyCode.W))
+            if (Input.GetKeyUp(KeyCode.UpArrow))
             {
                 thrusterSound.Stop();
             }
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 rb.AddForce(-transform.up * Time.deltaTime * speedBackwards);
 
@@ -80,7 +67,7 @@ public class StarfighterMovement : MonoBehaviour
     //Effects are handled below
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             thrusterTrail.enabled = false;
             thrusterSound.Stop();
@@ -88,7 +75,7 @@ public class StarfighterMovement : MonoBehaviour
 
         if(!gameManager.gamePaused)
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 thrusterTrail.enabled = true;
                 playThrusterSound();

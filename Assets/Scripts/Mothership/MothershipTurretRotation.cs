@@ -9,6 +9,7 @@ public class MothershipTurretRotation : MonoBehaviour
     public float currentRotation;
     public float maxRotation;
     public int cannonNumber;
+    private float cannonRotation;
 
     [Header("CannonManager Reference")]
     public MothershipCannonManager cannonManager;
@@ -17,7 +18,22 @@ public class MothershipTurretRotation : MonoBehaviour
     {
         if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon)
         {
-            float cannonRotation = Input.GetAxis("Horizontal");
+            if(Input.GetKey(KeyCode.E))
+            {
+                cannonRotation = 1;
+            }
+            if(Input.GetKey(KeyCode.Q)) {
+                cannonRotation = -1;
+            }
+            if(Input.GetKeyUp(KeyCode.E))
+            {
+                cannonRotation = 0;
+            }
+            if(Input.GetKeyUp(KeyCode.Q))
+            {
+                cannonRotation = 0;
+            }
+
             TurretRotation(cannonRotation);
         }
     }

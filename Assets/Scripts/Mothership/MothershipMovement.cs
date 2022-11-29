@@ -22,7 +22,7 @@ public class MothershipMovement : MonoBehaviour
 
     void FixedUpdate()
     { 
-        if (!cannonManager.isShooting && !gameManager.gamePaused)
+        if (!gameManager.gamePaused)
         {
             Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             Movement(direction);
@@ -37,7 +37,7 @@ public class MothershipMovement : MonoBehaviour
 
     private void Update()
     {
-            if (!thrusterSound.isPlaying && !cannonManager.isShooting && !gameManager.gamePaused &&
+            if (!thrusterSound.isPlaying && !gameManager.gamePaused &&
                                                                       (Input.GetKeyDown(KeyCode.UpArrow)
                                                                     || Input.GetKeyDown(KeyCode.RightArrow)
                                                                     || Input.GetKeyDown(KeyCode.DownArrow)

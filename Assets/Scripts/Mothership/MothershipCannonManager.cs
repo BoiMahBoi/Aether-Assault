@@ -23,100 +23,24 @@ public class MothershipCannonManager : MonoBehaviour
 
     void Update()
     {
-        TurretMode();
-        SwitchTurretUp();
-        SwitchTurretDown();
+        switchTurret();
         DestroyedActiveTurret();
-
         Debug.Log("Current active cannon is: " + activeCannon);
     }
 
-    void TurretMode()
+    void switchTurret()
     {
-
-        if (Input.GetKeyDown(KeyCode.RightShift) && !gameManager.gamePaused)
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (cannons[0].activeSelf == false && cannons[1].activeSelf == false && cannons[2].activeSelf == false)
-            {
-                isShooting = false;
-            }
-            else
-            {
-                if (isShooting)
-                {
-                    isShooting = false;
-                }
-                else
-                {
-                    isShooting = true;
-                }
-            }
+            activeCannon = 1;
         }
-    }
-
-    void SwitchTurretUp()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isShooting && !gameManager.gamePaused)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            activeCannon++;
-
-            if (activeCannon > 2)
-            {
-                activeCannon = 0;
-            }
-
-            if (activeCannon < 0)
-            {
-                activeCannon = 2;
-            }
-
-            if (activeCannon == 0 && cannons[0].activeSelf == false)
-            {
-                activeCannon = 1;
-            }
-
-            if (activeCannon == 1 && cannons[1].activeSelf == false)
-            {
-                activeCannon = 2;
-            }
-
-            if (activeCannon == 2 && cannons[2].activeSelf == false)
-            {
-                activeCannon = 0;
-            }
+            activeCannon = 2;
         }
-    }
-
-    void SwitchTurretDown()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && isShooting && !gameManager.gamePaused)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            activeCannon--;
-
-            if (activeCannon > 2)
-            {
-                activeCannon = 0;
-            }
-
-            if (activeCannon < 0)
-            {
-                activeCannon = 2;
-            }
-
-            if (activeCannon == 0 && cannons[0].activeSelf == false)
-            {
-                activeCannon = 2;
-            }
-
-            if (activeCannon == 1 && cannons[1].activeSelf == false)
-            {
-                activeCannon = 0;
-            }
-
-            if (activeCannon == 2 && cannons[2].activeSelf == false)
-            {
-                activeCannon = 1;
-            }
+            activeCannon = 0;
         }
     }
 

@@ -21,6 +21,7 @@ public class MothershipTurretShoot : MonoBehaviour
 
     private void Start()
     {
+        cannonManager.isShooting = true;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
