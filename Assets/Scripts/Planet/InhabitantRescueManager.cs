@@ -32,6 +32,8 @@ public class InhabitantRescueManager : MonoBehaviour
     #region builtin methods
     void Start()
     {
+        starFighter = GameObject.Find("Starfighter").GetComponent<GameObject>();
+
         rescueSlider.maxValue = maxRescueCount;
         rescueZoneTimer = rescueZoneTime;
         inhabitantRescueTimer = inhabitantRescueTime;
@@ -48,8 +50,11 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter")) 
         {
             isRescuing = true;
+<<<<<<< Updated upstream
             starFighter = collider.gameObject;
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
+=======
+>>>>>>> Stashed changes
 
             // disable the repairkit collection zone: when entering inhabitant rescue zone?
         }
@@ -60,8 +65,11 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRescuing = false;
+<<<<<<< Updated upstream
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
             starFighter = null;
+=======
+>>>>>>> Stashed changes
 
             rescueZoneTimer = rescueZoneTime;
             inhabitantRescueTimer = inhabitantRescueTime;
@@ -100,24 +108,21 @@ public class InhabitantRescueManager : MonoBehaviour
     {
         if (isRescuing)
         {
-            if (starFighter != null)
+            if (inhabitantRescueTimer > 0)
             {
-                if (inhabitantRescueTimer > 0)
-                {
-                    inhabitantRescueTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
-                    inhabitant.GetComponent<InhabitantMovement>().SetObjectReferences(starFighter.gameObject, this.transform.gameObject);
+                inhabitantRescueTimer -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
+                inhabitant.GetComponent<InhabitantMovement>().SetObjectReferences(starFighter.gameObject, this.transform.gameObject);
 
-                    rescueZoneTimer = rescueZoneTime;
-                    inhabitantRescueTimer = inhabitantRescueTime;
-                    isRescueZoneActive = false;
-                    rescueZone.SetActive(false);
+                rescueZoneTimer = rescueZoneTime;
+                inhabitantRescueTimer = inhabitantRescueTime;
+                isRescueZoneActive = false;
+                rescueZone.SetActive(false);
 
-                    // disable the repairkit collection zone: when successfully rescuing inhabitant?
-                }
+                // disable the repairkit collection zone: when successfully rescuing inhabitant?
             }
         }
     }
