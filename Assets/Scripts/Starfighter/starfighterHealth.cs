@@ -23,10 +23,9 @@ public class starfighterHealth : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        //Assigning value to the maximum health
-        maxHealth = 200;
         //Setting the current health to the maximum health at start of game
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         //Calling the function UpdateHealthBar
         UpdateHealthBar();
     }

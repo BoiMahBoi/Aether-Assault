@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 1735778449305931838}
   - component: {fileID: 635491831640088511}
   m_Layer: 0
-  m_Name: Inhabitant logo
+  m_Name: Inhabitant Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,6 +493,7 @@ MonoBehaviour:
   inhabitantRescueTime: 2.5
   isRescueZoneActive: 0
   isRescuing: 0
+  planetaryRotationInhabitant: 0
   starFighter: {fileID: 0}
   rescueZone: {fileID: 6818116705869427452}
   inhabitantSpawner: {fileID: 5350508677786334795}
@@ -565,7 +566,7 @@ GameObject:
   - component: {fileID: 800294861598480387}
   - component: {fileID: 7553250175952330536}
   m_Layer: 0
-  m_Name: Repair logo
+  m_Name: Repair Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,7 +888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3110692466633067684
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,6 +1088,7 @@ MonoBehaviour:
   repairKitTime: 2.5
   isRepairZoneActive: 0
   isRepairing: 0
+  planetaryRotationRepair: 0
   starFighter: {fileID: 0}
   repairZone: {fileID: 2209849473376195874}
   repairKitSpawner: {fileID: 8540616529890892931}

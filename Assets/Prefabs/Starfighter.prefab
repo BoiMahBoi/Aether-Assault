@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 616300472}
-  maxHealth: 0
+  maxHealth: 200
   currentHealth: 0
   healthBar: {fileID: 0}
   playerSprite: {fileID: 4302382927785466213}

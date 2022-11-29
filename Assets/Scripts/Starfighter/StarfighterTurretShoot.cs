@@ -37,6 +37,7 @@ public class StarfighterTurretShoot : MonoBehaviour
         canShoot = false;
         shootSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
+        projectile.name = "StarfighterProjectile";
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
     }

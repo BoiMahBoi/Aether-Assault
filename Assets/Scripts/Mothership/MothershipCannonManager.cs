@@ -28,7 +28,6 @@ public class MothershipCannonManager : MonoBehaviour
     {
         switchTurret();
         DestroyedActiveTurret();
-        Debug.Log("Current active cannon is: " + activeCannon);
     }
 
     void switchTurret()

@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+
     [Header("Projectile Settings")]
     public float speed;
     public int damage;
@@ -46,8 +47,9 @@ public class Projectile : MonoBehaviour
                 
                 Destroy(gameObject);
             } 
-            else if (collider.gameObject.name == "Starfighter")
+            else if (collider.gameObject.name == "Starfighter" && gameObject.name != "StarfighterProjectile")
             {
+                Debug.Log("You damaged the Starfighter!");
                 collider.gameObject.GetComponent<starfighterHealth>().TakeDamage(damage);
                 Destroy(gameObject);
             }
