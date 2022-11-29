@@ -13,6 +13,7 @@ public class InhabitantRescueManager : MonoBehaviour
     private float inhabitantRescueTimer; // current time until an inhabitant is instantiated
     public bool isRescueZoneActive;
     public bool isRescuing;
+    public float planetaryRotationInhabitant;
 
     [Header("Object References")]
     public GameObject starFighter;
@@ -32,6 +33,8 @@ public class InhabitantRescueManager : MonoBehaviour
     #region builtin methods
     void Start()
     {
+        starFighter = GameObject.Find("Starfighter");
+
         rescueSlider.maxValue = maxRescueCount;
         rescueZoneTimer = rescueZoneTime;
         inhabitantRescueTimer = inhabitantRescueTime;
@@ -48,10 +51,7 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter")) 
         {
             isRescuing = true;
-            starFighter = collider.gameObject;
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
-
-            // disable the repairkit collection zone: when entering inhabitant rescue zone?
         }
     }
 
@@ -61,14 +61,11 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             isRescuing = false;
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
-            starFighter = null;
 
             rescueZoneTimer = rescueZoneTime;
             inhabitantRescueTimer = inhabitantRescueTime;
             isRescueZoneActive = false;
             rescueZone.SetActive(false);
-
-            // disable the repairkit collection zone: when failing inhabitant rescue zone?
         }
     }
     #endregion
@@ -84,12 +81,22 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             if (!isRescueZoneActive)
             {
-                // test if the inhabitantRescueZone is active
-                    // if yes, get its current rotation
-                        // if repairZone rotation is within x degrees in either direction
-                            // re randomize a rotation
+                planetaryRotationInhabitant = Random.Range(0f, 359f);
 
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f)));
+                if (repairKitCollectionManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().isRepairZoneActive)
+                {
+                    float planetaryRotationRepair = repairKitCollectionManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().planetaryRotationRepair;
+
+                    // ideally I want to write a function that rotates planetaryRotationInhabitant away in the direction it is already in, until its far enough away, but I have 13 minutes to complete this
+
+                    if (Mathf.Abs(planetaryRotationInhabitant - planetaryRotationRepair) < 20)
+                    {
+                        Debug.Log("Marker was moved, too close to previously existing marker!");
+                        planetaryRotationInhabitant += 40;
+                    }
+                }
+
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, planetaryRotationInhabitant));
                 isRescueZoneActive = true;
                 rescueZone.SetActive(true);
             }
@@ -100,24 +107,23 @@ public class InhabitantRescueManager : MonoBehaviour
     {
         if (isRescuing)
         {
-            if (starFighter != null)
+            if (inhabitantRescueTimer > 0)
             {
-                if (inhabitantRescueTimer > 0)
-                {
-                    inhabitantRescueTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
-                    inhabitant.GetComponent<InhabitantMovement>().SetObjectReferences(starFighter.gameObject, this.transform.gameObject);
+                inhabitantRescueTimer -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject inhabitant = Instantiate(inhabitantPrefab, inhabitantSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
+                inhabitant.GetComponent<InhabitantMovement>().SetObjectReferences(starFighter.gameObject, this.transform.gameObject);
 
-                    rescueZoneTimer = rescueZoneTime;
-                    inhabitantRescueTimer = inhabitantRescueTime;
-                    isRescueZoneActive = false;
-                    rescueZone.SetActive(false);
+                rescueZoneTimer = rescueZoneTime;
+                inhabitantRescueTimer = inhabitantRescueTime;
+                isRescueZoneActive = false;
+                rescueZone.SetActive(false);
 
-                    // disable the repairkit collection zone: when successfully rescuing inhabitant?
-                }
+                // replace this with a coroutine, switching the logo with the failed logo
+                repairKitCollectionManager.transform.GetChild(0).transform.gameObject.SetActive(false);
+                repairKitCollectionManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().isRepairZoneActive = false;
             }
         }
     }

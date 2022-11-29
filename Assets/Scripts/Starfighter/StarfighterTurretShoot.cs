@@ -25,7 +25,7 @@ public class StarfighterTurretShoot : MonoBehaviour
     {
         if(!gameManager.gamePaused)
         {
-            if (Input.GetKey(KeyCode.Space) && canShoot && !guider.outOfGame)
+            if (Input.GetKey(KeyCode.RightShift) && canShoot && !guider.outOfGame)
             {
                 StartCoroutine(Fire());
             }
