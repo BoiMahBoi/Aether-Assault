@@ -23,7 +23,7 @@ public class AsteroidSpawner : MonoBehaviour
     public IEnumerator SpawnEnumerator()
     {
         SpawnAsteroid();
-        int randomTime = Random.Range(3, 6);
+        int randomTime = Random.Range(6, 12);
         yield return new WaitForSeconds(randomTime);
         StartCoroutine(SpawnEnumerator());
     }
