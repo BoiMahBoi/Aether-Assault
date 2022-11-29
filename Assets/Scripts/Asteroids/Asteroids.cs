@@ -15,6 +15,13 @@ public class Asteroids : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject crystal;
     public bool isCrystalAsteroid;
+<<<<<<< Updated upstream
+=======
+
+    [Header("Repairkit Settings")]
+    public bool enableAsteroidRepairkits;
+    public GameObject medkit;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +47,16 @@ public class Asteroids : MonoBehaviour
             {
                 Instantiate(crystal, transform.position, transform.localRotation);
             }
+<<<<<<< Updated upstream
+=======
+            else if(enableAsteroidRepairkits) 
+            {
+                if (Random.Range(0, 4) == 0)
+                {
+                    Instantiate(medkit, transform.position, transform.localRotation);
+                }
+            }
+>>>>>>> Stashed changes
 
             //Spawn asteroid explosion particle
             Destroy(gameObject);
@@ -56,7 +73,6 @@ public class Asteroids : MonoBehaviour
         StartCoroutine(BlinkWhite(0.75f, 1));
     }
 
-    
     public IEnumerator BlinkWhite(float endValue, float duration)
     {
         isFading = true;

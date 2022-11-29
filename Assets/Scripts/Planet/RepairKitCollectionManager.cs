@@ -24,6 +24,8 @@ public class RepairKitCollectionManager : MonoBehaviour
 
     void Start()
     {
+        starFighter = GameObject.Find("Starfighter");
+
         repairZoneTimer = repairZoneTime;
         repairKitTimer = repairKitTime;
     }
@@ -32,8 +34,11 @@ public class RepairKitCollectionManager : MonoBehaviour
     {
         if (EnablePlanetaryRepairkitCollection)
         {
-            RepairZoneSpawner();
-            MedkitSpawner();
+            if (starFighter.transform.gameObject.GetComponent<starfighterHealth>().currentHealth < starFighter.transform.gameObject.GetComponent<starfighterHealth>().maxHealth)
+            {
+                RepairZoneSpawner();
+                MedkitSpawner();
+            }
         }
     }
 
@@ -42,8 +47,11 @@ public class RepairKitCollectionManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRepairing = true;
+<<<<<<< Updated upstream
             starFighter = collider.gameObject;
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
+=======
+>>>>>>> Stashed changes
         }
 
         // disable the inhabitant rescue zone: when entering repairkit collection zone?
@@ -54,8 +62,11 @@ public class RepairKitCollectionManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRepairing = false;
+<<<<<<< Updated upstream
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
             starFighter = null;
+=======
+>>>>>>> Stashed changes
 
             repairZoneTimer = repairZoneTime;
             repairKitTimer = repairKitTime;
@@ -63,7 +74,6 @@ public class RepairKitCollectionManager : MonoBehaviour
             repairZone.SetActive(false);
 
             // disable the inhabitant rescue zone: when failing repairkit collection zone?
-
         }
     }
 
@@ -93,24 +103,21 @@ public class RepairKitCollectionManager : MonoBehaviour
     {
         if (isRepairing)
         {
-            if (starFighter != null)
+            if (repairKitTimer > 0)
             {
-                if (repairKitTimer > 0)
-                {
-                    repairKitTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    GameObject repairKit = Instantiate(repairKitPrefab, repairKitSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
-                    repairKit.GetComponent<RepairKitMovement>().SetStarfighterReference(starFighter.gameObject);
+                repairKitTimer -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject repairKit = Instantiate(repairKitPrefab, repairKitSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 359f))));
+                repairKit.GetComponent<RepairKitMovement>().SetStarfighterReference(starFighter.gameObject);
 
-                    repairZoneTimer = repairZoneTime;
-                    repairKitTimer = repairKitTime;
-                    isRepairZoneActive = false;
-                    repairZone.SetActive(false);
+                repairZoneTimer = repairZoneTime;
+                repairKitTimer = repairKitTime;
+                isRepairZoneActive = false;
+                repairZone.SetActive(false);
 
-                    // disable the inhabitant rescue zone: when successfully collecting repairkit?
-                }
+                // disable the inhabitant rescue zone: when successfully collecting repairkit?
             }
         }
     }

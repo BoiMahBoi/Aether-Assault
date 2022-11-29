@@ -3798,6 +3798,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: repairZone
+      value: 
+      objectReference: {fileID: 695047854}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: repairKitTime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: repairZoneTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: repairKitPrefab
+      value: 
+      objectReference: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: repairKitSpawner
+      value: 
+      objectReference: {fileID: 847576933}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: inhabitantRescueManager
+      value: 
+      objectReference: {fileID: 1432274451}
+    - target: {fileID: 6983995453887680887, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: EnablePlanetaryRepairkitCollection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540616529890892931, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
+      propertyPath: m_Name
+      value: Repairkit spawner
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
 --- !u!1001 &1776000048
