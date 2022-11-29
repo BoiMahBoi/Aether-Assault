@@ -9,7 +9,6 @@ public class Projectile : MonoBehaviour
     [Header("Projectile Settings")]
     public float speed;
     public int damage;
-    
 
     void Start()
     {
@@ -71,4 +70,13 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Uran"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
