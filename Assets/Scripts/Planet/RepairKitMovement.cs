@@ -20,6 +20,7 @@ public class RepairKitMovement : MonoBehaviour
             {
                 Debug.Log("RepairKit is being collected");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime);
+                transform.LookAt(starFighter.transform);
             }
             else // if inhabitant is NOT within x units
             {
