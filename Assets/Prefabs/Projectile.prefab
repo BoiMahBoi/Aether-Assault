@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 3917915536682991947}
   - component: {fileID: 3501357828612883423}
   - component: {fileID: 7350060124787486568}
+  - component: {fileID: 8516434769109458901}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -164,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4b160c098265f42acb3f992c2a15fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MotherSound: {fileID: 5929210615849246514, guid: d33b2358706b52f43a8e29e5e381edce, type: 3}
+  StarSound: {fileID: 2526497430334061739, guid: da1bf2bd2364f9b4b9f5d59bcb894d2f, type: 3}
   speed: 22
   damage: 10
 --- !u!70 &3917915536682991947
@@ -219,3 +222,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.22, y: 0.47}
   m_Direction: 0
+--- !u!114 &8516434769109458901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153415273550923046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a92a30771d0b941a27e266dc26ae40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 5

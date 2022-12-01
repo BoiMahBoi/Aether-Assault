@@ -392,7 +392,6 @@ MonoBehaviour:
   cannonManager: {fileID: 5426410325101145957}
   firePoint: {fileID: 9061446472538374323}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 8121351508836181863}
   indicatorSprite: {fileID: 5507799767810846017}
 --- !u!58 &8394548716938222709
 CircleCollider2D:
@@ -627,7 +626,7 @@ MonoBehaviour:
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   cannonSprite: {fileID: 8705362332683530002}
   cannonNumber: 2
-  hitSound: {fileID: 245876903}
+  hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
   explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
   repairSlider: {fileID: 0}
   maxHP: 50
@@ -1494,7 +1493,7 @@ MonoBehaviour:
   - {fileID: 6018418845424861797}
   - {fileID: 7856135592417418872}
   playerSprite: {fileID: 4298034460584776966}
-  hitSound: {fileID: 245876903}
+  hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
   healthBar: {fileID: 0}
   currentHP: 0
 --- !u!114 &534663103
@@ -1601,7 +1600,6 @@ MonoBehaviour:
   cannonManager: {fileID: 5426410325101145957}
   firePoint: {fileID: 6419113485895153}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 8121351508836181863}
   indicatorSprite: {fileID: 7793743460084616333}
 --- !u!58 &5752916926762112026
 CircleCollider2D:
@@ -2020,7 +2018,6 @@ MonoBehaviour:
   cannonManager: {fileID: 5426410325101145957}
   firePoint: {fileID: 3466860069449552954}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootingSound: {fileID: 8121351508836181863}
   indicatorSprite: {fileID: 4670962703670714546}
 --- !u!58 &2454888278449770761
 CircleCollider2D:
@@ -2948,7 +2945,7 @@ MonoBehaviour:
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   cannonSprite: {fileID: 7670666511754894433}
   cannonNumber: 1
-  hitSound: {fileID: 245876903}
+  hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
   explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
   repairSlider: {fileID: 0}
   maxHP: 50
@@ -3004,7 +3001,7 @@ MonoBehaviour:
   cannonPrefab: {fileID: 5676814640413969166, guid: b4c7ef1b9157b6b4c9e7086a863080f6, type: 3}
   cannonSprite: {fileID: 8548989696226122419}
   cannonNumber: 0
-  hitSound: {fileID: 245876903}
+  hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
   explosionParticles: {fileID: 2861106012759571187, guid: fa0169144bd5958448b38cf7b9895bf0, type: 3}
   repairSlider: {fileID: 0}
   maxHP: 50

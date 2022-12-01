@@ -6,7 +6,7 @@ public class starfighterHealth : MonoBehaviour
 {
     private bool isFading = false;
     private GameManager gameManager;
-    public AudioSource hitSound;
+    public GameObject hitSoundObject;
 
     [Header("Health Settings")]
     //Public var for the maximum health
@@ -47,7 +47,7 @@ public class starfighterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        hitSound.Play();
+        Instantiate(hitSoundObject, transform.position, transform.rotation);
         UpdateHealthBar();
 
         if (isFading)

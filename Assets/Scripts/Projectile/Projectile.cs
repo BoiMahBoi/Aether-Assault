@@ -5,7 +5,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    [Header("SoundObjects")]
+    public GameObject MotherSound;
+    public GameObject StarSound;
 
     [Header("Projectile Settings")]
     public float speed;
@@ -15,12 +17,14 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
-        Invoke("DeleteProjectile", 5.0f);
-    }
 
-    void DeleteProjectile()
-    {
-        Destroy(gameObject);
+        if(gameObject.name == "StarfighterProjectile")
+        {
+            Instantiate(StarSound, transform.position, transform.rotation);
+        } else
+        {
+            Instantiate(MotherSound, transform.position, transform.rotation);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)

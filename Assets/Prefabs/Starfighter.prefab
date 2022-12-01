@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12105e7dd64df4a4d8f99637b76cd6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSound: {fileID: 616300472}
+  hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
   maxHealth: 200
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -1144,5 +1144,4 @@ MonoBehaviour:
   canShoot: 1
   firePoint: {fileID: 3584853034087161495}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
-  shootSound: {fileID: 2453056521362812693}
   guider: {fileID: 1896813349}

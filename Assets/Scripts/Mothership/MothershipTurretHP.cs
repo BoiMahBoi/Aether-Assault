@@ -15,7 +15,7 @@ public class MothershipTurretHP : MonoBehaviour
     public GameObject cannonPrefab;
     public SpriteRenderer cannonSprite;
     public int cannonNumber;
-    public AudioSource hitSound;
+    public GameObject hitSoundObject;
     public GameObject explosionParticles;
 
     [Header("Repair bar slider refference")]
@@ -52,7 +52,7 @@ public class MothershipTurretHP : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        hitSound.Play();
+        Instantiate(hitSoundObject, transform.position, transform.rotation);
         currentHP -= damage;
         UpdateHealthBar();
 

@@ -14,15 +14,11 @@ public class MothershipTurretShoot : MonoBehaviour
     public MothershipCannonManager cannonManager;
     public GameObject firePoint;
     public GameObject projectilePrefab;
-    public AudioSource shootingSound;
     public GameObject indicatorSprite;
-    private GameManager gameManager;
-
 
     private void Start()
     {
         cannonManager.isShooting = true;
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -50,8 +46,8 @@ public class MothershipTurretShoot : MonoBehaviour
     IEnumerator Fire()
     {
         canShoot = false;
-        shootingSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
+        projectile.name = "MothershipProjectile";
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
     }

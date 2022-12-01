@@ -11,7 +11,6 @@ public class StarfighterTurretShoot : MonoBehaviour
     [Header("Object References")]
     public GameObject firePoint;
     public GameObject projectilePrefab;
-    public AudioSource shootSound;
     public LineGuider guider;
     private GameManager gameManager;
 
@@ -35,7 +34,6 @@ public class StarfighterTurretShoot : MonoBehaviour
     IEnumerator Fire()
     {
         canShoot = false;
-        shootSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, firePoint.transform.position, transform.rotation);
         projectile.name = "StarfighterProjectile";
         yield return new WaitForSeconds(reloadTime);
