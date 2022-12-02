@@ -24,6 +24,7 @@ public class RepairKitCollectionManager : MonoBehaviour
     public GameObject inhabitantRescueManager;
     public GameObject inhabitantLogoBlue;
     public GameObject inhabitantLogoRed;
+    public AudioSource beamSound;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class RepairKitCollectionManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRepairing = true;
+            beamSound.Play();
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
         }
     }
@@ -59,6 +61,7 @@ public class RepairKitCollectionManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRepairing = false;
+            beamSound.Stop();
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
 
             repairZoneTimer = repairZoneTime;

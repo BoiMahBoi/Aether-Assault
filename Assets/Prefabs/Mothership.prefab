@@ -393,6 +393,7 @@ MonoBehaviour:
   firePoint: {fileID: 9061446472538374323}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
   indicatorSprite: {fileID: 5507799767810846017}
+  guider: {fileID: 8349815086520321562}
 --- !u!58 &8394548716938222709
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1414,7 +1415,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 75
-  m_LinearDrag: 0.2
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1465,7 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c73e7c4f3c94c4e8acc21c7aea73e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 300
+  moveSpeed: 700
   thrusterSound: {fileID: 616949122290043639}
   cannonManager: {fileID: 5426410325101145957}
   rb: {fileID: 5451782020327103300}
@@ -1601,6 +1602,7 @@ MonoBehaviour:
   firePoint: {fileID: 6419113485895153}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
   indicatorSprite: {fileID: 7793743460084616333}
+  guider: {fileID: 8349815086520321562}
 --- !u!58 &5752916926762112026
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2019,6 +2021,7 @@ MonoBehaviour:
   firePoint: {fileID: 3466860069449552954}
   projectilePrefab: {fileID: 7153415273550923046, guid: 6e9ace504f3cebf4e93bae1b6a2988f0, type: 3}
   indicatorSprite: {fileID: 4670962703670714546}
+  guider: {fileID: 8349815086520321562}
 --- !u!58 &2454888278449770761
 CircleCollider2D:
   m_ObjectHideFlags: 0

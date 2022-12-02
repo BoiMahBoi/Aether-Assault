@@ -22,6 +22,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject inhabitantPrefab;
     public GameObject repairKitCollectionManager;
     public Slider rescueSlider;
+    public AudioSource beamSound;
 
     [Header("Rescue Win")]
     public int rescueCount;
@@ -51,6 +52,7 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter")) 
         {
             isRescuing = true;
+            beamSound.Play();
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag * 10;
         }
     }
@@ -60,6 +62,7 @@ public class InhabitantRescueManager : MonoBehaviour
         if (collider.gameObject.name == ("Starfighter"))
         {
             isRescuing = false;
+            beamSound.Stop();
             starFighter.GetComponent<Rigidbody2D>().drag = starFighter.GetComponent<Rigidbody2D>().drag / 10;
 
             rescueZoneTimer = rescueZoneTime;

@@ -15,6 +15,7 @@ public class MothershipTurretShoot : MonoBehaviour
     public GameObject firePoint;
     public GameObject projectilePrefab;
     public GameObject indicatorSprite;
+    public LineGuider guider;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class MothershipTurretShoot : MonoBehaviour
 
     void Update()
     {
-        if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon)
+        if (cannonManager.isShooting && cannonNumber == cannonManager.activeCannon && !guider.outOfGame)
         {
             if(!indicatorActive)
             {
