@@ -64,8 +64,9 @@ public class InhabitantRescueManager : MonoBehaviour
 
             rescueZoneTimer = rescueZoneTime;
             inhabitantRescueTimer = inhabitantRescueTime;
-            repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairZoneTimer = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairZoneTime;
-            repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairKitTimer = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairKitTime;
+            var _repairZoneManager = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>();
+            _repairZoneManager.repairZoneTimer = _repairZoneManager.repairZoneTime;
+            _repairZoneManager.repairKitTimer = _repairZoneManager.repairKitTime;
 
             isRescueZoneActive = false;
             rescueZone.transform.gameObject.SetActive(false);
@@ -123,8 +124,9 @@ public class InhabitantRescueManager : MonoBehaviour
 
                 rescueZoneTimer = rescueZoneTime;
                 inhabitantRescueTimer = inhabitantRescueTime;
-                repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairZoneTimer = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairZoneTime;
-                repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairKitTimer = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>().repairKitTime;
+                var _repairZoneManager = repairZoneManager.transform.gameObject.GetComponent<RepairKitCollectionManager>();
+                _repairZoneManager.repairZoneTimer = _repairZoneManager.repairZoneTime;
+                _repairZoneManager.repairKitTimer = _repairZoneManager.repairKitTime;
 
                 isRescueZoneActive = false;
                 rescueZone.transform.gameObject.SetActive(false);
