@@ -5,6 +5,7 @@ using UnityEngine;
 public class RepairKitMovement : MonoBehaviour
 {
     [Header("RepairKit Settings")]
+    public int repairAmount;
     public float moveSpeed;
     public float maxCollectionDistance;
     public float minCollectionDistance;
@@ -31,8 +32,7 @@ public class RepairKitMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, starFighter.transform.position) < minCollectionDistance) // if inhabitant is within x unit
             {
                 Debug.Log("RepairKit was collected");
-                starFighter.transform.gameObject.GetComponent<starfighterHealth>().currentHealth += 10;
-                starFighter.transform.gameObject.GetComponent<starfighterHealth>().UpdateHealthBar();
+                starFighter.transform.gameObject.GetComponent<starfighterHealth>().RepairDamage(repairAmount);
                 Destroy(gameObject);
             }
         }

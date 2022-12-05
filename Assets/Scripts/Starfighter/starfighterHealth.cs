@@ -61,6 +61,19 @@ public class starfighterHealth : MonoBehaviour
         }
         StartCoroutine(BlinkWhite(0.75f, 0.5f));
     }
+
+    public void RepairDamage(int repairAmount)
+    {
+        currentHealth += repairAmount;
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        UpdateHealthBar();
+    }
+
     public IEnumerator BlinkWhite(float endValue, float duration)
     {
         isFading = true;

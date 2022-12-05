@@ -9,9 +9,9 @@ public class RepairKitCollectionManager : MonoBehaviour
 
     [Header("Repair-System Settings")]
     public float repairZoneTime;
-    private float repairZoneTimer;
+    public float repairZoneTimer;
     public float repairKitTime;
-    private float repairKitTimer;
+    public float repairKitTimer;
     public bool isRepairZoneActive;
     public bool isRepairing;
     public float planetaryRotationRepair;
@@ -19,9 +19,10 @@ public class RepairKitCollectionManager : MonoBehaviour
     [Header("Object References")]
     public GameObject starFighter;
     public GameObject repairZone;
+    public GameObject rescueZone;
+    public GameObject rescueZoneManager;
     public GameObject repairKitSpawner;
     public GameObject repairKitPrefab;
-    public GameObject inhabitantRescueManager;
     public GameObject inhabitantLogoBlue;
     public GameObject inhabitantLogoRed;
     public AudioSource beamSound;
@@ -66,8 +67,15 @@ public class RepairKitCollectionManager : MonoBehaviour
 
             repairZoneTimer = repairZoneTime;
             repairKitTimer = repairKitTime;
+            rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().rescueZoneTimer = rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().rescueZoneTime;
+            rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().inhabitantRescueTimer = rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().inhabitantRescueTime;
+
             isRepairZoneActive = false;
-            repairZone.SetActive(false);
+            repairZone.transform.gameObject.SetActive(false);
+
+            // replace this with a coroutine, switching the logo with the failed logo
+            rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().isRescueZoneActive = false;
+            rescueZone.transform.gameObject.SetActive(false);
         }
     }
 
@@ -83,11 +91,11 @@ public class RepairKitCollectionManager : MonoBehaviour
             {
                 planetaryRotationRepair = Random.Range(0f, 359f);
 
-                if (inhabitantRescueManager.transform.gameObject.GetComponent<InhabitantRescueManager>().isRescueZoneActive)
+                if (rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().isRescueZoneActive)
                 {
-                    float planetaryRotationInhabitant = inhabitantRescueManager.transform.gameObject.GetComponent<InhabitantRescueManager>().planetaryRotationInhabitant;
+                    float planetaryRotationInhabitant = rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().planetaryRotationInhabitant;
 
-                    // ideally I want to write a function that rotates planetaryRotationInhabitant away in the direction it is already in, until its far enough away, but I have 13 minutes to complete this
+                    // ideally I want to write a function that rotates planetaryRotationInhabitant away in the direction it is already in, until its far enough away
 
                     if (Mathf.Abs(planetaryRotationRepair - planetaryRotationInhabitant) < 20)
                     {
@@ -118,12 +126,15 @@ public class RepairKitCollectionManager : MonoBehaviour
 
                 repairZoneTimer = repairZoneTime;
                 repairKitTimer = repairKitTime;
+                rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().rescueZoneTimer = rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().rescueZoneTime;
+                rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().inhabitantRescueTimer = rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().inhabitantRescueTime;
+
                 isRepairZoneActive = false;
-                repairZone.SetActive(false);
+                repairZone.transform.gameObject.SetActive(false);
 
                 // replace this with a coroutine, switching the logo with the failed logo
-                inhabitantRescueManager.transform.GetChild(0).transform.gameObject.SetActive(false);
-                inhabitantRescueManager.transform.gameObject.GetComponent<InhabitantRescueManager>().isRescueZoneActive = false;
+                rescueZoneManager.transform.gameObject.GetComponent<InhabitantRescueManager>().isRescueZoneActive = false;
+                rescueZone.transform.gameObject.SetActive(false);
             }
         }
     }

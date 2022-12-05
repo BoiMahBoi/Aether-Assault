@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f509f5702f5ce4cb864e8aa4cf2b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repairAmount: 75
   moveSpeed: 10
   maxCollectionDistance: 10
   minCollectionDistance: 1

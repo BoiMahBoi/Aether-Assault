@@ -31,7 +31,7 @@ Transform:
   - {fileID: 1135084715}
   - {fileID: 2106651889}
   m_Father: {fileID: 6755444911494866391}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135084714
 GameObject:
@@ -373,6 +373,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &76272491624018688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5800607731560215533}
+  m_Layer: 0
+  m_Name: Planetary Collectible Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5800607731560215533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76272491624018688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4682853222709309896}
+  - {fileID: 2893753095196883630}
+  m_Father: {fileID: 6755444911494866391}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974519393319909582
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +522,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2146228843328472594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4682853222709309896}
+  - component: {fileID: 7255733219048475582}
+  - component: {fileID: 6226539504620207498}
+  m_Layer: 0
+  m_Name: Rescue zone manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4682853222709309896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146228843328472594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3110692466633067684}
+  m_Father: {fileID: 5800607731560215533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7255733219048475582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146228843328472594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8fd82f5e0a05b4d8a358600323aa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rescueZoneTime: 5
+  rescueZoneTimer: 0
+  inhabitantRescueTime: 2
+  inhabitantRescueTimer: 0
+  isRescueZoneActive: 0
+  isRescuing: 0
+  planetaryRotationInhabitant: 0
+  starFighter: {fileID: 0}
+  rescueZone: {fileID: 6818116705869427452}
+  repairZone: {fileID: 2209849473376195874}
+  repairZoneManager: {fileID: 8975435814586420876}
+  inhabitantSpawner: {fileID: 5350508677786334795}
+  inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
+  rescueSlider: {fileID: 0}
+  beamSound: {fileID: 2106651890}
+  rescueCount: 0
+  maxRescueCount: 10
+  fleeTime: 5
+--- !u!50 &6226539504620207498
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146228843328472594}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2209849473376195874
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,14 +631,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209849473376195874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 34, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4075517650496635378}
   - {fileID: 6407712732845129337}
-  m_Father: {fileID: 3184631476996658417}
+  m_Father: {fileID: 2893753095196883630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &7088681890638856948
@@ -572,88 +690,6 @@ Transform:
   m_Father: {fileID: 3110692466633067684}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4621366901792271380
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3155579539632368688}
-  - component: {fileID: 257819372032449264}
-  - component: {fileID: 3167238694134076717}
-  m_Layer: 0
-  m_Name: Rescue zone manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3155579539632368688
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621366901792271380}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3110692466633067684}
-  m_Father: {fileID: 6755444911494866391}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &257819372032449264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621366901792271380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8fd82f5e0a05b4d8a358600323aa0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rescueZoneTime: 10
-  inhabitantRescueTime: 2
-  isRescueZoneActive: 0
-  isRescuing: 0
-  planetaryRotationInhabitant: 0
-  starFighter: {fileID: 0}
-  rescueZone: {fileID: 6818116705869427452}
-  inhabitantSpawner: {fileID: 5350508677786334795}
-  inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
-  repairKitCollectionManager: {fileID: 9054620764152367087}
-  rescueSlider: {fileID: 0}
-  beamSound: {fileID: 2106651890}
-  rescueCount: 0
-  maxRescueCount: 10
-  fleeTime: 5
---- !u!50 &3167238694134076717
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621366901792271380}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5350508677786334795
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6755444911494866391}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &6755444911072943400
 CircleCollider2D:
@@ -947,7 +983,7 @@ Transform:
   - {fileID: 6755444910534226316}
   - {fileID: 1379474668}
   m_Father: {fileID: 6755444911494866391}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6755444911494865961
 GameObject:
@@ -978,8 +1014,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3155579539632368688}
-  - {fileID: 3184631476996658417}
+  - {fileID: 5800607731560215533}
   - {fileID: 6755444911072943401}
   - {fileID: 6755444911081922194}
   - {fileID: 199790590}
@@ -1026,14 +1061,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6818116705869427452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 34, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1578950726295356150}
   - {fileID: 7728544019167206394}
-  m_Father: {fileID: 3155579539632368688}
+  m_Father: {fileID: 4682853222709309896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2241426729906807729
@@ -1167,7 +1202,7 @@ Transform:
   m_Father: {fileID: 808281814693117044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9054620764152367087
+--- !u!1 &8975435814586420876
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1175,66 +1210,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3184631476996658417}
-  - component: {fileID: 6983995453887680887}
-  - component: {fileID: 8604099077119011527}
+  - component: {fileID: 2893753095196883630}
+  - component: {fileID: 8096586651450982439}
+  - component: {fileID: 7671282282115907838}
   m_Layer: 0
-  m_Name: Medkit zone manager
+  m_Name: Repairkit zone manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3184631476996658417
+--- !u!4 &2893753095196883630
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9054620764152367087}
+  m_GameObject: {fileID: 8975435814586420876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 808281814693117044}
-  m_Father: {fileID: 6755444911494866391}
+  m_Father: {fileID: 5800607731560215533}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6983995453887680887
+--- !u!114 &8096586651450982439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9054620764152367087}
+  m_GameObject: {fileID: 8975435814586420876}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11ed94bcbd4a84d41a01405ad7183ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnablePlanetaryRepairkitCollection: 1
-  repairZoneTime: 10
+  repairZoneTime: 5
+  repairZoneTimer: 0
   repairKitTime: 2
+  repairKitTimer: 0
   isRepairZoneActive: 0
   isRepairing: 0
   planetaryRotationRepair: 0
   starFighter: {fileID: 0}
   repairZone: {fileID: 2209849473376195874}
+  rescueZone: {fileID: 6818116705869427452}
+  rescueZoneManager: {fileID: 2146228843328472594}
   repairKitSpawner: {fileID: 8540616529890892931}
   repairKitPrefab: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
-  inhabitantRescueManager: {fileID: 4621366901792271380}
   inhabitantLogoBlue: {fileID: 0}
   inhabitantLogoRed: {fileID: 0}
   beamSound: {fileID: 2106651890}
---- !u!50 &8604099077119011527
+--- !u!50 &7671282282115907838
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9054620764152367087}
+  m_GameObject: {fileID: 8975435814586420876}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
