@@ -1241,6 +1241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasShield: 1
+  startAlpha: 0
   shieldSprite: {fileID: 6294302584153800751}
   shieldSound: {fileID: 1891920451}
 --- !u!1 &4298034460584776963
@@ -1495,6 +1497,7 @@ MonoBehaviour:
   - {fileID: 7856135592417418872}
   playerSprite: {fileID: 4298034460584776966}
   hitSoundObject: {fileID: 2781856371529311875, guid: 1d06a3da835e9154cb086d28de90d12b, type: 3}
+  playerExplosion: {fileID: 757782324032853767, guid: 7ff337d8aaddb8744ab20f268e51cda7, type: 3}
   healthBar: {fileID: 0}
   currentHP: 0
 --- !u!114 &534663103

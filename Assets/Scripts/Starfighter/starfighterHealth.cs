@@ -7,6 +7,7 @@ public class starfighterHealth : MonoBehaviour
     private bool isFading = false;
     private GameManager gameManager;
     public GameObject hitSoundObject;
+    private bool gameOver = false;
 
     [Header("Health Settings")]
     //Public var for the maximum health
@@ -18,6 +19,7 @@ public class starfighterHealth : MonoBehaviour
     [Header("Object References")]
     public HealthBar healthBar;
     public SpriteRenderer playerSprite;
+    public GameObject playerExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,12 @@ public class starfighterHealth : MonoBehaviour
         //Updating the HealthBar, so that is relates to current health
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !gameOver)
         {
+            gameOver = true;
             //Spawn explosion here
             Debug.Log("Mothership wins!");
-            gameManager.GameOver("Mothership");
+            gameManager.endGameBuffer("Starfighter");
         }
     }
 

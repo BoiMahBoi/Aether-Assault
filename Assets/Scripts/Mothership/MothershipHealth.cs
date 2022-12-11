@@ -9,6 +9,8 @@ public class MothershipHealth : MonoBehaviour
     public GameObject[] healthSections = new GameObject[6];
     public SpriteRenderer playerSprite;
     public GameObject hitSoundObject;
+    private bool gameOver = false;
+    public GameObject playerExplosion;
 
     private bool isFading = false;
 
@@ -55,11 +57,12 @@ public class MothershipHealth : MonoBehaviour
         currentHP++;
         bool isAlive = hasHealthLeft();
 
-        if (!isAlive)
+        if (!isAlive && !gameOver)
         {
+            gameOver = true;
             //Spawn explosion here
             Debug.Log("The Starfighter won!");
-            gameManager.GameOver("Starfighter");
+            gameManager.endGameBuffer("Mothership");
         }
         if (isFading)
         {

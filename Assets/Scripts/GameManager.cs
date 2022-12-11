@@ -12,6 +12,18 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public TextMeshProUGUI gameOverText;
 
+    public GameObject Mothership;
+    public GameObject Starfighter;
+    public GameObject Planet;
+    public GameObject BeamOfDeath;
+
+    public GameObject MothershipExplosion;
+    public GameObject StarfighterExplosion;
+
+    [Header("Animations")]
+    public GameObject planetExplosion;
+    public Animator cameraAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,4 +74,48 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+
+    public void endGameBuffer(string deadPlayer)
+    {
+        StartCoroutine(EndGameWithABang(deadPlayer));
+    }
+
+    public void endGameWithBoomieHaha()
+    {
+        StartCoroutine(EndGameWithABiggerBang());
+    }
+
+    public IEnumerator EndGameWithABang(string deadPlayer)
+    {
+        string tmp;
+        Debug.Log("Gameover");
+        
+        if(deadPlayer == "Starfighter")
+        {
+            tmp = "Mothership";
+            Instantiate(StarfighterExplosion, Starfighter.transform.position, Starfighter.transform.localRotation);
+            Starfighter.SetActive(false);
+        } else
+        {
+            tmp = "Starfighter";
+            Instantiate(MothershipExplosion, Mothership.transform.position, Mothership.transform.localRotation);
+            Mothership.SetActive(false);
+        }
+        yield return new WaitForSeconds(1);
+        GameOver(tmp);
+    }
+
+    public IEnumerator EndGameWithABiggerBang()
+    {
+        cameraAnim.SetTrigger("PlanetBoom");
+        yield return new WaitForSeconds(1);
+        Planet.SetActive(false);
+        Instantiate(planetExplosion, transform.position, transform.localRotation);
+
+        yield return new WaitForSeconds(2);
+        GameOver("Mothership");
+    }
+
+
 }

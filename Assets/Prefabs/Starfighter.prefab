@@ -1080,6 +1080,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   playerSprite: {fileID: 4302382927785466213}
+  playerExplosion: {fileID: 4778397991125398687, guid: d1a25b9140881884a92daa19208cc674, type: 3}
 --- !u!114 &2080314709
 MonoBehaviour:
   m_ObjectHideFlags: 0

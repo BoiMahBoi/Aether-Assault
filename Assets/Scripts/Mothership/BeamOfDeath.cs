@@ -21,6 +21,8 @@ public class BeamOfDeath : MonoBehaviour
     [Header("Slider")]
     [Tooltip("Assign the slider here")]
     public Slider slider;
+    public GameObject controlTip;
+    public GameObject beamOfDeathObject;
 
     private void Start()
     {
@@ -45,6 +47,7 @@ public class BeamOfDeath : MonoBehaviour
                 if (count >= maxCharge)
                 {
                     beamCharged = true;
+                    controlTip.SetActive(true);
                 }
             }
             slider.value = count;
@@ -73,8 +76,10 @@ public class BeamOfDeath : MonoBehaviour
         yield return new WaitForSeconds(fireTime);
         Debug.Log("The Mothership destroyed the planet!");
         //Put effects here. before game ends input explosion.
+        beamOfDeathObject.SetActive(true);
         isFiring = false;
-        gameManager.GameOver("Mothership");
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver("Mothership");
+        gameManager.endGameWithBoomieHaha();
+        yield return new WaitForSeconds(1);
+        beamOfDeathObject.SetActive(false);
     }
 }

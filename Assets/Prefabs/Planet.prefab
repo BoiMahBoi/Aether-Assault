@@ -950,6 +950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676c9629b108a91459ba234a164b72f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasShield: 1
+  startAlpha: 0
   shieldSprite: {fileID: 1379474669}
   shieldSound: {fileID: 1135084716}
 --- !u!1 &6755444911081922195
