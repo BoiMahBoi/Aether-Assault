@@ -14,7 +14,6 @@ public class StarfighterMovement : MonoBehaviour
     public AudioSource thrusterSound;
     private GameManager gameManager;
 
-    
 
     // Start is called before the first frame update
     void Start()

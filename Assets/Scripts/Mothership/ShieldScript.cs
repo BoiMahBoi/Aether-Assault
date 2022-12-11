@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ShieldScript: MonoBehaviour
 {
+    public bool hasShield;
+    public float startAlpha;
+
     [Header("Object References")]
     public SpriteRenderer shieldSprite;
     public AudioSource shieldSound;
@@ -14,7 +17,7 @@ public class ShieldScript: MonoBehaviour
     {
         isFading = false;
         Color tmp = shieldSprite.color;
-        tmp.a = 0.0f;
+        tmp.a = startAlpha;
         shieldSprite.color = tmp;
     }
 
@@ -26,7 +29,11 @@ public class ShieldScript: MonoBehaviour
             tmp.a = 0.0f;
             shieldSprite.color = tmp;
         }
-        shieldSound.Play();
+        if (hasShield)
+        {
+            shieldSound.Play();
+        }
+
         StartCoroutine(ShieldFade(0.0f, 1));
     }
 
