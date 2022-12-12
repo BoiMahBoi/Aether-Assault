@@ -13,9 +13,13 @@ public class InhabitantRescueManager : MonoBehaviour
     public bool isRescueZoneActive;
     public bool isRescuing;
     public float planetaryRotationInhabitant;
+    private bool hasRescuedEveryone = false;
+    private bool isPoweringUp = false;
 
     [Header("Object References")]
+    private GameManager gameManager;
     public GameObject starFighter;
+    public GameObject warpEffect;
     public GameObject rescueZone;
     public GameObject repairZone;
     public GameObject repairZoneManager;
@@ -23,6 +27,7 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject inhabitantPrefab;
     public Slider rescueSlider;
     public AudioSource beamSound;
+    //public GameObject controlTip;
 
     [Header("Rescue Win")]
     public int rescueCount;
@@ -31,6 +36,7 @@ public class InhabitantRescueManager : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         starFighter = GameObject.Find("Starfighter");
 
         rescueSlider.maxValue = maxRescueCount;
@@ -42,6 +48,17 @@ public class InhabitantRescueManager : MonoBehaviour
     {
         RescueZoneSpawner();
         InhabitantSpawner();
+
+        if (Input.GetKeyDown(KeyCode.RightControl) && hasRescuedEveryone && !gameManager.gamePaused)
+        {
+            StartCoroutine(PowerUpFlee());
+        }
+        if (Input.GetKeyUp(KeyCode.RightControl) && isPoweringUp && !gameManager.gamePaused)
+        {
+            Debug.Log("Stopped trying to flee...");
+            StopAllCoroutines();
+            isPoweringUp = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -145,11 +162,28 @@ public class InhabitantRescueManager : MonoBehaviour
 
         if (rescueCount >= maxRescueCount)
         {
-            StartCoroutine("Fleeing");
+            rescueCount = maxRescueCount;
+            hasRescuedEveryone = true;
+            //controlTip.SetActive(true);
         }
     }
 
-    IEnumerator Fleeing()
+    public IEnumerator PowerUpFlee()
+    {
+        isPoweringUp = true;
+        Debug.Log("Preparing to flee!");
+        yield return new WaitForSeconds(fleeTime);
+        Debug.Log("The Starfighter rescued everyone!");
+        //Put effects here. before game ends input explosion.
+        starFighter.GetComponent<PolygonCollider2D>().enabled = false;
+        starFighter.GetComponent<StarfighterMovement>().enabled = false;
+        warpEffect.SetActive(true);
+        starFighter.GetComponent<Rigidbody2D>().AddForce(starFighter.transform.up * 1000);
+        isPoweringUp = false;
+        yield return new WaitForSeconds(1);
+        gameManager.GameOver("Starfighter");
+    }
+    /*IEnumerator Fleeing()
     {
         yield return new WaitForSeconds(fleeTime);
         RescueWin();
@@ -158,5 +192,5 @@ public class InhabitantRescueManager : MonoBehaviour
     void RescueWin()
     {
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver("Starfighter");
-    }
+    }*/
 }
