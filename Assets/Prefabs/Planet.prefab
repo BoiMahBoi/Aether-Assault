@@ -576,6 +576,7 @@ MonoBehaviour:
   isRescuing: 0
   planetaryRotationInhabitant: 0
   starFighter: {fileID: 0}
+  warpEffect: {fileID: 0}
   rescueZone: {fileID: 6818116705869427452}
   repairZone: {fileID: 2209849473376195874}
   repairZoneManager: {fileID: 8975435814586420876}
@@ -585,7 +586,7 @@ MonoBehaviour:
   beamSound: {fileID: 2106651890}
   rescueCount: 0
   maxRescueCount: 10
-  fleeTime: 5
+  fleeTime: 3
 --- !u!50 &6226539504620207498
 Rigidbody2D:
   serializedVersion: 4
