@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
             Instantiate(MothershipExplosion, Mothership.transform.position, Mothership.transform.localRotation);
             Mothership.SetActive(false);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         GameOver(tmp);
     }
 
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         Planet.SetActive(false);
         Instantiate(planetExplosion, transform.position, transform.localRotation);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.8f);
         GameOver("Mothership");
     }
 
