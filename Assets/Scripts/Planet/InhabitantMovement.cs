@@ -21,6 +21,7 @@ public class InhabitantMovement : MonoBehaviour
             {
                 Debug.Log("Inhabitant is being rescued");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime); // move inhabitant towards starfighter
+                transform.LookAt(starFighter.transform);
             }
             else // if inhabitant is NOT within x units
             {
