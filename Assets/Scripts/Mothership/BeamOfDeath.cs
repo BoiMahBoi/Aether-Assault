@@ -21,8 +21,11 @@ public class BeamOfDeath : MonoBehaviour
     [Header("Slider")]
     [Tooltip("Assign the slider here")]
     public Slider slider;
+
+    [Header("Object references")]
     public GameObject controlTip;
     public GameObject beamOfDeathObject;
+    public AudioSource chargeSound;
 
     private void Start()
     {
@@ -63,7 +66,7 @@ public class BeamOfDeath : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space) && isFiring && !gameManager.gamePaused)
         {
-            Debug.Log("Stopped charging the beam...");
+            chargeSound.Stop();
             StopAllCoroutines();
             isFiring = false;
         }
@@ -72,9 +75,9 @@ public class BeamOfDeath : MonoBehaviour
     public IEnumerator FireBeam()
     {
         isFiring = true;
-        Debug.Log("Preparing the beam!");
+        chargeSound.Play();
         yield return new WaitForSeconds(fireTime);
-        Debug.Log("The Mothership destroyed the planet!");
+        chargeSound.Stop();
         //Put effects here. before game ends input explosion.
         beamOfDeathObject.SetActive(true);
         isFiring = false;

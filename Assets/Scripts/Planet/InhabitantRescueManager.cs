@@ -27,6 +27,8 @@ public class InhabitantRescueManager : MonoBehaviour
     public GameObject inhabitantPrefab;
     public Slider rescueSlider;
     public AudioSource beamSound;
+    public AudioSource chargeSound;
+    public AudioSource fleeSound;
     //public GameObject controlTip;
 
     [Header("Rescue Win")]
@@ -55,7 +57,7 @@ public class InhabitantRescueManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.RightControl) && isPoweringUp && !gameManager.gamePaused)
         {
-            Debug.Log("Stopped trying to flee...");
+            chargeSound.Stop();
             StopAllCoroutines();
             isPoweringUp = false;
         }
@@ -171,26 +173,18 @@ public class InhabitantRescueManager : MonoBehaviour
     public IEnumerator PowerUpFlee()
     {
         isPoweringUp = true;
-        Debug.Log("Preparing to flee!");
+        chargeSound.Play();
         yield return new WaitForSeconds(fleeTime);
-        Debug.Log("The Starfighter rescued everyone!");
+        chargeSound.Stop();
+        fleeSound.Play();
         //Put effects here. before game ends input explosion.
         starFighter.GetComponent<PolygonCollider2D>().enabled = false;
         starFighter.GetComponent<StarfighterMovement>().enabled = false;
+        starFighter.GetComponent<ShieldBounce>().enabled = false;
         warpEffect.SetActive(true);
         starFighter.GetComponent<Rigidbody2D>().AddForce(starFighter.transform.up * 1000);
         isPoweringUp = false;
         yield return new WaitForSeconds(1);
         gameManager.GameOver("Starfighter");
     }
-    /*IEnumerator Fleeing()
-    {
-        yield return new WaitForSeconds(fleeTime);
-        RescueWin();
-    }
-
-    void RescueWin()
-    {
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().GameOver("Starfighter");
-    }*/
 }

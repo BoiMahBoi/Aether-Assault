@@ -19,19 +19,16 @@ public class RepairKitMovement : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, starFighter.transform.position) < maxCollectionDistance) // if inhabitant is within x units
             {
-                Debug.Log("RepairKit is being collected");
                 transform.position = Vector3.MoveTowards(transform.position, starFighter.transform.position, moveSpeed * Time.deltaTime);
                 transform.LookAt(starFighter.transform);
             }
             else // if inhabitant is NOT within x units
             {
-                Debug.Log("RepairKit was lost");
                 Destroy(gameObject);
             }
 
             if (Vector3.Distance(transform.position, starFighter.transform.position) < minCollectionDistance) // if inhabitant is within x unit
             {
-                Debug.Log("RepairKit was collected");
                 starFighter.transform.gameObject.GetComponent<starfighterHealth>().RepairDamage(repairAmount);
                 Destroy(gameObject);
             }
