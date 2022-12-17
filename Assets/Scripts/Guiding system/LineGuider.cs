@@ -33,7 +33,7 @@ public class LineGuider : MonoBehaviour
             //we draw a line from position 1, which is our planet 
             lineRenderer.SetPosition(0, planet.transform.position);
             //to our player
-            lineRenderer.SetPosition(1, gameObject.transform.position);
+            lineRenderer.SetPosition(1, transform.position);
         }
     }
 

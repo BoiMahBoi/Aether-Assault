@@ -758,7 +758,10 @@ MonoBehaviour:
   repairZoneManager: {fileID: 8975435814586420876}
   inhabitantSpawner: {fileID: 5350508677786334795}
   inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
+  RescueLogo: {fileID: 0}
+  RepairLogo: {fileID: 0}
   failedRescueLogo: {fileID: 0}
+  failedRepairLogo: {fileID: 0}
   rescueSlider: {fileID: 0}
   beamSound: {fileID: 2106651890}
   chargeSound: {fileID: 1977368788}
@@ -1426,7 +1429,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e63c036b32748bf4a94a98ec474b1a8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb9184d424dc31549bad088314f9b809, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1529,8 +1532,10 @@ MonoBehaviour:
   rescueZoneManager: {fileID: 2146228843328472594}
   repairKitSpawner: {fileID: 8540616529890892931}
   repairKitPrefab: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
-  inhabitantLogoBlue: {fileID: 0}
-  inhabitantLogoRed: {fileID: 0}
+  RepairLogo: {fileID: 0}
+  RescueLogo: {fileID: 0}
+  failedRepairLogo: {fileID: 0}
+  failedRescueLogo: {fileID: 0}
   beamSound: {fileID: 2106651890}
 --- !u!50 &7671282282115907838
 Rigidbody2D:
