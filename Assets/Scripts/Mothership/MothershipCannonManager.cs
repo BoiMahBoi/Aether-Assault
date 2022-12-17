@@ -5,18 +5,16 @@ using UnityEngine;
 public class MothershipCannonManager : MonoBehaviour
 {
     private GameManager gameManager;
+    
     [HideInInspector]
     public float rotateDirection;
 
     [Header("Mothership State")]
     public bool isShooting;
 
-    [Header("Current Cannon")]
-    public int activeCannon;
-
     [Header("Cannons")]
+    public int activeCannon;
     public GameObject[] cannons;
-    //public GameObject[] FunctionalCannons;
 
     private void Start()
     {
