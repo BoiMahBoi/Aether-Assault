@@ -9,9 +9,14 @@ public class Projectile : MonoBehaviour
     public GameObject MotherSound;
     public GameObject StarSound;
 
+    [Header("Projectile Particles")]
+    public GameObject projectileExplosion;
+
     [Header("Projectile Settings")]
     public float speed;
     public int damage;
+
+
 
     void Start()
     {
@@ -33,6 +38,7 @@ public class Projectile : MonoBehaviour
         {
             Destroy(collider.gameObject);
             Destroy(gameObject);
+            Instantiate(projectileExplosion, transform.position, transform.rotation);
         }
         else if (collider.gameObject.CompareTag("Enemy"))
         {
@@ -83,6 +89,9 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
 }

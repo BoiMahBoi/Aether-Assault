@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MotherSound: {fileID: 5929210615849246514, guid: d33b2358706b52f43a8e29e5e381edce, type: 3}
   StarSound: {fileID: 2526497430334061739, guid: da1bf2bd2364f9b4b9f5d59bcb894d2f, type: 3}
+  projectileExplosion: {fileID: 2256163503306546491, guid: 20660045d72e5764e92eaf5072314d55, type: 3}
   speed: 25
   damage: 10
 --- !u!70 &3917915536682991947
