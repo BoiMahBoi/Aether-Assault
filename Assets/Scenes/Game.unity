@@ -5663,7 +5663,7 @@ PrefabInstance:
       objectReference: {fileID: 1694206116}
     - target: {fileID: 7255733219048475582, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: zoneTimerOffsetRNG
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7350225426462928489, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_IsActive
@@ -5687,7 +5687,7 @@ PrefabInstance:
       objectReference: {fileID: 1694206116}
     - target: {fileID: 8096586651450982439, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: zoneTimerOffsetRNG
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8349820945755641197, guid: 6b503c795245c3a4881d53815fe9b9c7, type: 3}
       propertyPath: m_IsActive
