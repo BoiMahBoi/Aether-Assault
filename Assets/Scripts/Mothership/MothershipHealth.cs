@@ -61,7 +61,6 @@ public class MothershipHealth : MonoBehaviour
         {
             gameOver = true;
             //Spawn explosion here
-            Debug.Log("The Starfighter won!");
             gameManager.endGameBuffer("Mothership");
         }
         if (isFading)

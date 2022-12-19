@@ -46,12 +46,10 @@ public class Projectile : MonoBehaviour
             {
                 if(collider.gameObject.GetComponent<MothershipHealth>().hasWorkingTurrets())
                 {
-                    Debug.Log("Mothership still has working turrets!");
                     collider.gameObject.GetComponentInChildren<ShieldScript>().HitShield();
 
                 } else
                 {
-                    Debug.Log("You damaged the mothership!");
                     collider.gameObject.GetComponent<MothershipHealth>().TakeDamage(damage);
                 }
                 
@@ -59,25 +57,21 @@ public class Projectile : MonoBehaviour
             } 
             else if (collider.gameObject.name == "Starfighter" && gameObject.name != "StarfighterProjectile")
             {
-                Debug.Log("You damaged the Starfighter!");
                 collider.gameObject.GetComponent<starfighterHealth>().TakeDamage(damage);
                 Destroy(gameObject);
             }
             else if (collider.gameObject.name == "MothershipCannon")
             {
-                Debug.Log("A Mothership cannon was hit!");
                 collider.transform.parent.gameObject.GetComponent<MothershipTurretHP>().TakeDamage(damage);
                 Destroy(gameObject);
             }
         } 
         else if (collider.gameObject.CompareTag("Asteroid"))
         {
-            Debug.Log("An asteroid was hit!");
             collider.gameObject.GetComponent<Asteroids>().AsteroidGotShot();
             Destroy(gameObject);
         }
         else if (collider.gameObject.CompareTag("RescueZone")) {
-            Debug.Log("The Planet was hit!");
             collider.gameObject.GetComponent<ShieldScript>().HitShield();
             Destroy(gameObject);
         }

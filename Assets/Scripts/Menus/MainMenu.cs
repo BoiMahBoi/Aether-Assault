@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject creditsMenu;
 
+    private void Start()
+    {
+        Screen.fullScreen = true;
+    }
+
     public void playGame()
     {
         SceneManager.LoadScene("Game");
@@ -31,21 +36,23 @@ public class MainMenu : MonoBehaviour
     {
         if(optionsMenu.activeSelf)
         {
-            Debug.Log("Going back to the Main Menu from the Options Menu");
             optionsMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
         else if (howToMenu.activeSelf)
         {
-            Debug.Log("Going back to the Main Menu from the How To Play Menu");
             howToMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
         else if (creditsMenu.activeSelf)
         {
-            Debug.Log("Going back to the Main Menu from the credits menu");
             creditsMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
+    }
+
+    public void ToggleFullscreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
     }
 }

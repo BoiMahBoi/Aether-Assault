@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
     public IEnumerator EndGameWithABang(string deadPlayer)
     {
         string tmp;
-        Debug.Log("Gameover");
         
         if(deadPlayer == "Starfighter")
         {

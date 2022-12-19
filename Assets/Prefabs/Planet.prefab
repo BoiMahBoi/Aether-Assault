@@ -692,8 +692,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2391631999209670276}
   - {fileID: 800294861598480387}
+  - {fileID: 2391631999209670276}
   m_Father: {fileID: 808281814693117044}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -747,7 +747,7 @@ MonoBehaviour:
   inhabitantRescueTime: 2
   rescueZoneTimer: 0
   inhabitantRescueTimer: 0
-  zoneTimerOffsetRNG: 0
+  zoneTimerOffsetRNG: 1
   isRescueZoneActive: 0
   isRescuing: 0
   planetaryRotationInhabitant: 0
@@ -758,10 +758,10 @@ MonoBehaviour:
   repairZoneManager: {fileID: 8975435814586420876}
   inhabitantSpawner: {fileID: 5350508677786334795}
   inhabitantPrefab: {fileID: 680041690482599045, guid: 350337ced85a3534196500394c7f0aed, type: 3}
-  RescueLogo: {fileID: 0}
-  RepairLogo: {fileID: 0}
-  failedRescueLogo: {fileID: 0}
-  failedRepairLogo: {fileID: 0}
+  RescueLogo: {fileID: 1487313869012023202}
+  RepairLogo: {fileID: 5999036904210634601}
+  failedRescueLogo: {fileID: 7350225426462928489}
+  failedRepairLogo: {fileID: 8349820945755641197}
   rescueSlider: {fileID: 0}
   beamSound: {fileID: 2106651890}
   chargeSound: {fileID: 1977368788}
@@ -888,7 +888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1578950726295356150
 Transform:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6407712732845129337}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7553250175952330536
 SpriteRenderer:
@@ -1297,7 +1297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7350225426462928489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0.115, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1386,7 +1386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6407712732845129337}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3846528090018033111
 SpriteRenderer:
@@ -1496,8 +1496,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8975435814586420876}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   repairKitTime: 2
   repairZoneTimer: 0
   repairKitTimer: 0
-  zoneTimerOffsetRNG: 0
+  zoneTimerOffsetRNG: 1
   isRepairZoneActive: 0
   isRepairing: 0
   planetaryRotationRepair: 0
@@ -1532,10 +1532,10 @@ MonoBehaviour:
   rescueZoneManager: {fileID: 2146228843328472594}
   repairKitSpawner: {fileID: 8540616529890892931}
   repairKitPrefab: {fileID: 4089688437448752883, guid: 6d34ed51eb1858b4885fb995b7c9f89c, type: 3}
-  RepairLogo: {fileID: 0}
-  RescueLogo: {fileID: 0}
-  failedRepairLogo: {fileID: 0}
-  failedRescueLogo: {fileID: 0}
+  RepairLogo: {fileID: 5999036904210634601}
+  RescueLogo: {fileID: 1487313869012023202}
+  failedRepairLogo: {fileID: 8349820945755641197}
+  failedRescueLogo: {fileID: 7350225426462928489}
   beamSound: {fileID: 2106651890}
 --- !u!50 &7671282282115907838
 Rigidbody2D:
@@ -1583,11 +1583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2272053351930997108, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272053351930997108, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.389
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2272053351930997108, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1643,6 +1643,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}
+--- !u!1 &1487313869012023202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2272053351930997107, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}
+  m_PrefabInstance: {fileID: 802753891340656337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1487313869012023205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2272053351930997108, guid: 3fbdc10cbc798ea4ba5adc72795848a9, type: 3}

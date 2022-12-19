@@ -22,7 +22,6 @@ public class ShieldScript: MonoBehaviour
     }
 
     public void HitShield() {
-        Debug.Log("Shield was hit");
         if(isFading){
             StopAllCoroutines();
             Color tmp = shieldSprite.color;
