@@ -54,5 +54,9 @@ public class MainMenu : MonoBehaviour
     public void ToggleFullscreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
+        if(!Screen.fullScreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 }
