@@ -766,6 +766,8 @@ MonoBehaviour:
   beamSound: {fileID: 2106651890}
   chargeSound: {fileID: 1977368788}
   fleeSound: {fileID: 2091559276}
+  controlTip: {fileID: 0}
+  guiderCollider: {fileID: 0}
   rescueCount: 0
   maxRescueCount: 10
   fleeTime: 3

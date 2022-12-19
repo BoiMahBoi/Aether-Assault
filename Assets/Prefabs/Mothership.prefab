@@ -1647,7 +1647,7 @@ MonoBehaviour:
   beamCharged: 0
   isFiring: 0
   slider: {fileID: 0}
-  controlTip: {fileID: 8457379045935068788}
+  controlTip: {fileID: 0}
   beamOfDeathObject: {fileID: 0}
   chargeSound: {fileID: 106415261}
 --- !u!114 &1589951375

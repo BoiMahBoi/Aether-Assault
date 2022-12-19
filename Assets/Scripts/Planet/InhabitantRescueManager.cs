@@ -35,7 +35,8 @@ public class InhabitantRescueManager : MonoBehaviour
     public AudioSource beamSound;
     public AudioSource chargeSound;
     public AudioSource fleeSound;
-    //public GameObject controlTip;
+    public GameObject controlTip;
+    public GameObject guiderCollider;
 
     [Header("Rescue Win")]
     public int rescueCount;
@@ -175,7 +176,7 @@ public class InhabitantRescueManager : MonoBehaviour
         {
             rescueCount = maxRescueCount;
             hasRescuedEveryone = true;
-            //controlTip.SetActive(true);
+            controlTip.SetActive(true);
         }
     }
 
@@ -190,6 +191,7 @@ public class InhabitantRescueManager : MonoBehaviour
         starFighter.GetComponent<PolygonCollider2D>().enabled = false;
         starFighter.GetComponent<StarfighterMovement>().enabled = false;
         starFighter.GetComponent<ShieldBounce>().enabled = false;
+        guiderCollider.SetActive(false);
         warpEffect.SetActive(true);
         starFighter.GetComponent<Rigidbody2D>().AddForce(starFighter.transform.up * 1000);
         isPoweringUp = false;

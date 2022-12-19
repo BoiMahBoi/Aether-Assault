@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     public GameObject howToMenu;
     public GameObject optionsMenu;
     public GameObject creditsMenu;
+    public GameObject controlsMenu;
+    public GameObject gameplayMenu;
 
     private void Start()
     {
@@ -30,6 +32,12 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         menu.SetActive(true);
+    }
+
+    public void HowToMenuSwitch() {
+        Debug.Log("Poop");
+        controlsMenu.SetActive(!controlsMenu.activeSelf);
+        gameplayMenu.SetActive(!gameplayMenu.activeSelf);
     }
 
     public void BackToMainMenu()
